@@ -5,14 +5,12 @@ import { EventData } from "tns-core-modules/ui/page/page";
 import { RouterExtensions } from "nativescript-angular/router";
 
 @Component({
-    selector: "Featured",
-    templateUrl: "./featured.component.html"
+    selector: "MockExam",
+    templateUrl: "./mock-exam.component.html"
 })
-export class FeaturedComponent implements OnInit {
+export class MockExamComponent implements OnInit {
 
-    constructor(private routerExtensions: RouterExtensions) {
-        // Use the component constructor to inject providers.
-    }
+    constructor(private routerExtensions: RouterExtensions) {}
 
     ngOnInit(): void {
         // Init your component properties here.
@@ -35,5 +33,4 @@ export class FeaturedComponent implements OnInit {
         })
 
     }
-
 }

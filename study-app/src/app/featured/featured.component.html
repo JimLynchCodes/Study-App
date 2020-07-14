@@ -14,8 +14,21 @@
     </ActionItem>
     <Label text="Featured"></Label>
 </ActionBar>
-
-<GridLayout class="page__content">
+ 
+<StackLayout class="page__content">
     <Label class="page__content-icon fas" text="&#xf005;"></Label>
-    <Label class="page__content-placeholder" text="<!-- Page content goes here -->"></Label>
-</GridLayout>
+    
+    <Label class="page__content-placeholder" text=""></Label>
+    <Label class="page__content-placeholder" text="Choose a practice mode!"></Label>
+    <Label class="page__content-placeholder" text=""></Label>
+
+    <Button text="Fast Feedback" (tap)="onTap('/home')" class="-primary"></Button>
+    <Button text="Study By Section" (tap)="onTap('home')" class="-primary"></Button>
+    <Button text="Build Your Own" (tap)="onTap('home')" class="-primary"></Button>
+    <Button text="Mock Exam" (tap)="onTap('mock-exam')" class="-primary"></Button>
+     
+    <!-- <Button>Yo</Button> -->
+<!-- </GridLayout>
+<GridLayout class="page__content">
+    <Label class="page__content-placeholder" text="Please choose a practice mode."></Label> -->
+</StackLayout>

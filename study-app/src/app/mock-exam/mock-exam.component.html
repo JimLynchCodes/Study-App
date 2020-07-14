@@ -15,7 +15,17 @@
     <Label text="Settings"></Label>
 </ActionBar>
 
-<GridLayout class="page__content">
+<StackLayout class="page__content">
     <Label class="page__content-icon fas" text="&#xf013;"></Label>
-    <Label class="page__content-placeholder" text="Your Settings..."></Label>
-</GridLayout>
+    <Label class="page__content-placeholder" text=""></Label>
+    <Label class="page__content-placeholder" text="Mock Exam"></Label>
+    <Label class="page__content-placeholder" text=""></Label>
+    <Label class="page__content-placeholder" text="In this section you'll have 30"></Label>
+    <Label class="page__content-placeholder" text="minutes to answer 20 questions."></Label>
+    <Label class="page__content-placeholder" text="Answers will be shown"></Label>
+    <Label class="page__content-placeholder" text="at the end of the exam."></Label>
+    <Label class="page__content-placeholder" text=""></Label>
+  
+    <Button text="Start Mock Exam" (tap)="onTap('home')" class="-primary"></Button>
+     
+</StackLayout>
