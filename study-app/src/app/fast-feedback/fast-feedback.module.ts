@@ -1,19 +1,19 @@
 import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
 import { NativeScriptCommonModule } from "nativescript-angular/common";
 
-import { FeaturedRoutingModule } from "./featured-routing.module";
-import { FeaturedComponent } from "./featured.component";
+import { FastFeedbackRoutingModule } from "./fast-feedback-routing.module";
+import { FastFeedbackComponent } from "./fast-feedback.component";
 
 @NgModule({
     imports: [
         NativeScriptCommonModule,
-        FeaturedRoutingModule
+        FastFeedbackRoutingModule
     ],
     declarations: [
-        FeaturedComponent
+        FastFeedbackComponent
     ],
     schemas: [
         NO_ERRORS_SCHEMA
     ]
 })
-export class FeaturedModule { }
+export class FastFeedbackModule { }

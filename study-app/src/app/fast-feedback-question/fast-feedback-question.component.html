@@ -1,0 +1,77 @@
+<ActionBar>
+    <!-- 
+    Use the NavigationButton as a side-drawer button in Android
+    because ActionItems are shown on the right side of the ActionBar
+    -->
+    <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
+    <!-- 
+    Use the ActionItem for IOS with position set to left. Using the
+    NavigationButton as a side-drawer button in iOS is not possible,
+    because its function is to always navigate back in the application.
+    -->
+    <ActionItem icon="res://menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()" ios.position="left">
+    </ActionItem>
+    <Label text="Fast Feedback"></Label>
+</ActionBar>
+
+<ScrollView>
+
+    <StackLayout class="page__content">
+        <!-- <Label class="page__content-icon fas" text="&#xf005;"></Label> -->
+
+        <Label class="question-padding" text="Question 1.2"></Label>
+
+        <TextView class="page__content-placeholder" text="{{currentQuestion.questionText}}">
+        </TextView>
+
+        <Label text=""></Label>
+
+        <!-- <TextView text=" 
+                [debug panel]
+                'answered': {{answered}}
+                'answer': {{answered}}
+                'answeredCorrectly': {{answeredCorrectly}}
+                'answerChoice': {{answerChoice}}
+                "></TextView> -->
+
+        <!-- Button 0, 'A' Choice -->
+        <Button text="{{currentQuestion.answerChoices[0]}}" (tap)="onTap('A')" [ngClass]="{
+                    '-primary': answered === false || answered === true && answerChoice !== 'A' && currentQuestion.correctAnswer !== 'A',
+                    'correct-green': answered === true && currentQuestion.correctAnswer === 'A',
+                    'incorrect-choice': answered === true && answerChoice === 'A' && answeredCorrectly === false
+                }"></Button>
+
+        <!-- Button 1, 'B' Choice -->
+        <Button text="{{currentQuestion.answerChoices[1]}}" (tap)="onTap('B')" [ngClass]="{
+            '-primary': answered === false || answered === true && answerChoice !== 'B' && currentQuestion.correctAnswer !== 'B',
+                    'correct-green': answered === true && currentQuestion.correctAnswer === 'B',
+                    'incorrect-choice': answered === true && answerChoice === 'B' && answeredCorrectly === false
+                }"></Button>
+
+        <!-- Button 2, 'C' Choice -->
+        <Button text="{{currentQuestion.answerChoices[2]}}" (tap)="onTap('C')" [ngClass]="{
+                    '-primary': answered === false || answered === true && answerChoice !== 'C' && currentQuestion.correctAnswer !== 'C',
+                    'correct-green': answered === true && currentQuestion.correctAnswer === 'C',
+                    'incorrect-choice': answered === true && answerChoice === 'C' && answeredCorrectly === false
+                }"></Button>
+
+        <!-- Button 3, 'D' Choice -->
+        <Button text="{{currentQuestion.answerChoices[3]}}" (tap)="onTap('D')" [ngClass]="{
+            '-primary': answered === false || answered === true && answerChoice !== 'D' && currentQuestion.correctAnswer !== 'D',
+            'correct-green': answered === true && currentQuestion.correctAnswer === 'D',
+            'incorrect-choice': answered === true && answerChoice === 'D' && answeredCorrectly === false
+        }"></Button>
+
+        <Label *ngIf="answered" class="page__content-placeholder" text="{{feedbackMessage}}"></Label>
+
+        <Button *ngIf="answered" text="Explanation..." (tap)="toggleDetailsExpanded()" class="-primary"></Button>
+
+        <TextView *ngIf="answered && moreDetailsExpanded"
+            text="{{currentQuestion.explanations[currentQuestion.correctAnswer]}} {{answerChoice !== currentQuestion.correctAnswer ? '&#X0D;&#X0D;' + currentQuestion.explanations[answerChoice] : '' }} &#X0D;&#X0D; {{currentQuestion.moreExplanation}}">
+        </TextView>
+
+        <Button *ngIf="answered" text="Next Question" (tap)="nextQuestion()" class="-primary"></Button>
+        <Button *ngIf="answered" text="Reset" (tap)="resetQuestion()" class="-primary"></Button>
+
+    </StackLayout>
+</ScrollView>

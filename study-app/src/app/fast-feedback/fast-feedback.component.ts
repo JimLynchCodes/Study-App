@@ -5,10 +5,10 @@ import { EventData } from "tns-core-modules/ui/page/page";
 import { RouterExtensions } from "nativescript-angular/router";
 
 @Component({
-    selector: "Featured",
-    templateUrl: "./featured.component.html"
+    selector: "FastFeedback",
+    templateUrl: "./fast-feedback.component.html"
 })
-export class FeaturedComponent implements OnInit {
+export class FastFeedbackComponent implements OnInit {
 
     constructor(private routerExtensions: RouterExtensions) {
         // Use the component constructor to inject providers.
@@ -23,16 +23,17 @@ export class FeaturedComponent implements OnInit {
         sideDrawer.showDrawer();
     }
 
-    onTap(args: EventData) {
+    onTap(arg: EventData) {
 
-        console.log('tapped: ', args)
+        console.log('tapped: ', arg)
 
-        this.routerExtensions.navigate([args], {
-            transition: {
-                name: "fade"
-            }
+        if (arg)
+            this.routerExtensions.navigate([arg + '/q1-1'], {
+                transition: {
+                    name: "fade"
+                }
 
-        })
+            })
 
     }
 
