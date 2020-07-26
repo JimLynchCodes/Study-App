@@ -4,6 +4,7 @@ import { NativeScriptUISideDrawerModule } from "nativescript-ui-sidedrawer/angul
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
+import { QuestionGenerator } from "./question-generator/question-generator.service";
 
 @NgModule({
     bootstrap: [
@@ -15,7 +16,10 @@ import { AppComponent } from "./app.component";
         NativeScriptUISideDrawerModule
     ],
     declarations: [
-        AppComponent
+        AppComponent,
+    ],
+    providers: [
+        QuestionGenerator
     ],
     schemas: [
         NO_ERRORS_SCHEMA

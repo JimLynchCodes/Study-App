@@ -26,40 +26,39 @@
 
         <Label text=""></Label>
 
-        <!-- <TextView text=" 
-                [debug panel]
-                'answered': {{answered}}
-                'answer': {{answered}}
-                'answeredCorrectly': {{answeredCorrectly}}
-                'answerChoice': {{answerChoice}}
-                "></TextView> -->
-
         <!-- Button 0, 'A' Choice -->
-        <Button text="{{currentQuestion.answerChoices[0]}}" (tap)="onTap('A')" [ngClass]="{
+        <Button text="{{textAnswerChoices[0]}}" (tap)="onTap('A')" [ngClass]="{
                     '-primary': answered === false || answered === true && answerChoice !== 'A' && currentQuestion.correctAnswer !== 'A',
                     'correct-green': answered === true && currentQuestion.correctAnswer === 'A',
                     'incorrect-choice': answered === true && answerChoice === 'A' && answeredCorrectly === false
                 }"></Button>
 
         <!-- Button 1, 'B' Choice -->
-        <Button text="{{currentQuestion.answerChoices[1]}}" (tap)="onTap('B')" [ngClass]="{
+        <Button text="{{textAnswerChoices[1]}}" (tap)="onTap('B')" [ngClass]="{
             '-primary': answered === false || answered === true && answerChoice !== 'B' && currentQuestion.correctAnswer !== 'B',
                     'correct-green': answered === true && currentQuestion.correctAnswer === 'B',
                     'incorrect-choice': answered === true && answerChoice === 'B' && answeredCorrectly === false
                 }"></Button>
 
         <!-- Button 2, 'C' Choice -->
-        <Button text="{{currentQuestion.answerChoices[2]}}" (tap)="onTap('C')" [ngClass]="{
+        <Button text="{{textAnswerChoices[2]}}" (tap)="onTap('C')" [ngClass]="{
                     '-primary': answered === false || answered === true && answerChoice !== 'C' && currentQuestion.correctAnswer !== 'C',
                     'correct-green': answered === true && currentQuestion.correctAnswer === 'C',
                     'incorrect-choice': answered === true && answerChoice === 'C' && answeredCorrectly === false
                 }"></Button>
 
         <!-- Button 3, 'D' Choice -->
-        <Button text="{{currentQuestion.answerChoices[3]}}" (tap)="onTap('D')" [ngClass]="{
+        <Button text="{{textAnswerChoices[3]}}" (tap)="onTap('D')" [ngClass]="{
             '-primary': answered === false || answered === true && answerChoice !== 'D' && currentQuestion.correctAnswer !== 'D',
             'correct-green': answered === true && currentQuestion.correctAnswer === 'D',
             'incorrect-choice': answered === true && answerChoice === 'D' && answeredCorrectly === false
+        }"></Button>
+
+        <!-- Button 4, 'E' Choice -->
+        <Button *ngIf="textAnswerChoices.length > 4" text="{{textAnswerChoices[4]}}" (tap)="onTap('E')" [ngClass]="{
+            '-primary': answered === false || answered === true && answerChoice !== 'E' && currentQuestion.correctAnswer !== 'E',
+            'correct-green': answered === true && currentQuestion.correctAnswer === 'E',
+            'incorrect-choice': answered === true && answerChoice === 'E' && answeredCorrectly === false
         }"></Button>
 
         <Label *ngIf="answered" class="page__content-placeholder" text="{{feedbackMessage}}"></Label>

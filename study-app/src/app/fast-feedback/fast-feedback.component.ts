@@ -25,14 +25,11 @@ export class FastFeedbackComponent implements OnInit {
 
     onTap(arg: EventData) {
 
-        console.log('tapped: ', arg)
-
         if (arg)
-            this.routerExtensions.navigate([arg + '/q1-1'], {
+            this.routerExtensions.navigate([arg], {
                 transition: {
                     name: "fade"
                 }
-
             })
 
     }
