@@ -44,6 +44,7 @@ export class QuestionGenerator {
     }
 
     private shuffle<T> (array: Array<T>): Array<T> {
+        console.log('shuffling...')
         var currentIndex = array.length, temporaryValue, randomIndex;
       
         // While there remain elements to shuffle...

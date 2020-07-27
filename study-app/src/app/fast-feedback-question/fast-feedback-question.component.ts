@@ -21,7 +21,7 @@ export class FastFeedbackQuestionComponent implements OnInit {
 
     content: any;
 
-    textAnswerChoices: string[];
+    textAnswerChoices: string[] = ['', '', '', ''];
 
     // questionText: string = 'A domestic LLC with at least two members that does NOT file Form 8832 is classified as a ____________ for Federal income tax purposes.'
 
@@ -42,10 +42,10 @@ export class FastFeedbackQuestionComponent implements OnInit {
 
         console.log('got a question: ', this.currentQuestion)
 
-        // this.textAnswerChoices = Object.values(this.currentQuestion.answerChoices);
-        // this.answerChoicesArray = Object.keys(this.currentQuestion.answerChoices);
+        this.textAnswerChoices = Object.values(this.currentQuestion.answerChoices);
+        this.answerChoicesArray = Object.keys(this.currentQuestion.answerChoices);
 
-        // console.log('choices: ', this.textAnswerChoices)
+        console.log('choices: ', this.textAnswerChoices)
 
         this.router.routeReuseStrategy.shouldReuseRoute = function(){
             return false;
@@ -53,21 +53,7 @@ export class FastFeedbackQuestionComponent implements OnInit {
 
     }
 
-    ngOnInit(): void {
-
-        this.route.params.subscribe(params => {
-
-            // console.log('Params ', params);
-            // console.log('Params question', params.question);
-
-            if (params.question === 'q1-1') {
-                console.log('Params ', params);
-                // this.questionText = 'some other question...'
-            }
-
-        })
-
-    }
+    ngOnInit(): void { }
 
     onDrawerButtonTap(): void {
         const sideDrawer = <RadSideDrawer>app.getRootView();
@@ -78,24 +64,24 @@ export class FastFeedbackQuestionComponent implements OnInit {
 
         console.log('answered with: ', choice); 
 
-        // if (!this.answered) {
+        if (!this.answered) {
 
-        //     console.log('tapping answer: ', choice)
+            console.log('tapping answer: ', choice)
 
-        //     this.answerChoice = choice
+            this.answerChoice = choice
 
-        //     if (choice === this.currentQuestion.correctAnswer) {
-        //         this.feedbackMessage = 'That\'s CORRECT!'
-        //         this.answeredCorrectly = true
-        //     }
-        //     else {
-        //         this.answeredCorrectly = false
-        //         this.feedbackMessage = `Sorry, ${this.currentQuestion.correctAnswer} is correct.`
-        //     }
+            if (choice === this.currentQuestion.correctAnswer) {
+                this.feedbackMessage = 'That\'s CORRECT!'
+                this.answeredCorrectly = true
+            }
+            else {
+                this.answeredCorrectly = false
+                this.feedbackMessage = `Sorry, ${this.currentQuestion.correctAnswer} is correct.`
+            }
 
-        //     this.answered = true
+            this.answered = true
 
-        // }
+        }
     }
 
     resetQuestion() {
