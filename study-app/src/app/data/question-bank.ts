@@ -12,7 +12,7 @@ export const questionBank: IQuestion[] = [
             [AnswerChoice.B]: 'ok',
             [AnswerChoice.C]: 'well then',
             [AnswerChoice.D]: 'hmm',
-            [AnswerChoice.D]: 'say what, now?',
+            [AnswerChoice.E]: 'say what, now?',
         },
         correctAnswer: AnswerChoice.A,
         explanations: {
@@ -124,6 +124,7 @@ export const questionBank: IQuestion[] = [
     {
         chapterIndex: 5,
         questionIndex: 1,
+
         qId: `q5-1`,
         tags: [],
         questionText: 'Business bad debts are deducted:',

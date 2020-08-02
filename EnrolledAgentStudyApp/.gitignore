@@ -7,7 +7,6 @@ platforms/
 *.js.map
 *.js
 !webpack.config.js
-*.css
 
 # Logs
 logs
@@ -32,6 +31,3 @@ typings/
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
-
-# Certs
-certs
