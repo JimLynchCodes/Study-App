@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
-import { questionBank } from "../data/question-bank";
-import { IQuestion, AnswerChoice } from "../models/question";
+import { questionBank } from "../../data/question-bank";
+import { IQuestion, AnswerChoice } from "../../models/question";
 
 
 const ANSWERS: AnswerChoice[] = [

@@ -4,7 +4,7 @@ import * as app from "tns-core-modules/application";
 import { RouterExtensions } from "nativescript-angular/router";
 import { ActivatedRoute, Router } from "@angular/router";
 import { IQuestion, AnswerChoice } from "../models/question";
-import { QuestionGenerator } from "../question-generator/question-generator.service";
+import { QuestionGenerator } from "../utils/question-generator/question-generator.service";
 
 @Component({
     selector: "FeaturedQuestion",

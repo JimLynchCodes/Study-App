@@ -107,7 +107,7 @@ export const questionBank: IQuestion[] = [
         },
         correctAnswer: AnswerChoice.C,
         explanations: {
-            [AnswerChoice.A]: '"Abandoned property" is a disposition of property, but are the answer answer choices!',
+            [AnswerChoice.A]: '"Abandoned property" is a disposition of property, but the other answer choices are true as well!',
             [AnswerChoice.B]: '"Property transferred to satisfy a debt" is a disposition of property, but are the answer answer choices!',
             [AnswerChoice.C]: 'The correct answer is all of these choices.',
             [AnswerChoice.D]: '"Property exchanged for other property" is a disposition of property, but are the answer answer choices!'

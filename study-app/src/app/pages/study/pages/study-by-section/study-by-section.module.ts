@@ -1,19 +1,19 @@
 import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
 import { NativeScriptCommonModule } from "nativescript-angular/common";
 
-import { FastFeedbackRoutingModule } from "./fast-feedback-routing.module";
-import { FastFeedbackComponent } from "./fast-feedback.component";
+import { StudyBySectionRoutingModule } from "./study-by-section-routing.module";
+import { StudyBySectionComponent } from "./study-by-section.component";
 
 @NgModule({
     imports: [
         NativeScriptCommonModule,
-        FastFeedbackRoutingModule
+        StudyBySectionRoutingModule
     ],
     declarations: [
-        FastFeedbackComponent
+        StudyBySectionComponent
     ],
     schemas: [
         NO_ERRORS_SCHEMA
     ]
 })
-export class FastFeedbackModule { }
+export class StudyBySectionModule { }

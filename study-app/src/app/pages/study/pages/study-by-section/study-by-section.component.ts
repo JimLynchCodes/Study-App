@@ -5,10 +5,10 @@ import { EventData } from "tns-core-modules/ui/page/page";
 import { RouterExtensions } from "nativescript-angular/router";
 
 @Component({
-    selector: "FastFeedback",
-    templateUrl: "./fast-feedback.component.html"
+    selector: "StudyBySection",
+    templateUrl: "./study-by-section.component.html"
 })
-export class FastFeedbackComponent implements OnInit {
+export class StudyBySectionComponent implements OnInit {
 
     constructor(private routerExtensions: RouterExtensions) {
         // Use the component constructor to inject providers.

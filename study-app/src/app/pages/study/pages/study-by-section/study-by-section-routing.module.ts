@@ -2,14 +2,14 @@ import { NgModule } from "@angular/core";
 import { Routes } from "@angular/router";
 import { NativeScriptRouterModule } from "nativescript-angular/router";
 
-import { FastFeedbackComponent } from "./fast-feedback.component";
+import { StudyBySectionComponent } from "./study-by-section.component";
 
 const routes: Routes = [
-    { path: "", component: FastFeedbackComponent }
+    { path: "", component: StudyBySectionComponent }
 ];
 
 @NgModule({
     imports: [NativeScriptRouterModule.forChild(routes)],
     exports: [NativeScriptRouterModule]
 })
-export class FastFeedbackRoutingModule { }
+export class StudyBySectionRoutingModule { }
