@@ -1,6 +1,6 @@
 {
   "nativescript": {
-    "id": "org.nativescript.studyapp",
+    "id": "enrolled-agent.study-app",
     "tns-android": {
       "version": "6.5.0"
     },

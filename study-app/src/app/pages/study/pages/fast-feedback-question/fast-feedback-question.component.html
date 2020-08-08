@@ -1,0 +1,76 @@
+<ActionBar>
+    <!-- 
+    Use the NavigationButton as a side-drawer button in Android
+    because ActionItems are shown on the right side of the ActionBar
+    -->
+    <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
+    <!-- 
+    Use the ActionItem for IOS with position set to left. Using the
+    NavigationButton as a side-drawer button in iOS is not possible,
+    because its function is to always navigate back in the application.
+    -->
+    <ActionItem icon="res://menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()" ios.position="left">
+    </ActionItem>
+    <Label text="Fast Feedback"></Label>
+</ActionBar>
+
+<ScrollView>
+
+    <StackLayout class="page__content">
+        <!-- <Label class="page__content-icon fas" text="&#xf005;"></Label> -->
+
+        <Label class="question-padding" text="Question 1.2"></Label>
+
+        <TextView class="page__content-placeholder" text="{{currentQuestion.questionText}}">
+        </TextView>
+
+        <Label text=""></Label>
+
+        <!-- Button 0, 'A' Choice -->
+        <Button text="{{textAnswerChoices[0]}}" (tap)="onTap(answerChoicesArray[0])" [ngClass]="{
+                    '-primary': answered === false || answered === true && answerChoice !== answerChoicesArray[0][0] && currentQuestion.correctAnswer !== answerChoicesArray[0],
+                    'correct-green': answered === true && currentQuestion.correctAnswer === answerChoicesArray[0],
+                    'incorrect-choice': answered === true && answerChoice === answerChoicesArray[0] && answeredCorrectly === false
+                }"></Button>
+ 
+        <!-- Button 1, 'B' Choice -->
+        <Button text="{{textAnswerChoices[1]}}" (tap)="onTap(answerChoicesArray[1])" [ngClass]="{
+            '-primary': answered === false || answered === true && answerChoice !== answerChoicesArray[1] && currentQuestion.correctAnswer !== answerChoicesArray[1],
+                    'correct-green': answered === true && currentQuestion.correctAnswer === answerChoicesArray[1],
+                    'incorrect-choice': answered === true && answerChoice === answerChoicesArray[1] && answeredCorrectly === false
+                }"></Button>
+
+        <!-- Button 2, 'C' Choice -->
+        <Button text="{{textAnswerChoices[2]}}" (tap)="onTap(answerChoicesArray[2])" [ngClass]="{
+                    '-primary': answered === false || answered === true && answerChoice !== answerChoicesArray[2] && currentQuestion.correctAnswer !== answerChoicesArray[2],
+                    'correct-green': answered === true && currentQuestion.correctAnswer === answerChoicesArray[2],
+                    'incorrect-choice': answered === true && answerChoice === answerChoicesArray[2] && answeredCorrectly === false
+                }"></Button>
+
+        <!-- Button 3, 'D' Choice -->
+        <Button text="{{textAnswerChoices[3]}}" (tap)="onTap(answerChoicesArray[3])" [ngClass]="{
+            '-primary': answered === false || answered === true && answerChoice !== answerChoicesArray[3] && currentQuestion.correctAnswer !== answerChoicesArray[3],
+            'correct-green': answered === true && currentQuestion.correctAnswer === answerChoicesArray[3],
+            'incorrect-choice': answered === true && answerChoice === answerChoicesArray[3] && answeredCorrectly === false
+        }"></Button>
+
+        <!-- Button 4, 'E' Choice -->
+        <Button *ngIf="textAnswerChoices ? textAnswerChoices.length > 4 : false" text="{{textAnswerChoices[4]}}" (tap)="onTap(answerChoicesArray[4])" [ngClass]="{
+            '-primary': answered === false || answered === true && answerChoice !== answerChoicesArray[4] && currentQuestion.correctAnswer !== answerChoicesArray[4],
+            'correct-green': answered === true && currentQuestion.correctAnswer === answerChoicesArray[4],
+            'incorrect-choice': answered === true && answerChoice === answerChoicesArray[4] && answeredCorrectly === false
+        }"></Button>
+
+        <Label *ngIf="answered" class="page__content-placeholder" text="{{feedbackMessage}}"></Label>
+
+        <Button *ngIf="answered" text="Explanation..." (tap)="toggleDetailsExpanded()" class="-primary"></Button>
+
+        <TextView *ngIf="answered && moreDetailsExpanded"
+            text="{{currentQuestion.explanations[currentQuestion.correctAnswer]}} {{answerChoice !== currentQuestion.correctAnswer ? '&#X0D;&#X0D;' + currentQuestion.explanations[answerChoice] : '' }} &#X0D;&#X0D; {{currentQuestion.moreExplanation}}">
+        </TextView>
+
+        <Button *ngIf="answered" text="Next Question" (tap)="nextQuestion()" class="-primary"></Button>
+        <Button *ngIf="answered" text="Reset" (tap)="resetQuestion()" class="-primary"></Button>
+ 
+    </StackLayout>
+</ScrollView>
