@@ -49,7 +49,6 @@ tns publish ios --ipa <path-to-app> --appleApplicationSpecificPassword <app-spec
 ```
 
 
-
 Note: Provision profiles should be placed here:
 ```
 /Users/jlynch/Library/MobileDevice/Provisioning Profiles
