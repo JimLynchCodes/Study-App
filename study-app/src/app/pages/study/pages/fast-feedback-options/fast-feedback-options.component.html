@@ -31,9 +31,9 @@
             <Switch checked="true" row="0" col="1" class="radio-switch" (checkedChange)="onCheckedChange($event.value, 'All')"></Switch>
         </GridLayout>
         
-        <GridLayout rows="auto" columns="300, 40" *ngFor="let chapter of chapters; let i = index">
-            <Label text="{{i + 1}}) {{chapter.title}}" class="radio-label" row="0" col="0" textWrap="true"></Label>
-            <Switch checked="true" row="0" col="1" class="radio-switch" (checkedChange)="onCheckedChange($event.value, chapter.title)"></Switch>
+        <GridLayout rows="auto" columns="300, 40" *ngFor="let chapterToggle of chapterToggles; let i = index">
+            <Label text="{{chapterToggle.chapter}}) {{chapterToggle.title}}" class="radio-label" row="0" col="0" textWrap="true"></Label>
+            <Switch [checked]="chapterToggle ? chapterToggle.checked : true" row="0" col="1" class="radio-switch" (checkedChange)="onCheckedChange($event.value, chapterToggle.chapter)"></Switch>
         </GridLayout>
         
         <Button text="Start Studying!" (tap)="onNextBtnTap()" class="-primary default-button extra-btm-margin"></Button>

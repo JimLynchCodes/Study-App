@@ -15,6 +15,17 @@ const ANSWERS: AnswerChoice[] = [
     providedIn: 'root'
 })
 export class QuestionGenerator {
+    
+    getQuestionFromValidChapter(selectedChapters: number[]): IQuestion {
+
+        const potentialQuestion = this.getTotallyRandomQuestion();
+
+        if (selectedChapters.indexOf(potentialQuestion.chapterIndex) !== -1)
+            return potentialQuestion
+        
+        return this.getQuestionFromValidChapter(selectedChapters)
+
+    }
 
     getTotallyRandomQuestion(): IQuestion {
 

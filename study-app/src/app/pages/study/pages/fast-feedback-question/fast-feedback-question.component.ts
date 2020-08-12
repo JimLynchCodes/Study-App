@@ -30,26 +30,30 @@ export class FastFeedbackQuestionComponent implements OnInit {
 
     currentQuestion: IQuestion
 
+    selectedChapters: number[]
+
     constructor(
         private router: Router,
-        private routerExtensions: RouterExtensions, 
-        private route: ActivatedRoute, 
+        private routerExtensions: RouterExtensions,
+        private route: ActivatedRoute,
         private questionGenerator: QuestionGenerator) {
 
-        this.content = `<p>hello! thereeee</p>`;
-
-        this.currentQuestion = questionGenerator.getTotallyRandomQuestion();
-
-        console.log('got a question: ', this.currentQuestion)
-
-        this.textAnswerChoices = Object.values(this.currentQuestion.answerChoices);
-        this.answerChoicesArray = Object.keys(this.currentQuestion.answerChoices);
-
-        console.log('choices: ', this.textAnswerChoices)
-
-        this.router.routeReuseStrategy.shouldReuseRoute = function(){
+        this.router.routeReuseStrategy.shouldReuseRoute = function () {
             return false;
-         }
+        }
+
+        route.params.subscribe(args => {
+
+            // this.currentQuestion = questionGenerator.getTotallyRandomQuestion();
+
+            this.selectedChapters = args.selectedChapters.split(',')
+
+            this.currentQuestion = questionGenerator.getQuestionFromValidChapter(args.selectedChapters)
+
+            this.textAnswerChoices = Object.values(this.currentQuestion.answerChoices);
+            this.answerChoicesArray = Object.keys(this.currentQuestion.answerChoices);
+
+        })
 
     }
 
@@ -62,11 +66,9 @@ export class FastFeedbackQuestionComponent implements OnInit {
 
     onTap(choice: string) {
 
-        console.log('answered with: ', choice); 
+        console.log('answered with: ', choice);
 
         if (!this.answered) {
-
-            console.log('tapping answer: ', choice)
 
             this.answerChoice = choice
 
@@ -92,11 +94,8 @@ export class FastFeedbackQuestionComponent implements OnInit {
     }
 
     nextQuestion() {
-        console.log('tapping...')
 
-        // this.routerExtensions.locationStrategy.replaceState
-
-        this.routerExtensions.navigateByUrl('/ffq', {
+        this.routerExtensions.navigate(['/ffq', {selectedChapters: this.selectedChapters }], {
             transition: {
                 name: "fade"
             }
