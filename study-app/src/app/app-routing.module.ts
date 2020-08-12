@@ -10,7 +10,7 @@ const routes: Routes = [
     // { path: "ffq", loadChildren: () => import("~/app/pages/study/pages/fast-feedback-question/fast-feedback-question.module").then((m) => m.FastFeedbackQuestionModule) },
     { path: "ffq", loadChildren: () => import("~/app/pages/study/pages/fast-feedback-question/fast-feedback-question.module").then((m) => m.FastFeedbackQuestionModule) },
     { path: "ffq/:question", loadChildren: () => import("~/app/pages/study/pages/fast-feedback-question/fast-feedback-question.module").then((m) => m.FastFeedbackQuestionModule) },
-    { path: "study-by-section", loadChildren: () => import("~/app/pages/study/pages/study-by-section/study-by-section.module").then((m) => m.StudyBySectionModule) },
+    { path: "fast-feedback-options", loadChildren: () => import("~/app/pages/study/pages/fast-feedback-options/fast-feedback-options.module").then((m) => m.FastFeedbackOptionsModule) },
     { path: "mock-exam", loadChildren: () => import("~/app/mock-exam/mock-exam.module").then((m) => m.MockExamModule) }
 ];
 

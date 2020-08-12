@@ -3,15 +3,21 @@ import { RadSideDrawer } from "nativescript-ui-sidedrawer";
 import * as app from "tns-core-modules/application";
 import { EventData } from "tns-core-modules/ui/page/page";
 import { RouterExtensions } from "nativescript-angular/router";
+import { chapters } from "../../../../data/chapters";
 
 @Component({
-    selector: "StudyBySection",
-    templateUrl: "./study-by-section.component.html"
+    selector: "FastFeedbackOptions",
+    templateUrl: "./fast-feedback-options.component.html",
+    styleUrls: ["./fast-feedback-options.scss"]
 })
-export class StudyBySectionComponent implements OnInit {
+export class FastFeedbackOptionsComponent implements OnInit {
 
+    chapters = chapters;
+     
     constructor(private routerExtensions: RouterExtensions) {
         // Use the component constructor to inject providers.
+
+        console.log('chapters are: ', chapters)
     }
 
     ngOnInit(): void {
@@ -32,6 +38,26 @@ export class StudyBySectionComponent implements OnInit {
                 }
             })
 
+    }
+
+    onCheckedChange(value: boolean, chapter: string) {
+
+
+        console.log('stuff here: ', value)
+        console.log('stuff here: ', chapter)
+
+        // Object.keys(event).forEach( key => {
+        //     console.log('stuff here: ', key)
+        // })
+
+    }
+
+    onNextBtnTap() {
+        this.routerExtensions.navigate(['/ffq'], {
+            transition: {
+                name: "fade"
+            }
+        })
     }
 
 }

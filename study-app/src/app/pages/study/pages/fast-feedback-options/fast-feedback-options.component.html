@@ -1,0 +1,81 @@
+<ActionBar>
+    <!-- 
+    Use the NavigationButton as a side-drawer button in Android
+    because ActionItems are shown on the right side of the ActionBar
+    -->
+    <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
+    <!-- 
+    Use the ActionItem for IOS with position set to left. Using the
+    NavigationButton as a side-drawer button in iOS is not possible,
+    because its function is to always navigate back in the application.
+    -->
+    <ActionItem icon="res://menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()" ios.position="left">
+    </ActionItem>
+    <Label text="Fast Feedback"></Label>
+
+
+</ActionBar>
+
+<ScrollView>
+
+    <StackLayout class="page__content">
+        
+        <!-- <Switch checked="true" (checkedChange)="onCheckedChange($event.value, 'All')"></Switch> -->
+        
+        <Button text="Quick Start" (tap)="onNextBtnTap()" class="-primary default-button extra-top-margin"></Button>
+        
+        <Label class="main-prompt" text="or select the chapters to study:"></Label>
+        
+        <GridLayout rows="auto" columns="300, 40">
+            <Label text="All" class="radio-label" row="0" col="0"></Label>
+            <Switch checked="true" row="0" col="1" class="radio-switch" (checkedChange)="onCheckedChange($event.value, 'All')"></Switch>
+        </GridLayout>
+        
+        <GridLayout rows="auto" columns="300, 40" *ngFor="let chapter of chapters; let i = index">
+            <Label text="{{i + 1}}) {{chapter.title}}" class="radio-label" row="0" col="0" textWrap="true"></Label>
+            <Switch checked="true" row="0" col="1" class="radio-switch" (checkedChange)="onCheckedChange($event.value, chapter.title)"></Switch>
+        </GridLayout>
+        
+        <Button text="Start Studying!" (tap)="onNextBtnTap()" class="-primary default-button extra-btm-margin"></Button>
+        
+        <!-- <GridLayout rows="auto" columns="300, 40">
+            <Label text="1) All long lable that long time jazz ok" textWrap="true" class="radio-label" row="0" col="0"></Label>
+            <Switch checked="true" row="0" col="1" class="radio-switch"></Switch>
+        </GridLayout>
+        
+        <GridLayout rows="auto" columns="300, 40">
+            <Label text="2) All long lable that long time jazz ok" textWrap="true" class="radio-label" row="0" col="0"></Label>
+            <Switch checked="true" row="0" col="1" class="radio-switch"></Switch>
+        </GridLayout>
+        
+        <GridLayout rows="auto" columns="300, 40">
+            <Label text="3) yeah some cool accounting thing" textWrap="true" class="radio-label" row="0" col="0"></Label>
+            <Switch checked="true" row="0" col="1" class="radio-switch"></Switch>
+        </GridLayout>
+        
+        <GridLayout rows="auto" columns="300, 40">
+            <Label text="4) Soem tax stuff" textWrap="true" class="radio-label" row="0" col="0"></Label>
+            <Switch checked="true" row="0" col="1" class="radio-switch"></Switch>
+        </GridLayout> -->
+        
+        <!-- <GridLayout rows="auto" columns="* 1">
+            <Label text="All long lable that eid going over the amount that it should" 
+            textWrap="true" class="radio-label" row="0" col="0" width="250"></Label>
+            <Switch checked="true" row="0" col="1" class="radio-switch"></Switch>
+        </GridLayout> -->
+        
+        
+        <!-- <Switch color="lightgray" backgroundColor="forestgreen">
+        </Switch>
+        <Switch color="lightgray" backgroundColor="forestgreen">
+        </Switch>
+        <Switch color="lightgray" backgroundColor="forestgreen">
+        </Switch>
+        <Switch color="lightgray" backgroundColor="forestgreen">
+        </Switch>
+        <Switch checked="true" color="lightgray" backgroundColor="forestgreen">
+        </Switch> -->
+        
+        
+    </StackLayout>
+</ScrollView>

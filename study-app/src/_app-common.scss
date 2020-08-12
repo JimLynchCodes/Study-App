@@ -24,8 +24,8 @@
 .page__content {
     &-icon,
     &-placeholder {
-        color: const(grey);
-        font-size: 20;
+        color: rgb(80, 80, 80);
+        font-size: 21;
         vertical-align: center;
         horizontal-align: center;
     }
@@ -39,6 +39,22 @@
 
 // Drawer navigation custom styles
 .nt-drawer__header-image {
-    color: const(grey);
+    color: rgb(80, 80, 80);
 }
 
+// uses -primary background-color
+Button {
+    height: auto;
+    font-size: 22; 
+    color: white;
+    border-radius: 10%;
+    padding: 8 15;
+}
+
+.correct-green {
+    background-color: rgb(54, 177, 54);
+}
+
+.incorrect-choice {
+    background-color: rgb(174, 36, 36);
+}
