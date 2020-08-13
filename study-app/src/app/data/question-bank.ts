@@ -26,127 +26,127 @@ import { IQuestion, AnswerChoice } from "../models/question";
 //         },
 //         moreExplanation: 'The phrase chyeah originated in 1987 when people needed to express yeah in a more cool form.',
 //     },
-    // {
-    //     chapterIndex: 0,
-    //     questionIndex: 2,
-    //     qId: `q0-2`,
-    //     tags: ['second question', 'yeah buddy'],
-    //     questionText: 'second question',
-    //     answerChoices: {
-    //         [AnswerChoice.A]: '1',
-    //         [AnswerChoice.B]: '2',
-    //         [AnswerChoice.C]: '3',
-    //         [AnswerChoice.D]: '4',
-    //         [AnswerChoice.E]: '5',
-    //     },
-    //     correctAnswer: AnswerChoice.D,
-    //     explanations: {
-    //         [AnswerChoice.A]: '1 is good, but 4 is better!',
-    //         [AnswerChoice.B]: '2 is for you, but 4 is much more. ;)',
-    //         [AnswerChoice.C]: '3 is a nice one, but four is t?".',
-    //         [AnswerChoice.E]: 'ahh four, what a great number!',
-    //         [AnswerChoice.D]: '5 is much too big. What do you think of four?',
-    //     },
-    //     moreExplanation: 'Four, 4, glorious FOUR!!',
-    // },
-    // {
-    //     chapterIndex: 2,
-    //     questionIndex: 1,
-    //     qId: `q2-1`,
-    //     tags: [],
-    //     questionText: 'Which of the following costs is NOT included in the basis of a patent a taxpayer gets for his invention?',
-    //     answerChoices: {
-    //         [AnswerChoice.A]: 'The cost of research (deducted as current business expense)',
-    //         [AnswerChoice.B]: 'Working model expenditures',
-    //         [AnswerChoice.C]: 'Experimental expenditures',
-    //         [AnswerChoice.D]: 'Attorney fees'
-    //     },
-    //     correctAnswer: AnswerChoice.A,
-    //     explanations: {
-    //         [AnswerChoice.A]: 'Attorney fees are the cost of research (deducted as current business expense).',
-    //         [AnswerChoice.B]: '[no reason provided why Working model expenditures is incorrect.]',
-    //         [AnswerChoice.C]: '[no reason provided why Experimental expenditures is incorrect.]',
-    //         [AnswerChoice.D]: '[no reason provided why Attorney fees is incorrect.]'
-    //     },
-    //     moreExplanation: `The cost of research (deducted as current business expense) cannot be included in the basis of a patent.
+// {
+//     chapterIndex: 0,
+//     questionIndex: 2,
+//     qId: `q0-2`,
+//     tags: ['second question', 'yeah buddy'],
+//     questionText: 'second question',
+//     answerChoices: {
+//         [AnswerChoice.A]: '1',
+//         [AnswerChoice.B]: '2',
+//         [AnswerChoice.C]: '3',
+//         [AnswerChoice.D]: '4',
+//         [AnswerChoice.E]: '5',
+//     },
+//     correctAnswer: AnswerChoice.D,
+//     explanations: {
+//         [AnswerChoice.A]: '1 is good, but 4 is better!',
+//         [AnswerChoice.B]: '2 is for you, but 4 is much more. ;)',
+//         [AnswerChoice.C]: '3 is a nice one, but four is t?".',
+//         [AnswerChoice.E]: 'ahh four, what a great number!',
+//         [AnswerChoice.D]: '5 is much too big. What do you think of four?',
+//     },
+//     moreExplanation: 'Four, 4, glorious FOUR!!',
+// },
+// {
+//     chapterIndex: 2,
+//     questionIndex: 1,
+//     qId: `q2-1`,
+//     tags: [],
+//     questionText: 'Which of the following costs is NOT included in the basis of a patent a taxpayer gets for his invention?',
+//     answerChoices: {
+//         [AnswerChoice.A]: 'The cost of research (deducted as current business expense)',
+//         [AnswerChoice.B]: 'Working model expenditures',
+//         [AnswerChoice.C]: 'Experimental expenditures',
+//         [AnswerChoice.D]: 'Attorney fees'
+//     },
+//     correctAnswer: AnswerChoice.A,
+//     explanations: {
+//         [AnswerChoice.A]: 'Attorney fees are the cost of research (deducted as current business expense).',
+//         [AnswerChoice.B]: '[no reason provided why Working model expenditures is incorrect.]',
+//         [AnswerChoice.C]: '[no reason provided why Experimental expenditures is incorrect.]',
+//         [AnswerChoice.D]: '[no reason provided why Attorney fees is incorrect.]'
+//     },
+//     moreExplanation: `The cost of research (deducted as current business expense) cannot be included in the basis of a patent.
 
-    //     The basis of a patent a taxpayer gets for his invention is the cost of development, such as research and experimental expenditures, drawings, working models, and attorneys' and governmental fees. HOWEVER, if the taxpayer deducts the research and experimental expenditures as current business expenses, the taxpayer cannot include them in the basis of the patent. The value of the inventor's time spent on an invention is not part of the basis.`,
-    // },
-    // {
-    //     chapterIndex: 3,
-    //     questionIndex: 1,
-    //     qId: `q3-1`,
-    //     tags: [],
-    //     questionText: `On April 6, Sue Thompson bought a house to use as residential rental property. She made several repairs and had it ready for rent on July 5. She did not actually rent the property until August 1, and the family moved in on August 15.
+//     The basis of a patent a taxpayer gets for his invention is the cost of development, such as research and experimental expenditures, drawings, working models, and attorneys' and governmental fees. HOWEVER, if the taxpayer deducts the research and experimental expenditures as current business expenses, the taxpayer cannot include them in the basis of the patent. The value of the inventor's time spent on an invention is not part of the basis.`,
+// },
+// {
+//     chapterIndex: 3,
+//     questionIndex: 1,
+//     qId: `q3-1`,
+//     tags: [],
+//     questionText: `On April 6, Sue Thompson bought a house to use as residential rental property. She made several repairs and had it ready for rent on July 5. She did not actually rent the property until August 1, and the family moved in on August 15.
 
-    //     The house is considered placed in service on:`,
-    //     answerChoices: {
-    //         [AnswerChoice.A]: 'April 6',
-    //         [AnswerChoice.B]: 'August 1',
-    //         [AnswerChoice.C]: 'August 15',
-    //         [AnswerChoice.D]: 'July 5'
-    //     },
-    //     correctAnswer: AnswerChoice.D,
-    //     explanations: {
-    //         [AnswerChoice.A]: '[no reason provided why April 6 is incorrect.]',
-    //         [AnswerChoice.B]: '[no reason provided why August 1 is incorrect.]".',
-    //         [AnswerChoice.C]: '[no reason provided why August 15 is incorrect.]',
-    //         [AnswerChoice.D]: 'The house is considered placed in service on July 5th when it was ready and available for rent. She can begin to depreciate it in July.'
-    //     },
-    //     moreExplanation: 'Property is placed in service when it is ready and available for a specific use, whether in a business activity, an income-producing activity, or a personal activity. Even if the property is not being used, it is in service when it is ready and available for its specific use.',
-    // },
-    // {
-    //     chapterIndex: 4,
-    //     questionIndex: 1,
-    //     qId: `q4-1`,
-    //     tags: [],
-    //     questionText: 'A disposition of property includes:',
-    //     answerChoices: {
-    //         [AnswerChoice.A]: 'Abandoned property',
-    //         [AnswerChoice.B]: 'Property transferred to satisfy a debt',
-    //         [AnswerChoice.C]: 'All of these choices',
-    //         [AnswerChoice.D]: 'Property exchanged for other property'
-    //     },
-    //     correctAnswer: AnswerChoice.C,
-    //     explanations: {
-    //         [AnswerChoice.A]: '"Abandoned property" is a disposition of property, but the other answer choices are true as well!',
-    //         [AnswerChoice.B]: '"Property transferred to satisfy a debt" is a disposition of property, but are the answer answer choices!',
-    //         [AnswerChoice.C]: 'The correct answer is all of these choices.',
-    //         [AnswerChoice.D]: '"Property exchanged for other property" is a disposition of property, but are the answer answer choices!'
-    //     },
-    //     moreExplanation: `Property is sold for cash or other property.
-    //     Property is exchanged for other property.
-    //     Money may be received as a tenant for the cancellation of a lease.
-    //     Property may be transferred to satisfy a debt.
-    //     Property may be abandoned.
-    //     A bank or other financial institution may foreclose on a mortgage or repossesses the financed property.
-        
-    //     (Not a complete list.)`,
-    // },
-    // {
-    //     chapterIndex: 5,
-    //     questionIndex: 1,
+//     The house is considered placed in service on:`,
+//     answerChoices: {
+//         [AnswerChoice.A]: 'April 6',
+//         [AnswerChoice.B]: 'August 1',
+//         [AnswerChoice.C]: 'August 15',
+//         [AnswerChoice.D]: 'July 5'
+//     },
+//     correctAnswer: AnswerChoice.D,
+//     explanations: {
+//         [AnswerChoice.A]: '[no reason provided why April 6 is incorrect.]',
+//         [AnswerChoice.B]: '[no reason provided why August 1 is incorrect.]".',
+//         [AnswerChoice.C]: '[no reason provided why August 15 is incorrect.]',
+//         [AnswerChoice.D]: 'The house is considered placed in service on July 5th when it was ready and available for rent. She can begin to depreciate it in July.'
+//     },
+//     moreExplanation: 'Property is placed in service when it is ready and available for a specific use, whether in a business activity, an income-producing activity, or a personal activity. Even if the property is not being used, it is in service when it is ready and available for its specific use.',
+// },
+// {
+//     chapterIndex: 4,
+//     questionIndex: 1,
+//     qId: `q4-1`,
+//     tags: [],
+//     questionText: 'A disposition of property includes:',
+//     answerChoices: {
+//         [AnswerChoice.A]: 'Abandoned property',
+//         [AnswerChoice.B]: 'Property transferred to satisfy a debt',
+//         [AnswerChoice.C]: 'All of these choices',
+//         [AnswerChoice.D]: 'Property exchanged for other property'
+//     },
+//     correctAnswer: AnswerChoice.C,
+//     explanations: {
+//         [AnswerChoice.A]: '"Abandoned property" is a disposition of property, but the other answer choices are true as well!',
+//         [AnswerChoice.B]: '"Property transferred to satisfy a debt" is a disposition of property, but are the answer answer choices!',
+//         [AnswerChoice.C]: 'The correct answer is all of these choices.',
+//         [AnswerChoice.D]: '"Property exchanged for other property" is a disposition of property, but are the answer answer choices!'
+//     },
+//     moreExplanation: `Property is sold for cash or other property.
+//     Property is exchanged for other property.
+//     Money may be received as a tenant for the cancellation of a lease.
+//     Property may be transferred to satisfy a debt.
+//     Property may be abandoned.
+//     A bank or other financial institution may foreclose on a mortgage or repossesses the financed property.
 
-    //     qId: `q5-1`,
-    //     tags: [],
-    //     questionText: 'Business bad debts are deducted:',
-    //     answerChoices: {
-    //         [AnswerChoice.A]: 'On Schedule 1, line 21 of Form 1040',
-    //         [AnswerChoice.B]: 'On the business tax return as an expense',
-    //         [AnswerChoice.C]: 'On Schedule D (Form 1040) as short-term capital loss',
-    //         [AnswerChoice.D]: 'On Schedule D (Form 1040) as long-term capital loss'
-    //     },
-    //     correctAnswer: AnswerChoice.B,
-    //     explanations: {
-    //         [AnswerChoice.A]: '__',
-    //         [AnswerChoice.B]: 'On the business tax return as an expense.',
-    //         [AnswerChoice.C]: '__',
-    //         [AnswerChoice.D]: '__'
-    //     },
-    //     moreExplanation: `Business bad debts are deducted as an expense on the business tax return when figuring business income or loss.
+//     (Not a complete list.)`,
+// },
+// {
+//     chapterIndex: 5,
+//     questionIndex: 1,
 
-    //     Non-business bad debts are reported as short-term capital losses on Form 8949 and carried to Schedule D (Form 1040). Business bad debts are deducted as an expense.`,
-    // }
+//     qId: `q5-1`,
+//     tags: [],
+//     questionText: 'Business bad debts are deducted:',
+//     answerChoices: {
+//         [AnswerChoice.A]: 'On Schedule 1, line 21 of Form 1040',
+//         [AnswerChoice.B]: 'On the business tax return as an expense',
+//         [AnswerChoice.C]: 'On Schedule D (Form 1040) as short-term capital loss',
+//         [AnswerChoice.D]: 'On Schedule D (Form 1040) as long-term capital loss'
+//     },
+//     correctAnswer: AnswerChoice.B,
+//     explanations: {
+//         [AnswerChoice.A]: '__',
+//         [AnswerChoice.B]: 'On the business tax return as an expense.',
+//         [AnswerChoice.C]: '__',
+//         [AnswerChoice.D]: '__'
+//     },
+//     moreExplanation: `Business bad debts are deducted as an expense on the business tax return when figuring business income or loss.
+
+//     Non-business bad debts are reported as short-term capital losses on Form 8949 and carried to Schedule D (Form 1040). Business bad debts are deducted as an expense.`,
+// }
 
 // ]
 
@@ -165,8 +165,7 @@ export const questionBank: IQuestion[] = [
             [AnswerChoice.A]: 'Partnership',
             [AnswerChoice.B]: 'Corporation',
             [AnswerChoice.C]: 'Sole Proprietorship',
-            [AnswerChoice.D]: 'Subchapter S-Corporation',
-            [AnswerChoice.E]: '',
+            [AnswerChoice.D]: 'Subchapter S-Corporation'
         },
         correctAnswer: AnswerChoice.A,
         explanations: {
@@ -248,8 +247,7 @@ export const questionBank: IQuestion[] = [
             [AnswerChoice.A]: 'Family limited partnership',
             [AnswerChoice.B]: 'None of these choices',
             [AnswerChoice.C]: 'Limited partnership',
-            [AnswerChoice.D]: 'General partnership',
-            [AnswerChoice.E]: '',
+            [AnswerChoice.D]: 'General partnership'
         },
         correctAnswer: AnswerChoice.D,
         explanations: {
@@ -413,7 +411,7 @@ export const questionBank: IQuestion[] = [
         a.The partnership can establish that there is a business purpose for the tax year.
         b.The partnership elects under section 444 to have a tax year other than a required tax year by filing Form 8716, Election to Have a Tax Year Other Than a Required Tax Year. For a partnership to have this election in effect, it must make the payments required by section 7519 and file Form 8752.`,
     },
-    
+
     // Chapter 2
     {
         chapterIndex: 2,
@@ -425,8 +423,7 @@ export const questionBank: IQuestion[] = [
             [AnswerChoice.A]: 'The cost of research (deducted as current business expense)',
             [AnswerChoice.B]: 'Working model expenditures',
             [AnswerChoice.C]: 'Experimental expenditures',
-            [AnswerChoice.D]: 'Attorney fees',
-            [AnswerChoice.E]: '',
+            [AnswerChoice.D]: 'Attorney fees'
         },
         correctAnswer: AnswerChoice.A,
         explanations: {
@@ -448,9 +445,9 @@ export const questionBank: IQuestion[] = [
         tags: [],
         questionText: 'On April 6, Sue Thompson bought a house to use as residential rental property. She made several repairs and had it ready for rent on July 5. She did not actually rent the property until August 1, and the family moved in on August 15.',
         answerChoices: {
-            [AnswerChoice.A]: ' April 6',
+            [AnswerChoice.A]: 'April 6',
             [AnswerChoice.B]: 'August 1',
-            [AnswerChoice.C]: ' August 15',
+            [AnswerChoice.C]: 'August 15',
             [AnswerChoice.D]: 'July 5'
         },
         correctAnswer: AnswerChoice.D,
@@ -463,141 +460,294 @@ export const questionBank: IQuestion[] = [
         moreExplanation: `The house is considered placed in service on July 5th when it was ready and available for rent. She can begin to depreciate it in July.
 
         Property is placed in service when it is ready and available for a specific use, whether in a business activity, an income-producing activity, or a personal activity. Even if the property is not being used, it is in service when it is ready and available for its specific use.`,
+    },
+
+     // Chapter 4
+
+    {
+        chapterIndex: 4,
+        questionIndex: 1,
+        qId: `q4-1`,
+        tags: [],
+        questionText: 'A disposition of property includes:',
+        answerChoices: {
+            [AnswerChoice.A]: 'Abandoned property',
+            [AnswerChoice.B]: 'Property transferred to satisfy a debt',
+            [AnswerChoice.C]: 'All of these choices',
+            [AnswerChoice.D]: 'Property exchanged for other property'
+        },
+        correctAnswer: AnswerChoice.C,
+        explanations: {
+            [AnswerChoice.A]: '',
+            [AnswerChoice.B]: '',
+            [AnswerChoice.C]: 'All of these choices',
+            [AnswerChoice.D]: ''
+        },
+        moreExplanation: `A disposition of property includes the following transactions:
+
+        Property is sold for cash or other property.
+        Property is exchanged for other property.
+        Money may be received as a tenant for the cancellation of a lease.
+        Property may be transferred to satisfy a debt.
+        Property may be abandoned.
+        A bank or other financial institution may foreclose on a mortgage or repossesses the financed property.
+        
+        (Not a complete list.)`,
+    },
+
+    // Chapter 5
+
+    {
+        chapterIndex: 5,
+        questionIndex: 1,
+        qId: `q5-1`,
+        tags: [],
+        questionText: 'Business bad debts are deducted:',
+        answerChoices: {
+            [AnswerChoice.A]: 'On Schedule 1, line 21 of Form 1040',
+            [AnswerChoice.B]: 'On the business tax return as an expense',
+            [AnswerChoice.C]: 'On Schedule D (Form 1040) as short-term capital loss',
+            [AnswerChoice.D]: 'On Schedule D (Form 1040) as long-term capital loss'
+        },
+        correctAnswer: AnswerChoice.B,
+        explanations: {
+            [AnswerChoice.A]: '',
+            [AnswerChoice.B]: 'Business bad debts are deducted on the business tax return as an expense',
+            [AnswerChoice.C]: '',
+            [AnswerChoice.D]: ''
+        },
+        moreExplanation: `Business bad debts are deducted as an expense on the business tax return when figuring business income or loss.
+
+        Non-business bad debts are reported as short-term capital losses on Form 8949 and carried to Schedule D (Form 1040). Business bad debts are deducted as an expense.`,
+    },
+
+     // Chapter 6
+
+    {
+        chapterIndex: 6,
+        questionIndex: 1,
+        qId: `q6-1`,
+        tags: [],
+        questionText: `A cafeteria plan is a written plan that allows employees to choose between receiving cash or taxable benefits instead of certain qualified benefits for which the law provides an exclusion from wages (deferral).
+
+        Which of the following can be included in a cafeteria plan?`,
+        answerChoices: {
+            [AnswerChoice.A]: 'Adoption assistance',
+            [AnswerChoice.B]: 'Tuition reduction',
+            [AnswerChoice.C]: 'Archer medical savings accounts',
+            [AnswerChoice.D]: 'Membership dues to athletic facilities'
+        },
+        correctAnswer: AnswerChoice.A,
+        explanations: {
+            [AnswerChoice.A]: 'Adoption assistance can be included in a cafeteria plan.',
+            [AnswerChoice.B]: '',
+            [AnswerChoice.C]: '',
+            [AnswerChoice.D]: ''
+        },
+        moreExplanation: `A cafeteria plan is a written plan that allows employees to choose between receiving cash or taxable benefits instead of certain qualified benefits for which the law provides an exclusion from wages.
+
+        Qualified cafeteria plan benefits INCLUDE the following benefits:
+        
+        a. Accident and health benefits (but not medical savings accounts or long-term care insurance)
+        b. Adoption assistance
+        c. Dependent care assistance
+        d. Group-term life insurance coverage (including costs that cannot be excluded from wages)
+        e. Health savings accounts (HSAs) (Distributions from an HSA may be used to pay eligible long-term care insurance premiums or qualified long-term care services.)
+        
+        A cafeteria plan CANNOT include the following benefits:
+        
+        a. Archer medical savings accounts
+        b. Athletic facilities
+        c. De minimis (minimal) benefits
+        d. Educational assistance
+        e. Employee discounts
+        f. Lodging on the business premises
+        g. Meals
+        h. Moving expense reimbursements
+        i. No-additional-cost services
+        j. Scholarships and fellowships
+        k. Transportation (commuting) benefits
+        l. Tuition reduction
+        m. Working condition benefits
+        
+        It also cannot include scholarships or fellowships.`,
+    },
+
+    // Chapter 7
+
+    {
+        chapterIndex: 7,
+        questionIndex: 1,
+        qId: `q7-1`,
+        tags: [],
+        questionText: '',
+        answerChoices: {
+            [AnswerChoice.A]: 'Patricia is an independent contractor because Hard Drive has the right to control only the result of the work and not how it will be done.',
+            [AnswerChoice.B]: 'Patricia is not an independent contractor because Hard Drive controls what will be done.',
+            [AnswerChoice.C]: 'Patricia is not an independent contractor because she uses her own computer and Hard Drive provides the specifications.',
+            [AnswerChoice.D]: 'Patricia is an independent contractor because she is not required to attend meetings.'
+        },
+        correctAnswer: AnswerChoice.A,
+        explanations: {
+            [AnswerChoice.A]: 'Patricia is an independent contractor because Hard Drive has the right to control only the result of the work and not how it will be done.',
+            [AnswerChoice.B]: '',
+            [AnswerChoice.C]: '',
+            [AnswerChoice.D]: ''
+        },
+        moreExplanation: `Patricia is an independent contractor.
+
+        The general rule is that an individual is an independent contractor if the payer has the right to control or direct only the result of the work and not what will be done and how it will be done. The earnings of an independent contractor are subject to SE tax.
+        
+        REPORTING. Independent contractors report income and expenses on Schedule C or C-EZ.`,
+    },
+
+    // Chapter 8
+
+    {
+        chapterIndex: 8,
+        questionIndex: 1,
+        qId: 'q8-1',
+        tags: [],
+        questionText: 'The receipt of Agricultural Program Payments by a farmer for refraining from growing crops should be reported as:',
+        answerChoices: {
+            [AnswerChoice.A]: 'Farm income, not subject to self-employment tax',
+            [AnswerChoice.B]: 'Farm income, subject to self-employment tax',
+            [AnswerChoice.C]: 'Rental income, not subject to self-employment tax',
+            [AnswerChoice.D]: 'Miscellaneous income on Form 1040'
+        },
+        correctAnswer: AnswerChoice.B,
+        explanations: {
+            [AnswerChoice.A]: '',
+            [AnswerChoice.B]: 'Farm income, subject to self-employment tax',
+            [AnswerChoice.C]: '',
+            [AnswerChoice.D]: ''
+        },
+        moreExplanation: `The receipt of Agricultural Program Payments by a farmer for refraining from growing crops should be reported as farm income on Schedule F, line 6a (Form 1040). These payments are subject to self-employment tax.
+
+        LINES 6a and 6b, Schedule F. Enter on line 6a the TOTAL of the following amounts:
+        
+        a. Price support payments
+        b. Market gain from the repayment of a secured Commodity Credit Corporation (CCC) loan for less than the original loan amount
+        c. Diversion payments
+        d. Cost-share payments (sight drafts)
+        e. Payments in the form of materials (such as fertilizer or lime) or services (such as grading or building dams)
+        
+        These amounts are government payments taxpayer received, usually reported to the taxpayer on FORM 1099-G. Report on line 6b only the taxable amount.`,
+    },
+
+    // Chapter 9
+    // (NOTE: DUP of 10-1!!)
+    {
+        chapterIndex: 9,
+        questionIndex: 1,
+        qId: `q9-1`,
+        tags: [],
+        questionText: 'Regarding partnership "pass-through" income, which of the following statements is FALSE?',
+        answerChoices: {
+            [AnswerChoice.A]: 'Partners are not employees of the partnership.',
+            [AnswerChoice.B]: 'Partners must report their share of partnership income even if a distribution is not made.',
+            [AnswerChoice.C]: 'Each partner reports his share of the partnership net profit or loss on his personal Form 1040 tax return.',
+            [AnswerChoice.D]: 'Neither general partners nor limited partners must pay self-employment tax on their net earnings from self-employment assigned to them from the partnership.'
+        },
+        correctAnswer: AnswerChoice.D,
+        explanations: {
+            [AnswerChoice.A]: '',
+            [AnswerChoice.B]: '',
+            [AnswerChoice.C]: '',
+            [AnswerChoice.D]: 'Neither general partners nor limited partners must pay self-employment tax on their net earnings from self-employment assigned to them from the partnership.'
+        },
+        moreExplanation: `The FALSE statement is (Neither general partners nor limited partners must pay self-employment tax on their net earnings from self-employment assigned to them from the partnership.) because GENERAL partners MUST pay self-employment tax on their net earnings from self-employment assigned to them from the partnership.
+
+        a. Each partner reports his share of the partnership net profit or loss on his personal Form 1040 tax return.
+        b. Partners must report their share of partnership income even if a distribution is not made.
+        c. Partners are not employees of the partnership.
+        d. Limited partners are subject to self-employment tax ONLY on guaranteed payments, such as professional fees for services rendered.`,
+    },
+
+    // Chapter 10
+    {
+        chapterIndex: 10,
+        questionIndex: 1,
+        qId: `q10-1`,
+        tags: [],
+        questionText: 'Regarding partnership "pass-through" income, which of the following statements is FALSE?',
+        answerChoices: {
+            [AnswerChoice.A]: 'Partners are not employees of the partnership.',
+            [AnswerChoice.B]: 'Partners must report their share of partnership income even if a distribution is not made.',
+            [AnswerChoice.C]: 'Each partner reports his share of the partnership net profit or loss on his personal Form 1040 tax return.',
+            [AnswerChoice.D]: 'Neither general partners nor limited partners must pay self-employment tax on their net earnings from self-employment assigned to them from the partnership.'
+        },
+        correctAnswer: AnswerChoice.D,
+        explanations: {
+            [AnswerChoice.A]: '',
+            [AnswerChoice.B]: '',
+            [AnswerChoice.C]: '',
+            [AnswerChoice.D]: 'Neither general partners nor limited partners must pay self-employment tax on their net earnings from self-employment assigned to them from the partnership.'
+        },
+        moreExplanation: `The FALSE statement is (Neither general partners nor limited partners must pay self-employment tax on their net earnings from self-employment assigned to them from the partnership.) because GENERAL partners MUST pay self-employment tax on their net earnings from self-employment assigned to them from the partnership.
+
+        a. Each partner reports his share of the partnership net profit or loss on his personal Form 1040 tax return.
+        b. Partners must report their share of partnership income even if a distribution is not made.
+        c. Partners are not employees of the partnership.
+        d. Limited partners are subject to self-employment tax ONLY on guaranteed payments, such as professional fees for services rendered.`,
+    },
+
+    // Chapter 11
+
+    {
+        chapterIndex: 11,
+        questionIndex: 1,
+        qId: `q11-1`,
+        tags: [],
+        questionText: `Phil and Don are equal partners in the Hilldale Company. Hilldale has a fiscal year ending on January 31. Phil and Don file their individual tax returns on a calendar year basis. For the tax year ending January 31, 2018, Hilldale had taxable income from the active conduct of its business of $100,000 of which $60,000 was earned in 2017.
+
+        How much of their partnership taxable income should Phil and Don each include in computing their taxable income limit for the 2018 tax year?`,
+        answerChoices: {
+            [AnswerChoice.A]: '$30,000',
+            [AnswerChoice.B]: '$20,000',
+            [AnswerChoice.C]: '$50,000',
+            [AnswerChoice.D]: '$-0-'
+        },
+        correctAnswer: AnswerChoice.C,
+        explanations: {
+            [AnswerChoice.A]: '',
+            [AnswerChoice.B]: '',
+            [AnswerChoice.C]: '$50,000',
+            [AnswerChoice.D]: ''
+        },
+        moreExplanation: `Phil and Don each include $50,000 (each partner's entire share) of partnership taxable income in computing their business income limit for the year.
+
+        A partner's income or loss from a partnership is the partner's distributive share of partnership items for the partnership's tax year that ends with or WITHIN THE PARTNER'S tax year.
+        
+        For purposes of the business income limit, the taxable income of a partner engaged in the active conduct of one or more of a partnership's trades or businesses includes his allocable share of taxable income derived from the partnership's active conduct of any trade or business.
+        
+        DIFFERENT TAX YEARS. For purposes of section 179, if the partner's tax year and that of the partnership differ, the partner's share of the partnership's taxable income for a tax year is determined based on the partnership tax year that ends with or within the partner's tax year.`,
+    },
+
+    // Chapter 12
+
+    {
+        chapterIndex: 12,
+        questionIndex: 1,
+        qId: `q12-1`,
+        tags: [],
+        questionText: 'A partnership terminates when:',
+        answerChoices: {
+            [AnswerChoice.A]: 'Any of these events takes place.',
+            [AnswerChoice.B]: 'A partnership converts into an LLC classified as a partnership.',
+            [AnswerChoice.C]: 'At least 1/3 of the total interest in partnership capital and profits is sold or exchanged within a 12-month period, including a sale or exchange to another partner.',
+            [AnswerChoice.D]: 'All of its operations are discontinued and no part of any business, financial operations, or venture is continued by any of its partners in a partnership.'
+        },
+        correctAnswer: AnswerChoice.D,
+        explanations: {
+            [AnswerChoice.A]: '',
+            [AnswerChoice.B]: '',
+            [AnswerChoice.C]: '',
+            [AnswerChoice.D]: 'All of its operations are discontinued and no part of any business, financial operations, or venture is continued by any of its partners in a partnership.'
+        },
+        moreExplanation: `A partnership terminates when all of its operations are discontinued and NO part of any business, financial operations, or venture is continued by any of its partners in a partnership or a limited liability company classified as a partnership.`,
     }
-    // ,
-    // {
-    //     chapterIndex: ?,
-    //     questionIndex: ?,
-    //     qId: `q?-?`,
-    //     tags: [],
-    //     questionText: '',
-    //     answerChoices: {
-    //         [AnswerChoice.A]: '',
-    //         [AnswerChoice.B]: '',
-    //         [AnswerChoice.C]: '',
-    //         [AnswerChoice.D]: '',
-    //         [AnswerChoice.E]: '',
-    //     },
-    //     correctAnswer: AnswerChoice.C,
-    //     explanations: {
-    //         [AnswerChoice.A]: '',
-    //         [AnswerChoice.B]: '',
-    //         [AnswerChoice.C]: '',
-    //         [AnswerChoice.D]: ''
-    //     },
-    //     moreExplanation: ``,
-    // },
-    // {
-    //     chapterIndex: ?,
-    //     questionIndex: ?,
-    //     qId: `q?-?`,
-    //     tags: [],
-    //     questionText: '',
-    //     answerChoices: {
-    //         [AnswerChoice.A]: '',
-    //         [AnswerChoice.B]: '',
-    //         [AnswerChoice.C]: '',
-    //         [AnswerChoice.D]: '',
-    //         [AnswerChoice.E]: '',
-    //     },
-    //     correctAnswer: AnswerChoice.C,
-    //     explanations: {
-    //         [AnswerChoice.A]: '',
-    //         [AnswerChoice.B]: '',
-    //         [AnswerChoice.C]: '',
-    //         [AnswerChoice.D]: ''
-    //     },
-    //     moreExplanation: ``,
-    // },
-    // {
-    //     chapterIndex: ?,
-    //     questionIndex: ?,
-    //     qId: `q?-?`,
-    //     tags: [],
-    //     questionText: '',
-    //     answerChoices: {
-    //         [AnswerChoice.A]: '',
-    //         [AnswerChoice.B]: '',
-    //         [AnswerChoice.C]: '',
-    //         [AnswerChoice.D]: '',
-    //         [AnswerChoice.E]: '',
-    //     },
-    //     correctAnswer: AnswerChoice.C,
-    //     explanations: {
-    //         [AnswerChoice.A]: '',
-    //         [AnswerChoice.B]: '',
-    //         [AnswerChoice.C]: '',
-    //         [AnswerChoice.D]: ''
-    //     },
-    //     moreExplanation: ``,
-    // },
-    // {
-    //     chapterIndex: ?,
-    //     questionIndex: ?,
-    //     qId: `q?-?`,
-    //     tags: [],
-    //     questionText: '',
-    //     answerChoices: {
-    //         [AnswerChoice.A]: '',
-    //         [AnswerChoice.B]: '',
-    //         [AnswerChoice.C]: '',
-    //         [AnswerChoice.D]: '',
-    //         [AnswerChoice.E]: '',
-    //     },
-    //     correctAnswer: AnswerChoice.C,
-    //     explanations: {
-    //         [AnswerChoice.A]: '',
-    //         [AnswerChoice.B]: '',
-    //         [AnswerChoice.C]: '',
-    //         [AnswerChoice.D]: ''
-    //     },
-    //     moreExplanation: ``,
-    // },
-    // {
-    //     chapterIndex: ?,
-    //     questionIndex: ?,
-    //     qId: `q?-?`,
-    //     tags: [],
-    //     questionText: '',
-    //     answerChoices: {
-    //         [AnswerChoice.A]: '',
-    //         [AnswerChoice.B]: '',
-    //         [AnswerChoice.C]: '',
-    //         [AnswerChoice.D]: '',
-    //         [AnswerChoice.E]: '',
-    //     },
-    //     correctAnswer: AnswerChoice.C,
-    //     explanations: {
-    //         [AnswerChoice.A]: '',
-    //         [AnswerChoice.B]: '',
-    //         [AnswerChoice.C]: '',
-    //         [AnswerChoice.D]: ''
-    //     },
-    //     moreExplanation: ``,
-    // },
-    // {
-    //     chapterIndex: ?,
-    //     questionIndex: ?,
-    //     qId: `q?-?`,
-    //     tags: [],
-    //     questionText: '',
-    //     answerChoices: {
-    //         [AnswerChoice.A]: '',
-    //         [AnswerChoice.B]: '',
-    //         [AnswerChoice.C]: '',
-    //         [AnswerChoice.D]: '',
-    //         [AnswerChoice.E]: '',
-    //     },
-    //     correctAnswer: AnswerChoice.C,
-    //     explanations: {
-    //         [AnswerChoice.A]: '',
-    //         [AnswerChoice.B]: '',
-    //         [AnswerChoice.C]: '',
-    //         [AnswerChoice.D]: ''
-    //     },
-    //     moreExplanation: ``,
-    // },
-    
+
 
     /**
      * Copy this for new questions

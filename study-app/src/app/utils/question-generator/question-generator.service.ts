@@ -47,26 +47,11 @@ export class QuestionGenerator {
 
     private shuffleQuestionAnswers(question: IQuestion): IQuestion {
 
-        // return question
-        // const originalAnswerChoices = Object.keys(question.answerChoices);
-
         const shuffledChoices = this.shuffle(Object.keys(question.answerChoices));
-
-
-
-        // ANSWERS.forEach( answerChoice => {
-        //     if ()
-        // })
 
         question.shuffledCorrectAnswer = ANSWERS[shuffledChoices.indexOf(question.correctAnswer)]
 
-        console.log('original correct: ', question.correctAnswer, ' ', question.answerChoices[question.correctAnswer])
-
-        // let i = 0;
-
         question.shuffledAnswerChoices = shuffledChoices.reduce((acc, answerChoice) => {
-
-            // i++;
 
             return {
                 ...acc,
@@ -74,35 +59,20 @@ export class QuestionGenerator {
             }
         }, {})
 
-        // relabel answers, remember
         const orderedShuffledAnswerChoices = {}
         
         
         Object.keys(question.shuffledAnswerChoices).forEach( (shuffledAnswerChoice, index) => {
-            
-            console.log('looping over answer: ', shuffledAnswerChoice, ' ', index)
-            console.log('setting choice: ', ANSWERS[index], ' to ', question.shuffledAnswerChoices[shuffledAnswerChoice])
-            
-            
-            
             orderedShuffledAnswerChoices[ANSWERS[index]] = question.shuffledAnswerChoices[shuffledAnswerChoice]
             
             if (shuffledAnswerChoice === question.correctAnswer) {
                 question.shuffledCorrectAnswer = ANSWERS[index]
-                console.log('set correct choice, ', ANSWERS[index], ' to ', question.shuffledAnswerChoices[index])
-
             }
             
         })
-        console.log('ord5: ', orderedShuffledAnswerChoices)
-        
+ 
         question.shuffledAnswerChoices = orderedShuffledAnswerChoices
 
-        console.log('shuff: ', question.shuffledAnswerChoices)
-        
-        question.shuffledCorrectAnswer = ANSWERS[0]
-
-        console.log('shuffled correct: ', question.shuffledCorrectAnswer, ' ', question.shuffledAnswerChoices[question.shuffledCorrectAnswer])
         return question
 
     }

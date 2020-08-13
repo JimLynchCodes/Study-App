@@ -14,49 +14,52 @@ export const chapters: any[] = [
         title: 'Depreciation and Amortization',
         index: 3,
         chapter: '3'
+    },
+    {
+        title: 'Business Asset Dispositions',
+        index: 4,
+        chapter: '4'
+    },
+    {
+        title: 'Business Expenses',
+        index: 5,
+        chapter: '5'
+    },
+    {
+        title: 'Benefits and Tax Credits',
+        index: 6,
+        chapter: '6'
+    },
+    {
+        title: 'Self-Employment Income',
+        index: 7,
+        chapter: '7'
+    },
+    {
+        title: 'Farm Taxation',
+        index: 8,
+        chapter: '8g'
+    },
+   
+    {
+        title: 'Partnership/LLC Formation',
+        index: 9,
+        chapter: '9'
+    },
+    {
+        title: 'Separately Stated Items',
+        index: 10,
+        chapter: '10b'
+    },
+    {
+        title: 'Partnership Operations',
+        index: 11,
+        chapter: '11'
+    },
+    {
+        title: 'Partnership Interest Disposition',
+        index: 12,
+        chapter: '12'
     }
-    // ,
-    // {
-    //     title: 'Business Asset Dispositions',
-    //     index: 4,
-    //     chapter: '4'
-    // }
-    
-    // ,
-    // {
-    //     title: 'Business Expenses',
-    //     index: 1,
-    //     chapter: ''
-    // },
-    // {
-    //     title: 'Benefits and Tax Credits',
-    //     index: 1,
-    //     chapter: ''
-    // },
-    // {
-    //     title: 'Self-Employment Income',
-    //     index: 1,
-    //     chapter: ''
-    // },
-    // {
-    //     title: 'Farm Taxation',
-    //     index: 1,
-    //     chapter: ''
-    // },
-    // {
-    //     title: 'Partnership/LLC Formation and Separately Stated Items',
-    //     index: 1,
-    //     chapter: ''
-    // },
-    // {
-    //     title: 'Partnership Operations',
-    //     index: 1,
-    //     chapter: ''
-    // },
-    // {
-    //     title: 'Partnership Interest Disposition',
-    //     index: 1,
-    //     chapter: ''
-    // }
     
 ]

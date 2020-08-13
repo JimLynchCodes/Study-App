@@ -12,26 +12,20 @@ import { chapters } from "../../../../data/chapters";
 })
 export class FastFeedbackOptionsComponent implements OnInit {
 
-    // chapters = chapters;
+    startBtnDisabled = false
 
     allToggle = true
 
-    chapterToggles = chapters.map( chapter => { 
+    chapterToggles = chapters.map(chapter => {
         return {
-            ...chapter, 
+            ...chapter,
             checked: true
         }
     })
-     
-    constructor(private routerExtensions: RouterExtensions) {
-        // Use the component constructor to inject providers.
 
-        console.log('chapters are: ', chapters)
-    }
+    constructor(private routerExtensions: RouterExtensions) { }
 
-    ngOnInit(): void {
-        // Init your component properties here.
-    }
+    ngOnInit(): void { }
 
     onDrawerButtonTap(): void {
         const sideDrawer = <RadSideDrawer>app.getRootView();
@@ -60,19 +54,46 @@ export class FastFeedbackOptionsComponent implements OnInit {
 
             this.allToggle = !this.allToggle
 
-            this.chapterToggles.forEach( chapterToggle => {
-                    chapterToggle.checked = this.allToggle
+            this.chapterToggles.forEach(chapterToggle => {
+                chapterToggle.checked = this.allToggle
             });
+
+            if (value)
+                this.startBtnDisabled = false
+            else
+                this.startBtnDisabled = true
+
         }
         else {
-            this.chapterToggles.forEach( chapterToggle => {
+
+            let checkedToggleFound = false
+
+            this.chapterToggles.forEach(chapterToggle => {
                 if (chapter === chapterToggle.chapter)
                     chapterToggle.checked = value
+
+                if (chapterToggle.checked)
+                    checkedToggleFound = true
             });
+
+            if (checkedToggleFound)
+                this.startBtnDisabled = false
+            else
+                this.startBtnDisabled = true
+
+
+            //     this.chapterToggles.forEach(chapterToggle => {
+            //         if (chapterToggle.value) {
+            //             this.startBtnDisabled = false
+            //             selectedToggleFound = true
+            //         }
+            //     })
+
+            //     if (!selectedToggleFound)
+            //         this.startBtnDisabled = true
+            // }
+
         }
-
-
-
 
         console.log('toggles:\n', this.chapterToggles)
 
@@ -82,15 +103,15 @@ export class FastFeedbackOptionsComponent implements OnInit {
     onNextBtnTap() {
 
         const selectedChapters: number[] = this.chapterToggles
-        .filter( chapterToggle => {
-         if (chapterToggle.checked)
-            return chapterToggle
-        })
-        .reduce((acc,  chapterToggle) => [...acc, chapterToggle.chapter], [])
+            .filter(chapterToggle => {
+                if (chapterToggle.checked)
+                    return chapterToggle
+            })
+            .reduce((acc, chapterToggle) => [...acc, chapterToggle.chapter], [])
 
         console.log('selected chapters: ', selectedChapters)
 
-        this.routerExtensions.navigate(['/ffq', {selectedChapters: selectedChapters }], {
+        this.routerExtensions.navigate(['/ffq', { selectedChapters: selectedChapters }], {
             transition: {
                 name: "fade"
             }
