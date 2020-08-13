@@ -23,8 +23,6 @@ export class FastFeedbackQuestionComponent implements OnInit {
 
     textAnswerChoices: string[] = ['', '', '', ''];
 
-    // questionText: string = 'A domestic LLC with at least two members that does NOT file Form 8832 is classified as a ____________ for Federal income tax purposes.'
-
     answerChoice: string = undefined
     answerChoicesArray: string[];
 
@@ -44,14 +42,18 @@ export class FastFeedbackQuestionComponent implements OnInit {
 
         route.params.subscribe(args => {
 
-            // this.currentQuestion = questionGenerator.getTotallyRandomQuestion();
+            // this.currentQuestion = questionGenerator.getRandomQuestion();
 
-            this.selectedChapters = args.selectedChapters.split(',')
+            this.selectedChapters = args.selectedChapters
 
+            console.log('selectedChapters: ', this.selectedChapters)
+            
             this.currentQuestion = questionGenerator.getQuestionFromValidChapter(args.selectedChapters)
 
-            this.textAnswerChoices = Object.values(this.currentQuestion.answerChoices);
-            this.answerChoicesArray = Object.keys(this.currentQuestion.answerChoices);
+            console.log('selected q: ', this.currentQuestion)
+
+            this.textAnswerChoices = Object.values(this.currentQuestion.shuffledAnswerChoices);
+            this.answerChoicesArray = Object.keys(this.currentQuestion.shuffledAnswerChoices);
 
         })
 
@@ -72,13 +74,13 @@ export class FastFeedbackQuestionComponent implements OnInit {
 
             this.answerChoice = choice
 
-            if (choice === this.currentQuestion.correctAnswer) {
+            if (choice === this.currentQuestion.shuffledCorrectAnswer) {
                 this.feedbackMessage = 'That\'s CORRECT!'
                 this.answeredCorrectly = true
             }
             else {
                 this.answeredCorrectly = false
-                this.feedbackMessage = `Sorry, ${this.currentQuestion.correctAnswer} is correct.`
+                this.feedbackMessage = `Sorry, ${this.currentQuestion.shuffledCorrectAnswer} is correct.`
             }
 
             this.answered = true

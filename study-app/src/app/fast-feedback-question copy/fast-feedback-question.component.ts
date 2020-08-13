@@ -38,7 +38,7 @@ export class FastFeedbackQuestionComponent implements OnInit {
 
         this.content = `<p>hello! thereeee</p>`;
 
-        this.currentQuestion = questionGenerator.getTotallyRandomQuestion();
+        this.currentQuestion = questionGenerator.getRandomQuestion();
 
         console.log('got a question: ', this.currentQuestion)
 

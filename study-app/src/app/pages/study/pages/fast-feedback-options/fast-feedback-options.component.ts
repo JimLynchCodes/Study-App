@@ -82,7 +82,10 @@ export class FastFeedbackOptionsComponent implements OnInit {
     onNextBtnTap() {
 
         const selectedChapters: number[] = this.chapterToggles
-        .filter( chapterToggle => chapterToggle.checked)
+        .filter( chapterToggle => {
+         if (chapterToggle.checked)
+            return chapterToggle
+        })
         .reduce((acc,  chapterToggle) => [...acc, chapterToggle.chapter], [])
 
         console.log('selected chapters: ', selectedChapters)
