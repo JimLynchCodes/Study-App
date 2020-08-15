@@ -1,0 +1,6 @@
+{
+    "some-stuff": "<id_replaced_by_pre_prepare_script>",
+    "foo": {
+        "version": "1.3"
+    }
+}

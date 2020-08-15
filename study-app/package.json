@@ -1,6 +1,6 @@
 {
   "nativescript": {
-    "id": "fooby",
+    "id": "deprle",
     "tns-ios": {
       "version": "*"
     },
@@ -12,6 +12,7 @@
   "license": "SEE LICENSE IN <your-license-filename>",
   "repository": "<fill-your-repository-here>",
   "scripts": {
+    "pre-prepare": "ts-node ./pre-prepare/pre-prepare-app.ts",
     "pre": "echo foo",
     "lint": "tslint \"src/**/*.ts\""
   },
