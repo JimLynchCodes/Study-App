@@ -5,6 +5,7 @@ import { RouterExtensions } from "nativescript-angular/router";
 import { ActivatedRoute, Router } from "@angular/router";
 import { IQuestion, AnswerChoice } from "../../../../models/question";
 import { QuestionGenerator } from "../../../../utils/question-generator/question-generator.service";
+import { environment } from "../../../../../environments/environment"
 
 @Component({
     selector: "FeaturedQuestion",
@@ -36,38 +37,42 @@ export class FastFeedbackQuestionComponent implements OnInit {
         private route: ActivatedRoute,
         private questionGenerator: QuestionGenerator) {
 
-        // console.log('ffq sees env: ', process.env.theme);
-
-        this.router.routeReuseStrategy.shouldReuseRoute = function () {
-            return false;
-        }
-
-        route.params.subscribe(args => {
-
-            this.selectedChapters = args.selectedChapters
-
-            console.log('selectedChapters: ', this.selectedChapters)
+            console.log('loading up!')
+            console.log('ffq sees env: ', environment.apiUrl);
             
-            this.currentQuestion = questionGenerator.getQuestionFromValidChapter(args.selectedChapters)
+            this.router.routeReuseStrategy.shouldReuseRoute = function () {
+                return false;
+            }
+            
+            route.params.subscribe(args => {
+                
+                this.selectedChapters = args.selectedChapters
+                
+                // console.log('selectedChapters: ', this.selectedChapters)
+                
+                this.currentQuestion = questionGenerator.getQuestionFromValidChapter(args.selectedChapters)
+                
+                // console.log('selected q: ', this.currentQuestion)
+                
+                this.textAnswerChoices = Object.values(this.currentQuestion.shuffledAnswerChoices);
+                this.answerChoicesArray = Object.keys(this.currentQuestion.shuffledAnswerChoices);
+                
+            })
+            
+        }
+        
+        ngOnInit(): void { 
+            console.log('loading up hello2!')
 
-            console.log('selected q: ', this.currentQuestion)
-
-            this.textAnswerChoices = Object.values(this.currentQuestion.shuffledAnswerChoices);
-            this.answerChoicesArray = Object.keys(this.currentQuestion.shuffledAnswerChoices);
-
-        })
-
-    }
-
-    ngOnInit(): void { }
-
-    onDrawerButtonTap(): void {
-        const sideDrawer = <RadSideDrawer>app.getRootView();
-        sideDrawer.showDrawer();
-    }
-
-    onTap(choice: string) {
-
+        }
+        
+        onDrawerButtonTap(): void {
+            const sideDrawer = <RadSideDrawer>app.getRootView();
+            sideDrawer.showDrawer();
+        }
+        
+        onTap(choice: string) {
+            
         console.log('answered with: ', choice);
 
         if (!this.answered) {

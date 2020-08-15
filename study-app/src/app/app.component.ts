@@ -5,6 +5,8 @@ import { DrawerTransitionBase, RadSideDrawer, SlideInOnTopTransition } from "nat
 import { filter } from "rxjs/operators";
 import * as app from "tns-core-modules/application";
 
+import { environment } from '../environments/environment';
+
 @Component({
     selector: "ns-app",
     templateUrl: "app.component.html"
@@ -16,7 +18,7 @@ export class AppComponent implements OnInit {
     constructor(private router: Router, private routerExtensions: RouterExtensions) {
         // Use the component constructor to inject services.
 
-        // console.log('app component sees env: ', process.env.theme);
+        console.log('app component sees env: ', environment.apiUrl);
 
     }
 
