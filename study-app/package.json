@@ -1,17 +1,18 @@
 {
   "nativescript": {
-    "id": "enrolled-agent.study-app",
-    "tns-android": {
-      "version": "6.5.0"
-    },
+    "id": "fooby",
     "tns-ios": {
-      "version": "6.5.0"
+      "version": "*"
+    },
+    "tns-android": {
+      "version": "*"
     }
   },
   "description": "NativeScript Application",
   "license": "SEE LICENSE IN <your-license-filename>",
   "repository": "<fill-your-repository-here>",
   "scripts": {
+    "pre": "echo foo",
     "lint": "tslint \"src/**/*.ts\""
   },
   "dependencies": {

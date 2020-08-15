@@ -15,6 +15,9 @@ export class AppComponent implements OnInit {
 
     constructor(private router: Router, private routerExtensions: RouterExtensions) {
         // Use the component constructor to inject services.
+
+        // console.log('app component sees env: ', process.env.theme);
+
     }
 
     ngOnInit(): void {

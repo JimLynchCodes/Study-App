@@ -20,14 +20,7 @@ export class QuestionGenerator {
 
         const potentialQuestion = this.getRandomQuestion();
 
-        console.log('selectedChapters: ', selectedChapters)
-        console.log('selectedChapters type: ', typeof selectedChapters)
-        console.log('selectedChapters type: ', JSON.stringify(selectedChapters))
-        console.log('potential selected: ', potentialQuestion)
-
         const selectedChaptersToNumbers = selectedChapters.split(',').map(a => +a)
-
-        console.log('found? ', selectedChaptersToNumbers.indexOf(+potentialQuestion.chapterIndex))
 
         if (selectedChaptersToNumbers.indexOf(+potentialQuestion.chapterIndex) !== -1)
             return potentialQuestion
@@ -37,8 +30,6 @@ export class QuestionGenerator {
     }
 
     getRandomQuestion(): IQuestion {
-
-        console.log('getting q...');
 
         const randomIndexWithinBounds = Math.floor(Math.random() * questionBank.length);
 

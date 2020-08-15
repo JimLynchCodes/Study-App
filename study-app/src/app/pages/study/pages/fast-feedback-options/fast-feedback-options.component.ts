@@ -45,11 +45,6 @@ export class FastFeedbackOptionsComponent implements OnInit {
 
     onCheckedChange(value: boolean, chapter: string) {
 
-
-        console.log('stuff here: ', value)
-        console.log('stuff here: ', chapter)
-
-
         if (chapter === 'All') {
 
             this.allToggle = !this.allToggle
@@ -81,22 +76,7 @@ export class FastFeedbackOptionsComponent implements OnInit {
             else
                 this.startBtnDisabled = true
 
-
-            //     this.chapterToggles.forEach(chapterToggle => {
-            //         if (chapterToggle.value) {
-            //             this.startBtnDisabled = false
-            //             selectedToggleFound = true
-            //         }
-            //     })
-
-            //     if (!selectedToggleFound)
-            //         this.startBtnDisabled = true
-            // }
-
         }
-
-        console.log('toggles:\n', this.chapterToggles)
-
 
     }
 
@@ -108,8 +88,6 @@ export class FastFeedbackOptionsComponent implements OnInit {
                     return chapterToggle
             })
             .reduce((acc, chapterToggle) => [...acc, chapterToggle.chapter], [])
-
-        console.log('selected chapters: ', selectedChapters)
 
         this.routerExtensions.navigate(['/ffq', { selectedChapters: selectedChapters }], {
             transition: {

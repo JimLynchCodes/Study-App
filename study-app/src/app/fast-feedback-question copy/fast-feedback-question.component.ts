@@ -2,8 +2,8 @@ import { Component, OnInit } from "@angular/core";
 import { RadSideDrawer } from "nativescript-ui-sidedrawer";
 import * as app from "tns-core-modules/application";
 import { RouterExtensions } from "nativescript-angular/router";
-import { ActivatedRoute, Router } from "@angular/router";
-import { IQuestion, AnswerChoice } from "../models/question";
+import { Router } from "@angular/router";
+import { IQuestion } from "../models/question";
 import { QuestionGenerator } from "../utils/question-generator/question-generator.service";
 
 @Component({
@@ -32,20 +32,13 @@ export class FastFeedbackQuestionComponent implements OnInit {
 
     constructor(
         private router: Router,
-        private routerExtensions: RouterExtensions, 
-        private route: ActivatedRoute, 
+        private routerExtensions: RouterExtensions,
         private questionGenerator: QuestionGenerator) {
-
-        this.content = `<p>hello! thereeee</p>`;
 
         this.currentQuestion = questionGenerator.getRandomQuestion();
 
-        console.log('got a question: ', this.currentQuestion)
-
         this.textAnswerChoices = Object.values(this.currentQuestion.answerChoices);
         this.answerChoicesArray = Object.keys(this.currentQuestion.answerChoices);
-
-        console.log('choices: ', this.textAnswerChoices)
 
         this.router.routeReuseStrategy.shouldReuseRoute = function(){
             return false;
@@ -62,12 +55,7 @@ export class FastFeedbackQuestionComponent implements OnInit {
 
     onTap(choice: string) {
 
-        console.log('answered with: ', choice); 
-
         if (!this.answered) {
-
-            console.log('tapping answer: ', choice)
-
             this.answerChoice = choice
 
             if (choice === this.currentQuestion.correctAnswer) {
@@ -92,10 +80,6 @@ export class FastFeedbackQuestionComponent implements OnInit {
     }
 
     nextQuestion() {
-        console.log('tapping...')
-
-        // this.routerExtensions.locationStrategy.replaceState
-
         this.routerExtensions.navigateByUrl('/ffq', {
             transition: {
                 name: "fade"

@@ -30,22 +30,23 @@ tns build ios --for-device --release --provision
 
 provision ID:
 ```
+
 ```
 
 Then prepare the iOS app with that profile:
 ```
-tns prepare ios --release --for-device --provision a04891b7-.....
+tns prepare ios --release --for-device --provision Ea-9-8b-profile
 ```
 
 Then build with the same provision id:
 ```
-tns build ios --for-device --release --provision a04891b7-.....
+tns build ios --release --for-device --provision Ea-9-8b-profile
 ```
 
 
 #### 3. Publish
 ```
-tns publish ios --ipa <path-to-app> --appleApplicationSpecificPassword <app-specific-pwd>
+tns publish ios --ipa ./platforms/ios/build/Release-iphoneos/studyapp.ipa --appleApplicationSpecificPassword <app-specific-pwd>
 ```
 
 

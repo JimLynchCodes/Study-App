@@ -1,0 +1,16 @@
+{
+    "enrolled-agent": {
+        "id": "com.enrolled-agen.foo",
+        "question-bank": "enrolled-agent.question-bank",
+        "chapters-bank": "enrolled-agent.chapters-bank",
+        "home-message": "hello!",
+        "home-title": "EA Study App"
+    },
+    "sat": {
+        "id": "com.sat.foo",
+        "question-bank": "sat.question-bank",
+        "chapters-bank": "sat.chapters-bank",
+        "home-message": "hello, sat studiers!",
+        "home-title": "SAT Study App"
+    }
+}

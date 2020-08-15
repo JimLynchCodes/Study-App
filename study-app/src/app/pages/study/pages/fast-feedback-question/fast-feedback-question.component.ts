@@ -36,13 +36,13 @@ export class FastFeedbackQuestionComponent implements OnInit {
         private route: ActivatedRoute,
         private questionGenerator: QuestionGenerator) {
 
+        // console.log('ffq sees env: ', process.env.theme);
+
         this.router.routeReuseStrategy.shouldReuseRoute = function () {
             return false;
         }
 
         route.params.subscribe(args => {
-
-            // this.currentQuestion = questionGenerator.getRandomQuestion();
 
             this.selectedChapters = args.selectedChapters
 

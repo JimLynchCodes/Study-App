@@ -12,9 +12,7 @@ export class MockExamComponent implements OnInit {
 
     constructor(private routerExtensions: RouterExtensions) {}
 
-    ngOnInit(): void {
-        // Init your component properties here.
-    }
+    ngOnInit(): void { }
 
     onDrawerButtonTap(): void {
         const sideDrawer = <RadSideDrawer>app.getRootView();
@@ -22,8 +20,6 @@ export class MockExamComponent implements OnInit {
     }
 
     onTap(args: EventData) {
-
-        console.log('tapped: ', args)
 
         this.routerExtensions.navigate([args], {
             transition: {

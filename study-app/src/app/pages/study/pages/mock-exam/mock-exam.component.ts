@@ -23,8 +23,6 @@ export class MockExamComponent implements OnInit {
 
     onTap(args: EventData) {
 
-        console.log('tapped: ', args)
-
         this.routerExtensions.navigate([args], {
             transition: {
                 name: "fade"
