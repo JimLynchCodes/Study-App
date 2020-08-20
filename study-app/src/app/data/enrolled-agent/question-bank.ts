@@ -1,4 +1,4 @@
-import { IQuestion, AnswerChoice } from "../models/question";
+import { IQuestion, AnswerChoice } from "../../models/question";
 
 // TEST / DEV Questions
 

@@ -1,9 +1,11 @@
-import { environment as devEnvironment } from './environment.dev';
-import { environment as prodEnvironment } from './environment.prod';
-import { environment as fooEnvironment } from './environment.foo';
+import { environment as eaDevEnvironment } from './enrolled-agent/environment.dev';
+import { environment as eaProdEnvironment } from './enrolled-agent/environment.prod';
+import { environment as satDevEnvironment } from './sat/environment.dev';
+import { environment as satProdEnvironment } from './sat/environment.prod';
 
 export const environment = (() => {
   let envVars;
+
 
   if (
     typeof process !== 'undefined' && process &&
@@ -11,20 +13,28 @@ export const environment = (() => {
     Object.prototype.hasOwnProperty.call(process.env, 'environment') && process.env.environment
   ) {
     switch (process.env.environment) {
-      case 'prod':
-        envVars = prodEnvironment;
+      case 'ea.prod':
+        envVars = eaProdEnvironment;
         break;
 
-      case 'foo':
-        envVars = fooEnvironment;
+      case 'ea.dev':
+        envVars = eaDevEnvironment;
+        break;
+
+      case 'sat.prod':
+        envVars = satProdEnvironment;
+        break;
+
+      case 'sat.dev':
+        envVars = satDevEnvironment;
         break;
 
       // TODO: Add additional environment (e.g. uat) if required. 
       default:
-        envVars = devEnvironment;
+        envVars = eaDevEnvironment;
     }
   } else {
-    envVars = devEnvironment;
+    envVars = eaDevEnvironment;
   }
 
   return envVars;

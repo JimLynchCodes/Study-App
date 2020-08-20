@@ -7,16 +7,16 @@ import { environment } from '../../../environments/environment'
 // import { } from '../../data/sat/static-text'
 
 @Component({
-    selector: "Home",
-    templateUrl: "./home.component.html",
-    styleUrls: ["./home.scss"]
+    selector: "About",
+    templateUrl: "./about.component.html",
+    styleUrls: ["./about.scss"]
 })
-export class HomeComponent implements OnInit {
+export class AboutComponent implements OnInit {
 
     appText
 
-    homeTitle
-    homeMessage
+    aboutTitle
+    aboutMessage
 
     constructor() {
         // Use the component constructor to inject providers.
@@ -37,10 +37,11 @@ export class HomeComponent implements OnInit {
 
         console.log('got appText: ', appTextData.appText)
 
-        this.homeTitle = appTextData.appText ? appTextData.appText.homeTitle : ''
-        this.homeMessage = appTextData.appText ? appTextData.appText.homeMessage : ''
+        this.aboutTitle = appTextData.appText ? appTextData.appText.aboutTitle : ''
+        this.aboutMessage = appTextData.appText ? appTextData.appText.aboutMessage : ''
 
     }
+    
 
     onDrawerButtonTap(): void {
         const sideDrawer = <RadSideDrawer>app.getRootView();

@@ -1,22 +1,22 @@
-.home-icon {
+.about-icon {
     padding: 70 40 0;
     margin: 0;
     color: rgb(80, 80, 80);
 }
 
-.home-title {
-    font-size: 35;
+.about-title {
+    font-size: 37;
     padding: 40 10 0;
     line-height: 12;
 }
 
-.home-message {
-    font-size: 23;
-    padding: 70 15;
+.about-message {
+    font-size: 24;
+    padding: 70 35;
     line-height: 10;
 }
 
-.home-gray {
+.about-gray {
     color: rgb(80, 80, 80);
     text-align: center;
 }
@@ -27,9 +27,9 @@
     flex-direction: column;
 }
 
-.home-page-container {
+.about-page-container {
     display: flex;
     flex: 1;
     text-align: center;
-    padding: 5 10 10;
+    padding: 50 10;
 }

@@ -28,18 +28,26 @@
 
         <Label class="main-prompt" text="or select chapters to study:"></Label>
 
-        <GridLayout rows="auto" columns="300, 40">
+        <FlexboxLayout justifyContent="space-between">
             <Label text="All" class="radio-label" row="0" col="0"></Label>
             <Switch checked="true" row="0" col="1" class="radio-switch"
                 (checkedChange)="onCheckedChange($event.value, 'All')"></Switch>
-        </GridLayout>
+        </FlexboxLayout>
 
-        <GridLayout rows="auto" columns="300, 40" *ngFor="let chapterToggle of chapterToggles; let i = index">
+        <FlexboxLayout justifyContent="space-between"
+            *ngFor="let chapterToggle of chapterToggles; let i = index">
             <Label text="{{chapterToggle.chapter}}) {{chapterToggle.title}}" class="radio-label" row="0" col="0"
                 textWrap="true"></Label>
             <Switch [checked]="chapterToggle ? chapterToggle.checked : true" row="0" col="1" class="radio-switch"
                 (checkedChange)="onCheckedChange($event.value, chapterToggle.chapter)"></Switch>
-        </GridLayout>
+        </FlexboxLayout>
+        
+        <!-- <GridLayout rows="auto" columns="300, 40" *ngFor="let chapterToggle of chapterToggles; let i = index">
+            <Label text="{{chapterToggle.chapter}}) {{chapterToggle.title}}" class="radio-label" row="0" col="0"
+                textWrap="true"></Label>
+            <Switch [checked]="chapterToggle ? chapterToggle.checked : true" row="0" col="1" class="radio-switch"
+                (checkedChange)="onCheckedChange($event.value, chapterToggle.chapter)"></Switch>
+        </GridLayout> -->
 
         <Button text="Start Studying!" (tap)="!startBtnDisabled && onNextBtnTap()"
             class="-primary default-button extra-btm-margin"

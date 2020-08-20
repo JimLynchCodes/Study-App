@@ -18,6 +18,11 @@ https://docs.nativescript.org/angular/ui/professional-ui-components/ng-SideDrawe
                     <Label col="1" text="Home" class="p-r-10" fontSize="17"></Label>
                 </GridLayout>
 
+                <GridLayout columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/about')" (tap)="onNavItemTap('/about')">
+                    <Label col="0" text="&#xf05a;" class="nt-icon fas" fontSize="17"></Label>
+                    <Label col="1" text="About" class="p-r-10" fontSize="17"></Label>
+                </GridLayout>
+
                 <GridLayout columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/study')" (tap)="onNavItemTap('/study')">
                     <Label col="0" text="&#xf005;" class="nt-icon fas" fontSize="17"></Label>
                     <Label col="1" text="Study" class="p-r-10" fontSize="17"></Label>

@@ -1,11 +1,11 @@
 {
   "nativescript": {
-    "id": "deprle",
-    "tns-ios": {
-      "version": "*"
-    },
+    "id": "enrolled-agent.study-app",
     "tns-android": {
       "version": "*"
+    },
+    "tns-ios": {
+      "version": "6.5.2"
     }
   },
   "description": "NativeScript Application",

@@ -3,7 +3,8 @@ import { RadSideDrawer } from "nativescript-ui-sidedrawer";
 import * as app from "tns-core-modules/application";
 import { EventData } from "tns-core-modules/ui/page/page";
 import { RouterExtensions } from "nativescript-angular/router";
-import { chapters } from "../../../../data/chapters";
+
+import { environment } from '../../../../../environments/environment'
 
 @Component({
     selector: "FastFeedbackOptions",
@@ -12,20 +13,32 @@ import { chapters } from "../../../../data/chapters";
 })
 export class FastFeedbackOptionsComponent implements OnInit {
 
+    chapters
+
     startBtnDisabled = false
 
     allToggle = true
 
-    chapterToggles = chapters.map(chapter => {
-        return {
-            ...chapter,
-            checked: true
-        }
-    })
+    chapterToggles
 
     constructor(private routerExtensions: RouterExtensions) { }
+    
+    async ngOnInit(): Promise<void> { 
+        
+        console.log("theme: ", environment.theme)
+        
+        const chaptersData = await import(`../../../../data/${environment.theme}/chapters`);
+        
+        console.log("chaptersData: ", JSON.stringify(chaptersData))
 
-    ngOnInit(): void { }
+        this.chapterToggles = chaptersData.chapters.map(chapter => {
+            return {
+                ...chapter,
+                checked: true
+            }
+        })
+
+    }
 
     onDrawerButtonTap(): void {
         const sideDrawer = <RadSideDrawer>app.getRootView();

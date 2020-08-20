@@ -1,7 +1,6 @@
 import { Injectable } from "@angular/core";
-import { questionBank } from "../../data/question-bank";
+// import { questionBank } from "../../data/enrolled-agent/question-bank";
 import { IQuestion, AnswerChoice } from "../../models/question";
-
 
 const ANSWERS: AnswerChoice[] = [
     AnswerChoice.A,
@@ -15,6 +14,16 @@ const ANSWERS: AnswerChoice[] = [
     providedIn: 'root'
 })
 export class QuestionGenerator {
+
+    questionBank
+
+    async ngOnInit() {
+
+        this.questionBank = (await import(`../../data/${environment.theme}/question-bank`)).questionBank;
+
+        console.log("question 1: ", JSON.stringify(this.questionBank[0]))
+
+    }
 
     getQuestionFromValidChapter(selectedChapters: string): IQuestion {
 
@@ -31,9 +40,9 @@ export class QuestionGenerator {
 
     getRandomQuestion(): IQuestion {
 
-        const randomIndexWithinBounds = Math.floor(Math.random() * questionBank.length);
+        const randomIndexWithinBounds = Math.floor(Math.random() * this.questionBank.length);
 
-        return this.shuffleQuestionAnswers(questionBank[randomIndexWithinBounds]);
+        return this.shuffleQuestionAnswers(this.questionBank[randomIndexWithinBounds]);
     }
 
     private shuffleQuestionAnswers(question: IQuestion): IQuestion {
@@ -51,17 +60,17 @@ export class QuestionGenerator {
         }, {})
 
         const orderedShuffledAnswerChoices = {}
-        
-        
-        Object.keys(question.shuffledAnswerChoices).forEach( (shuffledAnswerChoice, index) => {
+
+
+        Object.keys(question.shuffledAnswerChoices).forEach((shuffledAnswerChoice, index) => {
             orderedShuffledAnswerChoices[ANSWERS[index]] = question.shuffledAnswerChoices[shuffledAnswerChoice]
-            
+
             if (shuffledAnswerChoice === question.correctAnswer) {
                 question.shuffledCorrectAnswer = ANSWERS[index]
             }
-            
+
         })
- 
+
         question.shuffledAnswerChoices = orderedShuffledAnswerChoices
 
         return question

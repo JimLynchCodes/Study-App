@@ -11,16 +11,17 @@
     -->
     <ActionItem icon="res://menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()" ios.position="left">
     </ActionItem>
-    <Label text="Home"></Label>
+    <Label text="About"></Label>
 </ActionBar>
+
 
 <ScrollView row="1" class="nt-drawer__body">
 
-    <FlexboxLayout flexDirection="column" class="home-page-container">
-        <Label class="page__content-icon fas home-icon" text="&#xf015;"></Label>
-        <Label class="page__content-placeholder" text="{{homeTitle}}" class="home-gray home-title"
+    <FlexboxLayout flexDirection="column" class="about-page-container">
+        <Label class="page__content-icon fas info-circle" text="&#xf015;"></Label>
+        <Label class="page__content-placeholder" text="{{aboutTitle}}" class="about-gray about-title"
             textWrap="true"></Label>
-        <Label class="page__content-placeholder" text="{{homeMessage}}" class="home-gray home-message"
+        <Label class="page__content-placeholder" text="{{aboutMessage}}" class="about-gray about-message"
             textWrap="true"></Label>
         <Label class="page__content-placeholder" text=""></Label>
         <Label class="page__content-placeholder footer-text" text="Study App Technologies © 2020"></Label>
