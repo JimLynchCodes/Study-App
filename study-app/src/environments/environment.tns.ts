@@ -2,6 +2,8 @@ import { environment as eaDevEnvironment } from './enrolled-agent/environment.de
 import { environment as eaProdEnvironment } from './enrolled-agent/environment.prod';
 import { environment as satDevEnvironment } from './sat/environment.dev';
 import { environment as satProdEnvironment } from './sat/environment.prod';
+import { environment as randomTriviaDevEnvironment } from './random-trivia/environment.dev';
+import { environment as randomTriviaProdEnvironment } from './random-trivia/environment.prod';
 
 export const environment = (() => {
   let envVars;
@@ -27,6 +29,14 @@ export const environment = (() => {
 
       case 'sat.dev':
         envVars = satDevEnvironment;
+        break;
+
+      case 'random-trivia.prod':
+        envVars = randomTriviaProdEnvironment;
+        break;
+
+      case 'random-trivia.dev':
+        envVars = randomTriviaDevEnvironment;
         break;
 
       // TODO: Add additional environment (e.g. uat) if required. 

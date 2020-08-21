@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
-// import { questionBank } from "../../data/enrolled-agent/question-bank";
 import { IQuestion, AnswerChoice } from "../../models/question";
+import { environment } from '../../../environments/environment'
 
 const ANSWERS: AnswerChoice[] = [
     AnswerChoice.A,
@@ -17,22 +17,30 @@ export class QuestionGenerator {
 
     questionBank
 
-    async ngOnInit() {
-
-        this.questionBank = (await import(`../../data/${environment.theme}/question-bank`)).questionBank;
-
-        console.log("question 1: ", JSON.stringify(this.questionBank[0]))
-
+    ngOnInit() {
+        console.log('loading?')
     }
+    
+    async getQuestionFromValidChapter(selectedChapters: string): Promise<IQuestion> {
+        
+        console.log('loading question bank... ', `../../data/${environment.theme}/question-bank`)
+    
+        if (!this.questionBank)
 
-    getQuestionFromValidChapter(selectedChapters: string): IQuestion {
+            this.questionBank = (await import(`../../data/${environment.theme}/question-bank`)).questionBank;
+    
+        console.log("question 1: ", JSON.stringify(this.questionBank))
 
         const potentialQuestion = this.getRandomQuestion();
 
         const selectedChaptersToNumbers = selectedChapters.split(',').map(a => +a)
 
+        console.log('chap index: ', potentialQuestion.chapterIndex)
+        console.log('chap index: ', +potentialQuestion.chapterIndex)
+        console.log('chap index: ', selectedChaptersToNumbers.indexOf(+potentialQuestion.chapterIndex) !== -1)
+
         if (selectedChaptersToNumbers.indexOf(+potentialQuestion.chapterIndex) !== -1)
-            return potentialQuestion
+            return Promise.resolve(potentialQuestion)
 
         return this.getQuestionFromValidChapter(selectedChapters)
 

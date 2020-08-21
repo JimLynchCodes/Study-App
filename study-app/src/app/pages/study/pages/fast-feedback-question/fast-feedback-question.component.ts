@@ -44,15 +44,15 @@ export class FastFeedbackQuestionComponent implements OnInit {
                 return false;
             }
             
-            route.params.subscribe(args => {
+            route.params.subscribe(async args => {
                 
                 this.selectedChapters = args.selectedChapters
                 
-                // console.log('selectedChapters: ', this.selectedChapters)
+                console.log('selectedChapters: ', this.selectedChapters)
                 
-                this.currentQuestion = questionGenerator.getQuestionFromValidChapter(args.selectedChapters)
+                this.currentQuestion = await questionGenerator.getQuestionFromValidChapter(args.selectedChapters)
                 
-                // console.log('selected q: ', this.currentQuestion)
+                console.log('selected q: ', this.currentQuestion)
                 
                 this.textAnswerChoices = Object.values(this.currentQuestion.shuffledAnswerChoices);
                 this.answerChoicesArray = Object.keys(this.currentQuestion.shuffledAnswerChoices);

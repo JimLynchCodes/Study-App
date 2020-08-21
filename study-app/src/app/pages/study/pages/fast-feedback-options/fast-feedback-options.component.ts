@@ -102,6 +102,8 @@ export class FastFeedbackOptionsComponent implements OnInit {
             })
             .reduce((acc, chapterToggle) => [...acc, chapterToggle.chapter], [])
 
+        console.log('going to ffq with chapters: ', selectedChapters)
+
         this.routerExtensions.navigate(['/ffq', { selectedChapters: selectedChapters }], {
             transition: {
                 name: "fade"
