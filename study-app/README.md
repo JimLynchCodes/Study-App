@@ -77,19 +77,28 @@ tns build ios --release --for-device --provision Ea-9-8b-profile
 
 (use a 1024 x 1024px image)
 
-generate icons:
+### Generate icons:
 ```
+// EA App
 tns resources generate icons  ../artwork/app-icon/hax-computer-guy/hax-computer-guy-no-title.png
 
-// (B App)
+// EA App (B)
 tns resources generate icons  ../artwork/app-icon/enrolled-agent-lightbulb-brain/enrolled-agent-lightbulb-brain-guy.png
+
+// Random Trivia App
+tns resources generate icons  ../artwork/app-icon/random-trivia/random-trivia-logo.png
+
 ```
-generate splashes:
+### Generate splashes:
 ```
-tns resources generate splashes ../artwork/app-icon/hax-computer-guy/hax-computer-guy-no-title.png --background "#01040D"
+// EA App
+tns resources generate icons  ../artwork/app-icon/hax-computer-guy/hax-computer-guy-no-title.png --background="01040D"
 
 (B App)
 tns resources generate splashes ../artwork/app-icon/enrolled-agent-lightbulb-brain/enrolled-agent-lightbulb-brain-guy.png --background "#173890"
+
+// Random Trivia App
+tns resources generate splashes ../artwork/app-icon/random-trivia/random-trivia-logo.png --background "#37B7C5"
 
 ```
 

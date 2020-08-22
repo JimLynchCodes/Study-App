@@ -3,7 +3,7 @@ import { RadSideDrawer } from "nativescript-ui-sidedrawer";
 import * as app from "tns-core-modules/application";
 import { RouterExtensions } from "nativescript-angular/router";
 import { Router } from "@angular/router";
-import { IQuestion } from "../models/question";
+import { IQuestion } from "../data/_data.models/question.model";
 import { QuestionGenerator } from "../utils/question-generator/question-generator.service";
 
 @Component({

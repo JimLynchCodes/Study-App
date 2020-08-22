@@ -19,7 +19,7 @@ export interface IQuestion {
         correctAnswer: AnswerChoice,
         explanations: PartialRecord<AnswerChoice, string>,
         moreExplanation: string
-        // shuffledAnswerChoices?: PartialRecord<AnswerChoice, string>,
-        shuffledAnswerChoices?: any,
+        shuffledAnswerChoices?: PartialRecord<AnswerChoice, string>,
+        // shuffledAnswerChoices?: any,
         shuffledCorrectAnswer?: AnswerChoice
 }

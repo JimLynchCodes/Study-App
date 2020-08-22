@@ -1,5 +1,6 @@
+import { Chapter } from "../_data.models/chapter.model";
 
-export const chapters: any[] = [
+export const chapters: Chapter[] = [
     {
         title: 'Business Entity and Accounting Options',
         index: 1,

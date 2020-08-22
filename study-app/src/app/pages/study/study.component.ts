@@ -3,6 +3,7 @@ import { RadSideDrawer } from "nativescript-ui-sidedrawer";
 import * as app from "tns-core-modules/application";
 import { EventData } from "tns-core-modules/ui/page/page";
 import { RouterExtensions } from "nativescript-angular/router";
+import { environment } from '../../../environments/environment'
 
 @Component({
     selector: "Study",
@@ -11,12 +12,20 @@ import { RouterExtensions } from "nativescript-angular/router";
 })
 export class StudyComponent implements OnInit {
 
+    mockExamButtonLabel: string
+
     constructor(private routerExtensions: RouterExtensions) {
         // Use the component constructor to inject providers.
     }
 
-    ngOnInit(): void {
-        // Init your component properties here.
+    async ngOnInit(): Promise<void> {
+
+        const appTextData = (await import(`../../data/${environment.theme}/static-text`)).appText;
+
+        this.mockExamButtonLabel = appTextData.mockExamButtonLabel
+
+        console.log('got mockExamButtonLabel: ', this.mockExamButtonLabel)
+
     }
 
     onDrawerButtonTap(): void {
