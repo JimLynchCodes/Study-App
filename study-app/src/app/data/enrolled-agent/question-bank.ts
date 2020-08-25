@@ -436,7 +436,7 @@ export const questionBank: IQuestion[] = [
         questionIndex: 1,
         qId: `q7-1`,
         tags: [],
-        questionText: '',
+        questionText: 'Patricia is a computer programmer and was laid off from Hard Drive Inc. due to downsizing. Hard Drive asked Patricia to work on a one-time project. They agreed to pay her a flat fee to create an advance product. The number of hours to complete this project is unknown and there is no guaranteed minimum payment for the hours spent. Hard Drive provides the specifications to Patricia for the product. Patricia uses her own high-end computer, and is not required to attend meetings held by the software engineering group. Is Patricia an independent contractor?',
         answerChoices: {
             [AnswerChoice.A]: 'Patricia is an independent contractor because Hard Drive has the right to control only the result of the work and not how it will be done.',
             [AnswerChoice.B]: 'Patricia is not an independent contractor because Hard Drive controls what will be done.',
