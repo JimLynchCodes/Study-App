@@ -18,8 +18,6 @@ export class FastFeedbackQuestionComponent implements OnInit {
     moreDetailsExpanded: boolean = false;
     answeredCorrectly: boolean = undefined;
 
-    feedbackMessage = ''
-
     content: any;
 
     textAnswerChoices: string[] = ['', '', '', ''];
@@ -80,12 +78,10 @@ export class FastFeedbackQuestionComponent implements OnInit {
             this.answerChoice = choice
 
             if (choice === this.currentQuestion.shuffledCorrectAnswer) {
-                this.feedbackMessage = 'That\'s CORRECT!'
                 this.answeredCorrectly = true
             }
             else {
                 this.answeredCorrectly = false
-                this.feedbackMessage = `Sorry, ${this.currentQuestion.shuffledCorrectAnswer} is correct.`
             }
 
             this.answered = true
@@ -94,7 +90,6 @@ export class FastFeedbackQuestionComponent implements OnInit {
     }
 
     resetQuestion() {
-        this.feedbackMessage = ''
         this.answered = false;
         this.moreDetailsExpanded = false;
         this.answeredCorrectly = undefined;

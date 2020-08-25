@@ -1,6 +1,6 @@
 {
   "nativescript": {
-    "id": "enrolled-agent.study-app",
+    "id": "random.trivia",
     "tns-android": {
       "version": "*"
     },

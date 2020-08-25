@@ -51,7 +51,7 @@ tns platform clean ios
 
 First, find the available provisioning ids:
 ```
-tns build ios --for-device --release --provision
+tns build ios --for-device --release --provision Ea-9-8b-profile
 ```
 
 provision ID:
@@ -70,7 +70,7 @@ tns prepare ios --release --for-device --provision Ea-9-8b-profile
 
 Then build with the same provision id:
 ```
-tns build ios --release --for-device --provision Ea-9-8b-profile
+tns build ios --release --for-device --provision Ea-9-8b-profile --env.environment="enrolled-agent.dev" --env.uglify
 ```
 
 ### Regnerating Icons and Spalsh Screens
@@ -92,7 +92,7 @@ tns resources generate icons  ../artwork/app-icon/random-trivia/random-trivia-lo
 ### Generate splashes:
 ```
 // EA App
-tns resources generate icons  ../artwork/app-icon/hax-computer-guy/hax-computer-guy-no-title.png --background="01040D"
+tns resources generate splashes  ../artwork/app-icon/hax-computer-guy/hax-computer-guy-no-title.png --background="#01040D"
 
 (B App)
 tns resources generate splashes ../artwork/app-icon/enrolled-agent-lightbulb-brain/enrolled-agent-lightbulb-brain-guy.png --background "#173890"
