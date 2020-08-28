@@ -3,7 +3,7 @@ import { RadSideDrawer } from "nativescript-ui-sidedrawer";
 import * as app from "tns-core-modules/application";
 import { EventData } from "tns-core-modules/ui/page/page";
 import { RouterExtensions } from "nativescript-angular/router";
-import { NotesService } from "./notes.service";
+import { LoaderService } from "../../../../utils/loader.service";
 
 
 enum NoteType {
@@ -28,7 +28,7 @@ export class NotesComponent implements OnInit {
     chaptersData: any;
     questionBank: any;
 
-    constructor(private routerExtensions: RouterExtensions, private notesService: NotesService) {
+    constructor(private routerExtensions: RouterExtensions, private loaderService: LoaderService) {
 
 
     }
@@ -37,7 +37,7 @@ export class NotesComponent implements OnInit {
 
      
         console.log('getting notes 1')
-        this.notes = await this.notesService.getNotes()
+        this.notes = await this.loaderService.getNotes()
         //
     }
 

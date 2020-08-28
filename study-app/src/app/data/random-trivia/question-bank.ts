@@ -149,7 +149,6 @@ export const questionBank: IQuestion[] = [
 
         Non-business bad debts are reported as short-term capital losses on Form 8949 and carried to Schedule D (Form 1040). Business bad debts are deducted as an expense.`,
     },
-
     {
         chapterIndex: 5,
         questionIndex: 2,

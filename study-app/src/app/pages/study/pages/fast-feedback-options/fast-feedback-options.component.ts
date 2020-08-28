@@ -5,6 +5,7 @@ import { EventData } from "tns-core-modules/ui/page/page";
 import { RouterExtensions } from "nativescript-angular/router";
 
 import { environment } from '../../../../../environments/environment'
+import { LoaderService } from "../../../../utils/loader.service";
 
 @Component({
     selector: "FastFeedbackOptions",
@@ -21,17 +22,19 @@ export class FastFeedbackOptionsComponent implements OnInit {
 
     chapterToggles
 
-    constructor(private routerExtensions: RouterExtensions) { }
+    constructor(private routerExtensions: RouterExtensions, private loaderService: LoaderService) { }
     
     async ngOnInit(): Promise<void> { 
         
         console.log("theme: ", environment.theme)
         
-        const chaptersData = await import(`../../../../data/${environment.theme}/chapters`);
+        // const chaptersData = await import(`../../../../data/${environment.theme}/chapters`);
         
-        console.log("chaptersData: ", JSON.stringify(chaptersData))
+        const chapters = await this.loaderService.getChapters()
 
-        this.chapterToggles = chaptersData.chapters.map(chapter => {
+        console.log("chaptersData: ", JSON.stringify(chapters))
+
+        this.chapterToggles = chapters.map(chapter => {
             return {
                 ...chapter,
                 checked: true

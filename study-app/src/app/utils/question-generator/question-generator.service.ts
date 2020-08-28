@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import { IQuestion, AnswerChoice } from "../../data/_data.models/question.model";
 import { environment } from '../../../environments/environment'
+import { LoaderService } from "~/app/utils/loader.service";
 
 const ANSWERS: AnswerChoice[] = [
     AnswerChoice.A,
@@ -17,6 +18,8 @@ export class QuestionGenerator {
 
     questionBank
 
+    constructor(private loaderService: LoaderService) {}
+
     ngOnInit() {
         console.log('loading?')
     }
@@ -27,8 +30,10 @@ export class QuestionGenerator {
     
         if (!this.questionBank)
 
-            this.questionBank = (await import(`../../data/${environment.theme}/question-bank`)).questionBank;
+            // this.questionBank = (await import(`../../data/${environment.theme}/question-bank`)).questionBank;
     
+        this.questionBank = await this.loaderService.getQuestionBank();
+
         console.log("question 1: ", JSON.stringify(this.questionBank))
 
         const potentialQuestion = this.getRandomQuestion();
