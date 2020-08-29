@@ -1,19 +1,19 @@
 import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
 import { NativeScriptCommonModule } from "nativescript-angular/common";
 
-import { MockExamRoutingModule } from "./mock-exam-routing.module";
-import { MockExamComponent } from "./mock-exam.component";
+import { MockExamQuestionRoutingModule } from "./mock-exam-question-routing.module";
+import { MockExamQuestionComponent } from "./mock-exam-question.component";
 
 @NgModule({
     imports: [
         NativeScriptCommonModule,
-        MockExamRoutingModule
+        MockExamQuestionRoutingModule
     ],
     declarations: [
-        MockExamComponent
+        MockExamQuestionComponent
     ],
     schemas: [
         NO_ERRORS_SCHEMA
     ]
 })
-export class MockExamModule { }
+export class MockExamQuestionModule { }

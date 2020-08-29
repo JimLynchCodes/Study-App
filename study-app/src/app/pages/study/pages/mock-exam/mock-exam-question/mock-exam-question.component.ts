@@ -8,10 +8,10 @@ import { ListPicker } from "tns-core-modules/ui/list-picker";
 
 @Component({
     selector: "MockExam",
-    templateUrl: "./mock-exam.component.html",
-    styleUrls: ["./mock-exam-component.scss"]
+    templateUrl: "./mock-exam-question.component.html",
+    styleUrls: ["./mock-exam-question.component.scss"] 
 })
-export class MockExamComponent implements OnInit {
+export class MockExamQuestionComponent implements OnInit {
 
     constructor(private routerExtensions: RouterExtensions) {}
 

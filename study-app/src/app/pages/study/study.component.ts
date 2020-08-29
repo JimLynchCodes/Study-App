@@ -35,6 +35,8 @@ export class StudyComponent implements OnInit {
 
     onTap(arg: EventData) {
 
+        console.log('transitioning', arg)
+
         if (arg)
             this.routerExtensions.navigate([arg], {
                 transition: {

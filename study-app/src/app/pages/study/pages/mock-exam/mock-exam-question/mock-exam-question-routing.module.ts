@@ -2,14 +2,14 @@ import { NgModule } from "@angular/core";
 import { Routes } from "@angular/router";
 import { NativeScriptRouterModule } from "nativescript-angular/router";
 
-import { MockExamComponent } from "./mock-exam.component";
+import { MockExamQuestionComponent } from "./mock-exam-question.component";
 
 const routes: Routes = [
-    { path: "", component: MockExamComponent }
+    { path: "", component: MockExamQuestionComponent }
 ];
 
 @NgModule({
     imports: [NativeScriptRouterModule.forChild(routes)],
     exports: [NativeScriptRouterModule]
 })
-export class MockExamRoutingModule { }
+export class MockExamQuestionRoutingModule { }
