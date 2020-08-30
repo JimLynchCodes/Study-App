@@ -51,7 +51,7 @@ tns platform clean ios
 
 First, find the available provisioning ids:
 ```
-tns build ios --for-device --release --provision Ea-9-8b-profile
+tns build ios --for-device --release --provision Ea-9-8b-profile --env.environment="enrolled-agent.dev" --env.uglify 
 ```
 
 provision ID:
