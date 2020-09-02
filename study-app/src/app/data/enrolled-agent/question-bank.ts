@@ -268,6 +268,259 @@ export const questionBank: IQuestion[] = [
         b.The partnership elects under section 444 to have a tax year other than a required tax year by filing Form 8716, Election to Have a Tax Year Other Than a Required Tax Year. For a partnership to have this election in effect, it must make the payments required by section 7519 and file Form 8752.`,
     },
 
+    {
+        chapterIndex: 1,
+        questionIndex: 11,
+        qId: `q1-11`,
+        tags: [],
+        questionText: 'The XYZ Partnership is comprised of. What is the partnership’s “required tax year” end?',
+        answerChoices: {
+            [AnswerChoice.A]: 'June 30',
+            [AnswerChoice.B]: 'None of these choices',
+            [AnswerChoice.C]: 'September 30',
+            [AnswerChoice.D]: 'December 31'
+        },
+        correctAnswer: AnswerChoice.A,
+        explanations: {
+            [AnswerChoice.A]: 'The answer is June 30',
+            [AnswerChoice.B]: 'The answer is not b because...',
+            [AnswerChoice.C]: 'The answer is not c because...',
+            [AnswerChoice.D]: 'The answer is not d because...'
+        },
+        moreExplanation: `Their required tax year end is June 30. Sam’s 30% + Earl’s 30% = 60%. Both of their tax years end on June 30. Since this is a majority, June 30 is the required tax year.
+       A partnership generally must conform its tax year to its partners’ tax years. The rules for determining the required tax year are as follows:
+       
+       MAJORITY INTEREST TAX YEAR. If one or more partners having the same tax year own an interest in partnership profits and capital of more than 50% (a majority interest), the partnership must use the tax year of those partners.
+       TESTING DAY. The partnership determines if there is a majority interest tax year on the testing day, which is usually the first day of the partnership’s current tax year.
+       CHANGE IN TAX YEAR. If a partnership’s majority tax year changes, it will not be required to change to another tax year for 2 years following the year of change.
+       PRINCIPAL PARTNER. If there is no majority interest tax year, the partnership must use the tax year of all its principal partners.
+       LEAST AGGREGATE DEFERRAL OF INCOME. If there is no majority interest tax year and the principal partners do not have the same tax year, the partnership generally must use a tax year that results in the least aggregate deferral of income to the partners.`
+    },
+
+    {
+        chapterIndex: 1,
+        questionIndex: 12,
+        qId: `q1-12`,
+        tags: [],
+        questionText: `New ABC Partnership is organized during the year with three general partners. The partners include a corporation with a tax year ending on March 31 and a 60% interest in partnership capital and profits, and two individuals, each having a calendar tax year and a 20% interest in partnership capital and profits.
+       The partnership’s required tax year ends on:`,
+        answerChoices: {
+            [AnswerChoice.A]: 'March 31',
+            [AnswerChoice.B]: 'December 31',
+            [AnswerChoice.C]: 'September 30',
+            [AnswerChoice.D]: 'October 31'
+        },
+        correctAnswer: AnswerChoice.A,
+        explanations: {
+            [AnswerChoice.A]: 'The answer is March 31',
+            [AnswerChoice.B]: 'The answer is not b because...',
+            [AnswerChoice.C]: 'The answer is not c because...',
+            [AnswerChoice.D]: 'The answer is not d because...'
+        },
+        moreExplanation: `more explanation...`
+    },
+    {
+        chapterIndex: 1,
+        questionIndex: 13,
+        qId: `q1-13`,
+        tags: [],
+        questionText: `Maggie and Simon each have a 50% interest in a partnership that started business October 1. Maggie uses a calendar year while Simon has a fiscal year ending November 30.
+       Which of the following is correct?`,
+        answerChoices: {
+            [AnswerChoice.A]: 'Both (The partnership may use the fiscal year ending September 30 provided a section 444 election and payment are made.) and (The partnership may use the fiscal year ending November 30 as that results in the least deferral.)',
+            [AnswerChoice.B]: 'The partnership may use the fiscal year ending November 30 as that results in the least deferral.',
+            [AnswerChoice.C]: 'The partnership may use the fiscal year ending September 30 provided a section 444 election and payment are made.',
+            [AnswerChoice.D]: 'The partnership may use the calendar year.'
+        },
+        correctAnswer: AnswerChoice.A,
+        explanations: {
+            [AnswerChoice.A]: 'The answer is A because...',
+            [AnswerChoice.B]: 'The answer is not b because...',
+            [AnswerChoice.C]: 'The answer is not c because...',
+            [AnswerChoice.D]: 'The answer is not d because...'
+        },
+        moreExplanation: `The partnership may not use the calendar year. It does not result in the least aggregate deferral of income.`
+    },
+    {
+        chapterIndex: 1,
+        questionIndex: 14,
+        qId: `q1-14`,
+        tags: [],
+        questionText: 'Ray Johnson operates a retail store using the accrual method of accounting and reporting on Schedule C, Net Profit or Loss from Business. He plans to start a lawn-care service to operate only in the summer months. With regard to this scenario, which of the following statements is true?',
+        answerChoices: {
+            [AnswerChoice.A]: 'A different accounting method may be used for each separate and distinct business if the method used for each clearly shows the income.',
+            [AnswerChoice.B]: 'All businesses operated by one individual must use the same method of accounting.',
+            [AnswerChoice.C]: 'He can use the cash method of accounting for the lawn care business by first getting IRS permission.',
+            [AnswerChoice.D]: 'He must use the accrual method of accounting for the lawn care business.'
+        },
+        correctAnswer: AnswerChoice.A,
+        explanations: {
+            [AnswerChoice.A]: 'The answer is A because...',
+            [AnswerChoice.B]: 'The answer is not b because...',
+            [AnswerChoice.C]: 'The answer is not c because...',
+            [AnswerChoice.D]: 'The answer is not d because...'
+        },
+        moreExplanation: `If a taxpayer operates more than one business, a different accounting method may be used for each separate and distinct business if the method used for each clearly shows the income. They are separate and distinct only if the taxpayer maintains complete and separate books and records for each business.
+       BUSINESS AND PERSONAL ITEMS. A taxpayer can account for business and personal items under different accounting methods. For example, Ray can figure his business income under an accrual method, even if he uses the cash method to figure personal items.`
+
+    },
+    {
+        chapterIndex: 1,
+        questionIndex: 15,
+        qId: `q1-15`,
+        tags: [],
+        questionText: 'When a taxpayer operates two or more separate and distinct businesses:',
+        answerChoices: {
+            [AnswerChoice.A]: 'The same accounting method does not have to be used for both businesses if separate and distinct books and records are kept.',
+            [AnswerChoice.B]: 'The IRS must approve the accounting method.',
+            [AnswerChoice.C]: 'The cash method of accounting must be used for both businesses.',
+            [AnswerChoice.D]: 'The same accounting period must be used for both businesses.'
+        },
+        correctAnswer: AnswerChoice.A,
+        explanations: {
+            [AnswerChoice.A]: 'The answer is A because...',
+            [AnswerChoice.B]: 'The answer is not b because...',
+            [AnswerChoice.C]: 'The answer is not c because...',
+            [AnswerChoice.D]: 'The answer is not d because...'
+        },
+        moreExplanation: `When a taxpayer operates two or more separate and distinct businesses, with separate and distinct books and records, the same accounting method does NOT have to be used for both businesses. `
+    },
+    {
+        chapterIndex: 1,
+        questionIndex: 16,
+        qId: `q1-16`,
+        tags: [],
+        questionText: 'Which of the following changes does NOT require IRS approval?',
+        answerChoices: {
+            [AnswerChoice.A]: 'An adjustment in the useful life of a depreciable asset',
+            [AnswerChoice.B]: 'A change from the cash method of accounting to an accrual method',
+            [AnswerChoice.C]: 'All of these choices',
+            [AnswerChoice.D]: 'A change from an accrual method of accounting to the cash method'
+        },
+        correctAnswer: AnswerChoice.A,
+        explanations: {
+            [AnswerChoice.A]: 'The answer is A because...',
+            [AnswerChoice.B]: 'The answer is not b because...',
+            [AnswerChoice.C]: 'The answer is not c because...',
+            [AnswerChoice.D]: 'The answer is not d because...'
+        },
+        moreExplanation: `An adjustment in the useful life of a depreciable asset is not a change in accounting methods and does NOT require IRS approval.
+       The following changes are examples of types of changes that require IRS approval:
+       
+       A change from the cash method to an accrual method or vice versa
+       A change in the method or basis used to value inventory
+       A change in the method of figuring depreciation (except certain permitted changes to the straight-line method for property placed in service before 1981)`
+    },
+    {
+        chapterIndex: 1,
+        questionIndex: 17,
+        qId: `q1-17`,
+        tags: [],
+        questionText: `In September 2018, Charlie, a self-employed lawyer, performed legal services for a client that has a men’s clothing store. In payment for his services, Charlie received store credit of $3,500 in 2018. Charlie uses $1,500 of his store credit in 2018 and the balance in 2019.
+    How much income should Charlie include in 2018 and 2019?`,
+        answerChoices: {
+            [AnswerChoice.A]: '2018 $3,500; 2019 $ -0-',
+            [AnswerChoice.B]: '2018 $1,500; 2019 $2,000',
+            [AnswerChoice.C]: '2018 $1,750; 2019 $1,750',
+            [AnswerChoice.D]: '2018 $ -0-; 2019 $3,500'
+        },
+        correctAnswer: AnswerChoice.A,
+        explanations: {
+            [AnswerChoice.A]: 'The answer is A because...',
+            [AnswerChoice.B]: 'The answer is not b because...',
+            [AnswerChoice.C]: 'The answer is not c because...',
+            [AnswerChoice.D]: 'The answer is not d because...'
+        },
+        moreExplanation: `$3,500 is reported for tax year 2018 and $-0- is reported for tax year 2019. Under the cash method of accounting, all items of income actually or constructively received during the year are included in gross income for that year. If property and services are received, the fair market value is included in income.
+       Under the accrual method of accounting, generally include an amount in gross income for the tax year in which all events that fix the taxpayer’s right to receive the income have occurred, and the amount can be determined with reasonable accuracy.`
+    },
+    {
+        chapterIndex: 1,
+        questionIndex: 18,
+        qId: `q1-18.`,
+        tags: [],
+        questionText: 'The Pine Tree Partnership produces and sells toys. It had gross receipts of $1,000,000 in 2018. It had gross receipts of $500,000 in 2014; $1,000,000 in 2015 and $1,500,000 in 2017. Pine Tree may use the cash method of accounting.',
+        answerChoices: {
+            [AnswerChoice.A]: 'True',
+            [AnswerChoice.B]: 'False',
+
+        },
+        correctAnswer: AnswerChoice.A,
+        explanations: {
+            [AnswerChoice.A]: 'The answer is A because...',
+            [AnswerChoice.B]: 'The answer is not b because...',
+            [AnswerChoice.C]: 'The answer is not c because...',
+            [AnswerChoice.D]: 'The answer is not d because...'
+        },
+        moreExplanation: `Tree may NOT use the cash method of accounting. `
+    },
+    {
+        chapterIndex: 1,
+        questionIndex: 19,
+        qId: `q1-19`,
+        tags: [],
+        questionText: `Eric, a cash basis taxpayer, owned 25% of Watson, Inc. stock. Watson, Inc. files a calendar year U.S. Corporate Income Tax Return Form 1120 employing the accrual method of accounting. Eric loaned Watson, Inc. $100,000 at the beginning of 2017. The accrued interest on this loan was $5,000 as of December 31, 2017. Watson, Inc. paid Eric the $5,000 in January of 2018.
+    How should Eric report the interest income and Watson, Inc.report the interest expense from this transaction ?`,
+
+        answerChoices: {
+            [AnswerChoice.A]: 'Watson, Inc. reports the expense in 2017 and Eric reports the income in 2018.',
+            [AnswerChoice.B]: 'Watson, Inc. reports the expense in 2017 and Eric reports the income in 2017.',
+            [AnswerChoice.C]: 'None of these choices',
+            [AnswerChoice.D]: 'Watson, Inc. reports the expense in 2018 and Eric reports the income in 2018.'
+        },
+        correctAnswer: AnswerChoice.A,
+        explanations: {
+            [AnswerChoice.A]: 'The answer is A because...',
+            [AnswerChoice.B]: 'The answer is not b because...',
+            [AnswerChoice.C]: 'The answer is not c because...',
+            [AnswerChoice.D]: 'The answer is not d because...'
+        },
+        moreExplanation: `Watson, Inc. reports the expense in 2017 and Eric reports the income in 2018.
+       Under an accrual method of accounting, generally report income in the year earned and DEDUCT or capitalize expenses in the year incurred. Since the accrued interest was $5,000 as of 12/31/2017, Watson Inc. economic performance has occurred and the expense can be deducted. Economic performance occurs with the passage of time (as the borrower uses, and the lender forgoes use of, the lender’s money) rather than as payments are made.
+       
+       Eric includes the $5,000 as income in 2018 because under the cash method, include in gross income all items of income actually or constructively received during the tax year. Income is constructively received when an amount is credited to taxpayer’s account or made available to him without restriction.
+       
+       Business expenses and interest owed to a RELATED person who uses the cash method of accounting are not deductible UNTIL taxpayer makes the payment and the corresponding amount is includible in the related person’s gross income. HOWEVER, in this problem, Watson Inc. and Eric are not related persons. For purposes of the related persons rule, a related person is an individual and a corporation when the individual owns, directly or indirectly, more than 50% of the value of the outstanding stock of the corporation. Therefore Watson, Inc. deducts the interest expense in the year incurred; and Eric reports the interest in 2018 because this is when he actually received the income.`
+    },
+    {
+        chapterIndex: 1,
+        questionIndex: 20,
+        qId: `q1-20`,
+        tags: [],
+        questionText: 'Which of the following items is NOT included in inventory?',
+        answerChoices: {
+            [AnswerChoice.A]: 'Goods consigned TO the taxpayer',
+            [AnswerChoice.B]: 'Work in process',
+            [AnswerChoice.C]: 'Goods OUT on consignment',
+            [AnswerChoice.D]: 'Raw materials'
+        },
+        correctAnswer: AnswerChoice.A,
+        explanations: {
+            [AnswerChoice.A]: 'The answer is A because...',
+            [AnswerChoice.B]: 'The answer is not b because...',
+            [AnswerChoice.C]: 'The answer is not c because...',
+            [AnswerChoice.D]: 'The answer is not d because...'
+        },
+        moreExplanation: `The following merchandise is NOT included in inventory:
+       Goods the taxpayer has sold, but only if title has passed to the buyer
+       Goods consigned to the taxpayer
+       Goods ordered for future delivery if the taxpayer does not yet have title
+       Inventory includes all of the following:
+       
+       Merchandise or stock in trade
+       Raw materials
+       Work in process
+       Finished products
+       Supplies that physically become a part of the item intended for sale
+       Merchandise included in inventory includes:
+       
+       Purchased merchandise if title has passed to the taxpayer, even if the merchandise is in transit or the taxpayer does not have physical possession for another reason
+       Goods under contract for sale that the taxpayer has not yet segregated and applied to the contract
+       Goods out on consignment
+       Goods held for a sale in display rooms, merchandise mart rooms, or booths located away from the taxpayer’s place of business`
+    },
+
+
     // Chapter 2
     {
         chapterIndex: 2,
@@ -318,7 +571,7 @@ export const questionBank: IQuestion[] = [
         Property is placed in service when it is ready and available for a specific use, whether in a business activity, an income-producing activity, or a personal activity. Even if the property is not being used, it is in service when it is ready and available for its specific use.`,
     },
 
-     // Chapter 4
+    // Chapter 4
 
     {
         chapterIndex: 4,
@@ -377,7 +630,7 @@ export const questionBank: IQuestion[] = [
         Non-business bad debts are reported as short-term capital losses on Form 8949 and carried to Schedule D (Form 1040). Business bad debts are deducted as an expense.`,
     },
 
-     // Chapter 6
+    // Chapter 6
 
     {
         chapterIndex: 6,

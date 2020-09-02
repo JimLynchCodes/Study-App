@@ -9,7 +9,7 @@ import { ListPicker } from "tns-core-modules/ui/list-picker";
 @Component({
     selector: "MockExam",
     templateUrl: "./mock-exam.component.html",
-    styleUrls: ["./mock-exam-component.scss"]
+    styleUrls: ["./mock-exam.component.scss"]
 })
 export class MockExamComponent implements OnInit {
 

@@ -5,7 +5,7 @@
       "version": "*"
     },
     "tns-ios": {
-      "version": "6.5.2"
+      "version": "*"
     }
   },
   "description": "NativeScript Application",

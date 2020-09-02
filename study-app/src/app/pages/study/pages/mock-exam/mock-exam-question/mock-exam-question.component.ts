@@ -1,40 +1,89 @@
 import { Component, OnInit } from "@angular/core";
 import { RadSideDrawer } from "nativescript-ui-sidedrawer";
 import * as app from "tns-core-modules/application";
-import { EventData } from "tns-core-modules/ui/page/page";
 import { RouterExtensions } from "nativescript-angular/router";
-// import { EventData } from "tns-core-modules/data/observable";
-import { ListPicker } from "tns-core-modules/ui/list-picker";
+import { ActivatedRoute, Router } from "@angular/router";
+import { QuestionGenerator } from "~/app/utils/question-generator/question-generator.service";
+import { IQuestion } from "~/app/data/_data.models/question.model";
+// import { IQuestion, AnswerChoice } from "../../../../data/_data.models/question.model";
+// import { QuestionGenerator } from "../../../../utils/question-generator/question-generator.service";
+import { environment } from "../../../../../../environments/environment"
+import { MockExamManagerService } from "./mock-exam-manager.service";
 
 @Component({
-    selector: "MockExam",
+    selector: "FeaturedQuestion",
     templateUrl: "./mock-exam-question.component.html",
-    styleUrls: ["./mock-exam-question.component.scss"] 
+    styleUrls: ["./mock-exam-question.component.scss"]
 })
 export class MockExamQuestionComponent implements OnInit {
 
-    constructor(private routerExtensions: RouterExtensions) {}
+    answered: boolean = false;
+    moreDetailsExpanded: boolean = false;
+    answeredCorrectly: boolean = undefined;
 
-    public years: Array<number> = [1980, 1990, 2000, 2010, 2020];
-    public exams: Array<string> = ['Business', 'Accounting', 'Other stuff'];
-    private examSelected
+    hoursRemaining = '00';
+    minutesRemaining = '37'
+    secondsRemaining = '12'
 
-    public times: Array<string> = ['Full Exam (100q / 3.5hr', 'Halfer (50q / 1.75hr', '60 Minute Dash (28q / 1hr)', '30 Minute Dash (15q / 30min)', '20 Minute Dash (10q / 20min)', '10 Minute Dash (5q / 10min)'];
-    private timeSelected
+    content: any;
 
-    public onSelectedExamIndexChanged(args: EventData) {
-        const picker = <ListPicker>args.object;
-        console.log(`index: ${picker.selectedIndex}; item" ${this.years[picker.selectedIndex]}`);
-        this.examSelected = this.years[picker.selectedIndex]
-    }
-    public onSelectedTimeIndexChanged(args: EventData) {
-        const picker = <ListPicker>args.object;
-        console.log(`index: ${picker.selectedIndex}; item" ${this.years[picker.selectedIndex]}`);
-        this.timeSelected = this.times[picker.selectedIndex]
+    textAnswerChoices: string[] = ['', '', '', ''];
+
+    answerChoice: string = undefined
+    answerChoicesArray: string[];
+
+    currentQuestion: IQuestion
+
+    selectedChapters: number[]
+
+    constructor(
+        private router: Router,
+        private routerExtensions: RouterExtensions,
+        private route: ActivatedRoute,
+        private questionGenerator: QuestionGenerator,
+        private mockExamService: MockExamManagerService) {
+
+        console.log('loading up!')
+        console.log('MOCK EXAM LOADING UOOPP!@P#!@#! @#d', environment.apiUrl);
+
+        this.router.routeReuseStrategy.shouldReuseRoute = function () {
+            return false;
+        }
+
+        mockExamService.startTimer();
+        mockExamService.timer.subscribe(([hours, minutes, seconds]: [string, string, string]) => {
+
+            this.hoursRemaining = hours
+            this.minutesRemaining = minutes
+            this.secondsRemaining = seconds
+
+//
+            console.log(`got a new time! ${hours}:${minutes}:${seconds}`)
+
+        })
+
+        route.params.subscribe(async args => {
+
+            // this.selectedChapters = args.selectedChapters
+            // this.selectedChapters = [1, 2, 3]
+
+            console.log('selectedChapters: ', this.selectedChapters)
+
+            this.currentQuestion = await questionGenerator.getQuestionFromValidChapter('1,2,3')
+            // this.currentQuestion = await questionGenerator.getQuestionFromValidChapter(args.selectedChapters)
+
+            console.log('selected q: ', this.currentQuestion)
+
+            this.textAnswerChoices = Object.values(this.currentQuestion.shuffledAnswerChoices);
+            this.answerChoicesArray = Object.keys(this.currentQuestion.shuffledAnswerChoices);
+
+        })
+
     }
 
     ngOnInit(): void {
-        // Init your component properties here.
+        console.log('loading up hello2!')
+
     }
 
     onDrawerButtonTap(): void {
@@ -42,15 +91,43 @@ export class MockExamQuestionComponent implements OnInit {
         sideDrawer.showDrawer();
     }
 
-    onTap(args: EventData) {
+    onTap(choice: string) {
 
-        console.log('clicked!')
+        console.log('answered with: ', choice);
 
-        this.routerExtensions.navigate(['/meq', { exam: this.examSelected, time: this.timeSelected }], {
+        if (!this.answered) {
+
+            this.answerChoice = choice
+
+            if (choice === this.currentQuestion.shuffledCorrectAnswer) {
+                this.answeredCorrectly = true
+            }
+            else {
+                this.answeredCorrectly = false
+            }
+
+            this.answered = true
+
+        }
+    }
+
+    resetQuestion() {
+        this.answered = false;
+        this.moreDetailsExpanded = false;
+        this.answeredCorrectly = undefined;
+    }
+
+    nextQuestion() {
+
+        this.routerExtensions.navigate(['/ffq', { selectedChapters: this.selectedChapters }], {
             transition: {
                 name: "fade"
             }
         })
-
     }
+
+    toggleDetailsExpanded() {
+        this.moreDetailsExpanded = !this.moreDetailsExpanded
+    }
+
 }

@@ -15,46 +15,94 @@
 </ActionBar>
 
 <ScrollView>
+
     <StackLayout class="page__content">
 
+        <FlexLayout backgroundColor="darkgray">
 
-        <!-- <Label class="page__content-placeholder" text="" width="100%" height="50"></Label>
-        <Label class="page__content-icon fas" text="&#xf013;"></Label>
-        <Label class="page__content-placeholder" text="" width="100%" height="25"></Label>
-        <Label class="page__content-placeholder" text=""></Label>
-        <Label class="page__content-placeholder" text="Mock Exam"></Label>
-        <Label class="page__content-placeholder" text="" width="100%" height="30"></Label>
-        <Label class="page__content-placeholder" text=""></Label>
-        <Label class="page__content-placeholder" text="Choose an exam:" padding="0"></Label>
-         -->
-        <!-- <ListPicker class="mock-exam-picker" [items]="exams" selectedIndex="0" (selectedIndexChange)="onSelectedExamIndexChanged($event)">
-        </ListPicker> -->
-        
-        
-        <!-- <Label class="page__content-placeholder" text="minutes to answer 20 questions."></Label> -->
-        <!-- <Label class="page__content-placeholder" text="Answers will be shown"></Label> -->
-        <!-- <Label class="page__content-placeholder" text=""></Label> -->
-        <!-- <Label class="page__content-placeholder" text="Choose an exam duration:"></Label> -->
-        
-        <!-- <ListPicker 
-        [items]="times"
-        selectedIndex="0"
-        class="mock-exam-picker"
-        (selectedIndexChange)="onSelectedTimeIndexChanged($event)">
-    </ListPicker> -->
-    
-    
-    <Label class="page__content-placeholder" text=""></Label>
-    <Label class="page__content-placeholder" text="Derp"></Label>
-    <!-- <Label class="page__content-placeholder" text="immediately after pressing start."></Label>
-    <Label class="page__content-placeholder" text="" height="15"></Label>
-    <Label class="page__content-placeholder" text="Good luck!"></Label>
-    
-    <Label class="page__content-placeholder" text="" width="100%" height="20"></Label>
-    
-    <Button text="Start Exam" (tap)="onTap('home')" class="-primary"></Button>
-    
-    <Label class="page__content-placeholder" text="" width="100%" height="10"></Label> -->
-    
-</StackLayout>
+            <Label class="time-remaining-label" width="100%"
+                text="Time Remaining - {{hoursRemaining}}:{{minutesRemaining}}:{{secondsRemaining}}"></Label>
+            
+        </FlexLayout>
+
+        <FlexLayout backgroundColor="lightgray">
+
+            <Label class="question-index-label" width="100%" backgroundColor="#DCDCDC"
+                text="Q {{currentQuestion.chapterIndex}}.{{currentQuestion.questionIndex}}"></Label>
+
+            <Label class="page__content-placeholder question-text" width="100%" backgroundColor="#DCDCDC"
+                text="{{currentQuestion.questionText}}" textWrap="true">
+            </Label>
+            
+        </FlexLayout>
+
+        <!-- *ngFor="let answerChoice in currentQuestion.shuffledAnswerChoices"  -->
+        <Button *ngIf="false" text="{{answerChoice}})" textWrap="true" class="default-button" [ngClass]="{}"></Button>
+
+        <!-- (tap)="onTap(answerChoice[0])" -->
+
+
+        <!-- Button 0, 'A' Choice -->
+        <Button text="A)  {{textAnswerChoices[0]}}" (tap)="onTap(answerChoicesArray[0])" textWrap="true"
+            class="default-button ffq-btn first-button" [ngClass]="{
+                    '-primary': answered === false || answered === true && answerChoice !== answerChoicesArray[0][0] && currentQuestion.shuffledCorrectAnswer !== answerChoicesArray[0],
+                    'correct-green': answered === true && currentQuestion.shuffledCorrectAnswer === answerChoicesArray[0],
+                    'incorrect-choice': answered === true && answerChoice === answerChoicesArray[0] && answeredCorrectly === false
+                }"></Button>
+
+        <!-- Button 1, 'B' Choice -->
+        <Button text="B)  {{textAnswerChoices[1]}}" (tap)="onTap(answerChoicesArray[1])" textWrap="true"
+            class="default-button ffq-btn" [ngClass]="{
+                    '-primary': answered === false || answered === true && answerChoice !== answerChoicesArray[1] && currentQuestion.shuffledCorrectAnswer !== answerChoicesArray[1],
+                    'correct-green': answered === true && currentQuestion.shuffledCorrectAnswer === answerChoicesArray[1],
+                    'incorrect-choice': answered === true && answerChoice === answerChoicesArray[1] && answeredCorrectly === false
+                }"></Button>
+
+        <!-- Button 2, 'C' Choice -->
+        <Button text="C)  {{textAnswerChoices[2]}}" (tap)="onTap(answerChoicesArray[2])" textWrap="true"
+            class="default-button ffq-btn" [ngClass]="{
+                    '-primary': answered === false || answered === true && answerChoice !== answerChoicesArray[2] && currentQuestion.shuffledCorrectAnswer !== answerChoicesArray[2],
+                    'correct-green': answered === true && currentQuestion.shuffledCorrectAnswer === answerChoicesArray[2],
+                    'incorrect-choice': answered === true && answerChoice === answerChoicesArray[2] && answeredCorrectly === false
+                }"></Button>
+
+        <!-- Button 3, 'D' Choice -->
+        <Button text="D)  {{textAnswerChoices[3]}}" (tap)="onTap(answerChoicesArray[3])" textWrap="true"
+            class="default-button ffq-btn" [ngClass]="{
+                    '-primary': answered === false || answered === true && answerChoice !== answerChoicesArray[3] && currentQuestion.shuffledCorrectAnswer !== answerChoicesArray[3],
+                    'correct-green': answered === true && currentQuestion.shuffledCorrectAnswer === answerChoicesArray[3],
+                    'incorrect-choice': answered === true && answerChoice === answerChoicesArray[3] && answeredCorrectly === false
+        }"></Button>
+
+        <!-- Button 4, 'E' Choice -->
+        <Button *ngIf="textAnswerChoices ? textAnswerChoices.length > 4 : false" text="E)  {{textAnswerChoices[4]}}"
+            (tap)="onTap(answerChoicesArray[4])" textWrap="true" class="default-button ffq-btn" [ngClass]="{
+                    '-primary': answered === false || answered === true && answerChoice !== answerChoicesArray[4] && currentQuestion.shuffledCorrectAnswer !== answerChoicesArray[4],
+                    'correct-green': answered === true && currentQuestion.shuffledCorrectAnswer === answerChoicesArray[4],
+                    'incorrect-choice': answered === true && answerChoice === answerChoicesArray[4] && answeredCorrectly === false
+        }"></Button>
+
+        <Label *ngIf="answered" class="hacky-hr" width="100%" height="3" backgroundColor="#DCDCDC" text=""></Label>
+
+        <Button *ngIf="answered" text="More Explanation..." (tap)="toggleDetailsExpanded()"
+            class="-primary more-explanation"></Button>
+
+        <Label *ngIf="answered && moreDetailsExpanded && currentQuestion.explanations[answerChoice] !== ''"
+            class="readable-p" textWrap="true"
+            text="{{currentQuestion.explanations[currentQuestion.shuffledCorrectAnswer]}} {{answerChoice !== currentQuestion.shuffledCorrectAnswer ? '&#X0D;&#X0D;' + currentQuestion.explanations[answerChoice] : '' }} &#X0D;&#X0D;">
+        </Label>
+
+        <Label *ngIf="answered && moreDetailsExpanded" textWrap="true" text="{{currentQuestion.moreExplanation}}"
+            class="readable-p">
+        </Label>
+
+        <Label width="100%" height="15" text="" *ngIf="answered && moreDetailsExpanded"></Label> <!-- Spacer -->
+
+        <Button *ngIf="answered" text="Next Question" (tap)="nextQuestion()" class="-primary"></Button>
+
+        <Label width="100%" height="15" text=""></Label> <!-- Spacer -->
+
+        <!-- <Button *ngIf="answered" text="Reset" (tap)="resetQuestion()" class="-primary"></Button> -->
+
+    </StackLayout>
 </ScrollView>

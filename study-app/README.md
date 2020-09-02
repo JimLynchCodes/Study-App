@@ -99,7 +99,6 @@ tns resources generate splashes ../artwork/app-icon/enrolled-agent-lightbulb-bra
 
 // Random Trivia App
 tns resources generate splashes ../artwork/app-icon/random-trivia/random-trivia-logo.png --background "#37B7C5"
-
 ```
 
 
