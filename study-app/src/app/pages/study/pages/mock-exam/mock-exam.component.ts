@@ -3,11 +3,10 @@ import { RadSideDrawer } from "nativescript-ui-sidedrawer";
 import * as app from "tns-core-modules/application";
 import { EventData } from "tns-core-modules/ui/page/page";
 import { RouterExtensions } from "nativescript-angular/router";
-// import { EventData } from "tns-core-modules/data/observable";
 import { ListPicker } from "tns-core-modules/ui/list-picker";
 
 @Component({
-    selector: "MockExam",
+    selector: "mock-exam",
     templateUrl: "./mock-exam.component.html",
     styleUrls: ["./mock-exam.component.scss"]
 })

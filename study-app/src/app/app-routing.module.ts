@@ -13,7 +13,8 @@ const routes: Routes = [
     { path: "ffq/:question", loadChildren: () => import("~/app/pages/study/pages/fast-feedback-question/fast-feedback-question.module").then((m) => m.FastFeedbackQuestionModule) },
     { path: "fast-feedback-options", loadChildren: () => import("~/app/pages/study/pages/fast-feedback-options/fast-feedback-options.module").then((m) => m.FastFeedbackOptionsModule) },
     { path: "mock-exam", loadChildren: () => import("~/app/pages/study/pages/mock-exam/mock-exam.module").then((m) => m.MockExamModule) },
-    { path: "meq", loadChildren: () => import("~/app/pages/study/pages/mock-exam/mock-exam-question/mock-exam-question.module").then((m) => m.MockExamQuestionModule) }
+    { path: "meq", loadChildren: () => import("~/app/pages/study/pages/mock-exam/mock-exam-question/mock-exam-question.module").then((m) => m.MockExamQuestionModule) },
+    { path: "review-answers", loadChildren: () => import("~/app/pages/study/pages/mock-exam/review-answers/review-answers.module").then((m) => m.ReviewAnswersModule) }
 ];
 
 @NgModule({

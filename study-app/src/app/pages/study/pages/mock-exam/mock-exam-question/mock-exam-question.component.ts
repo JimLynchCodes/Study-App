@@ -18,18 +18,14 @@ import { MockExamManagerService } from "./mock-exam-manager.service";
 export class MockExamQuestionComponent implements OnInit {
 
     answered: boolean = false;
-    moreDetailsExpanded: boolean = false;
-    answeredCorrectly: boolean = undefined;
 
     hoursRemaining = '00';
     minutesRemaining = '37'
     secondsRemaining = '12'
 
-    content: any;
-
     textAnswerChoices: string[] = ['', '', '', ''];
 
-    answerChoice: string = undefined
+    answerChoice: string = ''
     answerChoicesArray: string[];
 
     currentQuestion: IQuestion
@@ -57,7 +53,7 @@ export class MockExamQuestionComponent implements OnInit {
             this.minutesRemaining = minutes
             this.secondsRemaining = seconds
 
-//
+            //
             console.log(`got a new time! ${hours}:${minutes}:${seconds}`)
 
         })
@@ -95,26 +91,15 @@ export class MockExamQuestionComponent implements OnInit {
 
         console.log('answered with: ', choice);
 
-        if (!this.answered) {
+        this.answerChoice = choice
 
-            this.answerChoice = choice
+        console.log('chose it: ', this.answerChoice)
 
-            if (choice === this.currentQuestion.shuffledCorrectAnswer) {
-                this.answeredCorrectly = true
-            }
-            else {
-                this.answeredCorrectly = false
-            }
-
-            this.answered = true
-
-        }
+        this.answered = true
     }
 
     resetQuestion() {
         this.answered = false;
-        this.moreDetailsExpanded = false;
-        this.answeredCorrectly = undefined;
     }
 
     nextQuestion() {
@@ -126,8 +111,15 @@ export class MockExamQuestionComponent implements OnInit {
         })
     }
 
-    toggleDetailsExpanded() {
-        this.moreDetailsExpanded = !this.moreDetailsExpanded
+    reviewAnswersTap() {
+
+        console.log('grrrarrr')
+
+        this.routerExtensions.navigate(['/review-answers'], {
+            transition: {
+                name: "fade"
+            }
+        })
     }
 
 }

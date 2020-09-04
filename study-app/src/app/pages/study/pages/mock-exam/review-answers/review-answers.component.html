@@ -20,21 +20,27 @@
 
         <FlexLayout backgroundColor="darkgray" flexDirection="row">
 
-            <Label class="time-remaining-label"
-                text="Time Remaining - {{hoursRemaining}}:{{minutesRemaining}}:{{secondsRemaining}}"></Label>
+            <!-- <Label class="time-remaining-label"
+                text="Time Remaining - {{hoursRemaining}}:{{minutesRemaining}}:{{secondsRemaining}}"></Label> -->
 
-            <Button text="Mock Exam" textWrap="true" class="review-answers-btn" (tap)="reviewAnswersTap()"></Button>
+            <!-- <Button text="Review Answers" textWrap="true" class="review-answers-btn"></Button> -->
+
         </FlexLayout>
 
         <FlexLayout backgroundColor="lightgray">
 
-            <Label class="question-index-label" width="100%" backgroundColor="#DCDCDC"
+            <Label text="FOO"></Label>
+
+            <!-- <Label class="question-index-label" width="100%" backgroundColor="#DCDCDC"
                 text="Q {{currentQuestion.chapterIndex}}.{{currentQuestion.questionIndex}}"></Label>
 
             <Label class="page__content-placeholder question-text" width="100%" backgroundColor="#DCDCDC"
                 text="{{currentQuestion.questionText}}" textWrap="true">
             </Label>
 
+            <Label text="derp {{answered}}" class="page__content-placeholder question-text"></Label>
+            <Label text="derp {{answerChoice}}" class="page__content-placeholder question-text"></Label>
+            <Label text="derp {{answerChoicesArray[0]}}" class="page__content-placeholder question-text"></Label> -->
 
             <!-- <Label> class="page__content-placeholder question-text" text="foo" </Label> -->
             <!-- <Label> class="page__content-placeholder question-text" text="foo {{answeredChoice}}" backgroundColor="#DCDCDC" fontSize="30"</Label> -->
@@ -42,28 +48,28 @@
         </FlexLayout>
 
         <!-- *ngFor="let answerChoice in currentQuestion.shuffledAnswerChoices"  -->
-        <Button *ngIf="false" text="{{answerChoice}})" textWrap="true" class="default-button" [ngClass]="{}"></Button>
+        <!-- <Button *ngIf="false" text="{{answerChoice}})" textWrap="true" class="default-button" [ngClass]="{}"></Button> -->
 
         <!-- (tap)="onTap(answerChoice[0])" -->
 
         <!-- Button 0, 'A' Choice -->
-        <Button text="A)  {{textAnswerChoices[0]}}" (tap)="onTap(answerChoicesArray[0])" textWrap="true"
-            class="default-button -primary" [ngClass]="{'answered': answerChoice === answerChoicesArray[0]}"></Button>
+        <!-- <Button text="A)  {{textAnswerChoices[0]}}" (tap)="onTap(answerChoicesArray[0])" textWrap="true"
+            class="default-button -primary" [ngClass]="{'answered': answerChoice === answerChoicesArray[0]}"></Button> -->
 
         <!-- Button 1, 'B' Choice -->
-        <Button text="B)  {{textAnswerChoices[1]}}" (tap)="onTap(answerChoicesArray[1])" textWrap="true"
-            class="default-button -primary" [ngClass]="{'answered': answerChoice === answerChoicesArray[1]}"></Button>
+        <!-- <Button text="B)  {{textAnswerChoices[1]}}" (tap)="onTap(answerChoicesArray[1])" textWrap="true"
+            class="default-button -primary" [ngClass]="{'answered': answerChoice === answerChoicesArray[1]}"></Button> -->
 
         <!-- Button 2, 'C' Choice -->
-        <Button text="C)  {{textAnswerChoices[2]}}" (tap)="onTap(answerChoicesArray[2])" textWrap="true"
-            class="default-button -primary" [ngClass]="{'answered': answerChoice === answerChoicesArray[2]}"></Button>
+        <!-- <Button text="C)  {{textAnswerChoices[2]}}" (tap)="onTap(answerChoicesArray[2])" textWrap="true"
+            class="default-button -primary" [ngClass]="{'answered': answerChoice === answerChoicesArray[2]}"></Button> -->
 
         <!-- Button 3, 'D' Choice -->
-        <Button text="D)  {{textAnswerChoices[3]}}" (tap)="onTap(answerChoicesArray[3])" textWrap="true"
-            class="default-button -primary" [ngClass]="{'answered': answerChoice === answerChoicesArray[3]}"></Button>
+        <!-- <Button text="D)  {{textAnswerChoices[3]}}" (tap)="onTap(answerChoicesArray[3])" textWrap="true"
+            class="default-button -primary" [ngClass]="{'answered': answerChoice === answerChoicesArray[3]}"></Button> -->
 
         <!-- Button 4, 'E' Choice -->
-        <Button *ngIf="textAnswerChoices ? textAnswerChoices.length > 4 : false" text="E)  {{textAnswerChoices[4]}}"
+        <!-- <Button *ngIf="textAnswerChoices ? textAnswerChoices.length > 4 : false" text="E)  {{textAnswerChoices[4]}}"
             (tap)="onTap(answerChoicesArray[4])" textWrap="true" class="default-button -primary"
             [ngClass]="{'answered': answerChoice === answerChoicesArray[4]}"></Button>
 
@@ -71,9 +77,9 @@
 
         <Label width="100%" height="15" text="" *ngIf="answered && moreDetailsExpanded"></Label> <!-- Spacer -->
 
-        <Button *ngIf="answered" text="Next Question" (tap)="nextQuestion()" class="-primary"></Button>
+        <!-- <Button *ngIf="answered" text="Next Question" (tap)="nextQuestion()" class="-primary"></Button> -->
 
-        <Label width="100%" height="15" text=""></Label> <!-- Spacer -->
+        <!-- <Label width="100%" height="15" text=""></Label> Spacer --> -->
 
         <!-- <Button *ngIf="answered" text="Reset" (tap)="resetQuestion()" class="-primary"></Button> -->
 
