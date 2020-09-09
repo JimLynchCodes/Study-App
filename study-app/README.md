@@ -46,6 +46,7 @@ tns platform clean ios
 ```
 
 0b. Edit the ios Info.plist in App_Resources
+(Increment the verison, ensure "CFBundleName" and "CFBundleDisplayName" are what you want to be shown for your app on the iphone home screen)
 
 1. set app id in package.json
 
@@ -54,12 +55,7 @@ First, find the available provisioning ids:
 tns build ios --for-device --release --provision Ea-9-8b-profile --env.environment="enrolled-agent.dev" --env.uglify 
 ```
 
-provision ID:
-```
-
-```
-
-Then prepare the iOS app with that profile:
+Optional: you can "prepare" the iOS app if build doesn't work:
 ```
 tns prepare ios --release --for-device --provision Ea-9-8b-profile
 ```
@@ -73,7 +69,7 @@ Then build with the same provision id:
 tns build ios --release --for-device --provision Ea-9-8b-profile --env.environment="enrolled-agent.dev" --env.uglify
 ```
 
-### Regnerating Icons and Spalsh Screens
+### Regenerating Icons and Splash Screens
 
 (use a 1024 x 1024px image)
 
@@ -104,7 +100,7 @@ tns resources generate splashes ../artwork/app-icon/random-trivia/random-trivia-
 
 ### 3. Publish
 ```
-tns publish ios --ipa ./platforms/ios/build/Release-iphoneos/studyapp.ipa --appleApplicationSpecificPassword <app-specific-pwd>
+tns publish ios ______@gmail.com --ipa ./platforms/ios/build/Release-iphoneos/studyapp.ipa --appleApplicationSpecificPassword <app-specific-pwd>
 ```
 
 
