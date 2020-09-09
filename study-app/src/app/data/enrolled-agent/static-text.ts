@@ -11,5 +11,5 @@ export const appText: StaticText = {
     
     If you have any questions or feedback, please send them to: 
     
-    EAstudy1Studyapptechnologies@gmail.com`
+    studyapptechnologies@gmail.com`
 }
