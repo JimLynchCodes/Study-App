@@ -20,23 +20,35 @@
 
         <FlexLayout backgroundColor="darkgray" flexDirection="row">
 
+            <Label class="time-remaining-label"
+                text="Time Remaining - {{hoursRemaining}}:{{minutesRemaining}}:{{secondsRemaining}}"></Label>
+        </FlexLayout>
+
+        <FlexLayout backgroundColor="darkgray" flexDirection="row">
+
             <!-- <Label class="time-remaining-label"
                 text="Time Remaining - {{hoursRemaining}}:{{minutesRemaining}}:{{secondsRemaining}}"></Label> -->
 
-            <!-- <Button text="Review Answers" textWrap="true" class="review-answers-btn"></Button> -->
+            <!-- <Button  text="Review Answers" textWrap="true" class="review-answers-btn"></Button> -->
 
         </FlexLayout>
 
         <FlexLayout backgroundColor="lightgray">
 
-            <Label text="FOO"></Label>
+            <Button text="Back to the Questions" textWrap="true" class="-primary" (tap)="onBackToQuestionsBtnTap()"></Button>
+
+        </FlexLayout>
+       
+        <FlexLayout backgroundColor="lightgray">
+
+            <!-- <Label text="FOO"></Label> -->
+
+            <Label class="page__content-placeholder exam-review-header" width="100%" backgroundColor="#DCDCDC"
+                text="Exam Review" textWrap="true">
+            </Label>
 
             <!-- <Label class="question-index-label" width="100%" backgroundColor="#DCDCDC"
                 text="Q {{currentQuestion.chapterIndex}}.{{currentQuestion.questionIndex}}"></Label>
-
-            <Label class="page__content-placeholder question-text" width="100%" backgroundColor="#DCDCDC"
-                text="{{currentQuestion.questionText}}" textWrap="true">
-            </Label>
 
             <Label text="derp {{answered}}" class="page__content-placeholder question-text"></Label>
             <Label text="derp {{answerChoice}}" class="page__content-placeholder question-text"></Label>
@@ -46,6 +58,27 @@
             <!-- <Label> class="page__content-placeholder question-text" text="foo {{answeredChoice}}" backgroundColor="#DCDCDC" fontSize="30"</Label> -->
             <!-- <Label>text="bar {{answerChoicesArray[0]}}"</Label> -->
         </FlexLayout>
+
+        <FlexboxLayout justifyContent="space-around"  width="80%"
+            *ngFor="let question of questions; let i = index" class="review-answer-row">
+            <Label text="Q{{i+1}}) &nbsp; &nbsp; {{question.currentAnswer}}" width="auto"
+                textWrap="true"
+                class="review-answers-q-text"></Label>
+
+                <Button *ngIf="question.currentAnswer === '_'" text="Answer" textWrap="true" class="-primary review-page-answer-btn" width="40%" (tap)="onViewQuestionTap(question.qId)"></Button>
+
+                <Button *ngIf="question.currentAnswer !== '_'" text="Review" textWrap="true" class="-primary" width="40%" (tap)="onViewQuestionTap(question.qId)"></Button>
+
+            <!-- <Switch [checked]="chapterToggle ? chapterToggle.checked : true" row="0" col="1" class="radio-switch"
+                (checkedChange)="onCheckedChange($event.value, chapterToggle.chapter)"></Switch> -->
+        </FlexboxLayout>
+
+        <FlexLayout>
+
+            <Button text="Submit Exam" textWrap="true" class="-primary submit-exam-btn" (tap)="submitExamBtnTap()"></Button>
+
+        </FlexLayout>
+
 
         <!-- *ngFor="let answerChoice in currentQuestion.shuffledAnswerChoices"  -->
         <!-- <Button *ngIf="false" text="{{answerChoice}})" textWrap="true" class="default-button" [ngClass]="{}"></Button> -->

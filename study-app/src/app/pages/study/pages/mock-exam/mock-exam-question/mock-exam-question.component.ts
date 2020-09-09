@@ -5,9 +5,6 @@ import { RouterExtensions } from "nativescript-angular/router";
 import { ActivatedRoute, Router } from "@angular/router";
 import { QuestionGenerator } from "~/app/utils/question-generator/question-generator.service";
 import { IQuestion } from "~/app/data/_data.models/question.model";
-// import { IQuestion, AnswerChoice } from "../../../../data/_data.models/question.model";
-// import { QuestionGenerator } from "../../../../utils/question-generator/question-generator.service";
-import { environment } from "../../../../../../environments/environment"
 import { MockExamManagerService } from "./mock-exam-manager.service";
 
 @Component({
@@ -31,6 +28,7 @@ export class MockExamQuestionComponent implements OnInit {
     currentQuestion: IQuestion
 
     selectedChapters: number[]
+    currentQuestionIndex: number;
 
     constructor(
         private router: Router,
@@ -40,51 +38,41 @@ export class MockExamQuestionComponent implements OnInit {
         private mockExamService: MockExamManagerService) {
 
         console.log('loading up!')
-        console.log('MOCK EXAM LOADING UOOPP!@P#!@#! @#d', environment.apiUrl);
 
         this.router.routeReuseStrategy.shouldReuseRoute = function () {
             return false;
         }
 
-        mockExamService.startTimer();
+        if (!mockExamService.isTimerRunning)
+            mockExamService.startTimer();
+            
         mockExamService.timer.subscribe(([hours, minutes, seconds]: [string, string, string]) => {
 
             this.hoursRemaining = hours
             this.minutesRemaining = minutes
             this.secondsRemaining = seconds
 
-            //
-            console.log(`got a new time! ${hours}:${minutes}:${seconds}`)
-
         })
 
         route.params.subscribe(async args => {
+            
+            this.currentQuestionIndex = +args.questionIndex
+            
+            this.currentQuestion = mockExamService.getMockExamQuestion(this.currentQuestionIndex)
+            console.log('currentQuestion: ', this.currentQuestion)
+            
+            this.textAnswerChoices = Object.values(this.currentQuestion.shuffledAnswerChoices)
+            console.log('textAnswerChoices: ', this.textAnswerChoices)
 
-            // this.selectedChapters = args.selectedChapters
-            // this.selectedChapters = [1, 2, 3]
-
-            console.log('selectedChapters: ', this.selectedChapters)
-
-            this.currentQuestion = await questionGenerator.getQuestionFromValidChapter('1,2,3')
-            // this.currentQuestion = await questionGenerator.getQuestionFromValidChapter(args.selectedChapters)
-
-            console.log('selected q: ', this.currentQuestion)
-
-            this.textAnswerChoices = Object.values(this.currentQuestion.shuffledAnswerChoices);
             this.answerChoicesArray = Object.keys(this.currentQuestion.shuffledAnswerChoices);
-
+           
+    
         })
 
     }
 
     ngOnInit(): void {
         console.log('loading up hello2!')
-
-    }
-
-    onDrawerButtonTap(): void {
-        const sideDrawer = <RadSideDrawer>app.getRootView();
-        sideDrawer.showDrawer();
     }
 
     onTap(choice: string) {
@@ -104,22 +92,26 @@ export class MockExamQuestionComponent implements OnInit {
 
     nextQuestion() {
 
-        this.routerExtensions.navigate(['/ffq', { selectedChapters: this.selectedChapters }], {
+        this.routerExtensions.navigate(['/meq', { questionIndex: this.currentQuestionIndex + 1 }], {
             transition: {
                 name: "fade"
             }
         })
+
     }
 
     reviewAnswersTap() {
-
-        console.log('grrrarrr')
 
         this.routerExtensions.navigate(['/review-answers'], {
             transition: {
                 name: "fade"
             }
         })
+    }
+
+    onDrawerButtonTap(): void {
+        const sideDrawer = <RadSideDrawer>app.getRootView();
+        sideDrawer.showDrawer();
     }
 
 }

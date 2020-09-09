@@ -18,25 +18,20 @@ export class QuestionGenerator {
 
     questionBank
 
-    constructor(private loaderService: LoaderService) {}
+    constructor(private loaderService: LoaderService) { }
 
     ngOnInit() {
         console.log('loading?')
     }
-    
-    async getQuestionFromValidChapter(selectedChapters: string): Promise<IQuestion> {
-        
-        console.log('loading question bank... ', `../../data/${environment.theme}/question-bank`)
-    
-        if (!this.questionBank)
 
-            // this.questionBank = (await import(`../../data/${environment.theme}/question-bank`)).questionBank;
-    
-        this.questionBank = await this.loaderService.getQuestionBank();
+    async getQuestionFromValidChapter(selectedChapters: string): Promise<IQuestion> {
+
+        if (!this.questionBank)
+            this.questionBank = await this.loaderService.getQuestionBank();
 
         console.log("question 1: ", JSON.stringify(this.questionBank))
 
-        const potentialQuestion = this.getRandomQuestion();
+        const potentialQuestion = await this.getRandomQuestion();
 
         const selectedChaptersToNumbers = selectedChapters.split(',').map(a => +a)
 
@@ -51,9 +46,16 @@ export class QuestionGenerator {
 
     }
 
-    getRandomQuestion(): IQuestion {
+    async getRandomQuestion(): Promise<IQuestion> {
+
+        if (!this.questionBank)
+            this.questionBank = await this.loaderService.getQuestionBank();
+
+        console.log('bank is: ', this.questionBank)
 
         const randomIndexWithinBounds = Math.floor(Math.random() * this.questionBank.length);
+
+        console.log('getting q from bank: ', this.questionBank.length)
 
         return this.shuffleQuestionAnswers(this.questionBank[randomIndexWithinBounds]);
     }

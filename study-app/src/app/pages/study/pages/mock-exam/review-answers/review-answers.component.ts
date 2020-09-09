@@ -17,99 +17,78 @@ import { MockExamManagerService } from "../mock-exam-question/mock-exam-manager.
 })
 export class ReviewAnswersComponent implements OnInit {
 
-    // answered: boolean = false;
+    hoursRemaining = '00'
+    minutesRemaining = '37'
+    secondsRemaining = '12'
 
-    // hoursRemaining = '00';
-    // minutesRemaining = '37'
-    // secondsRemaining = '12'
-
-    // textAnswerChoices: string[] = ['', '', '', ''];
-
-    // answerChoice: string = ''
-    // answerChoicesArray: string[];
-
-    // currentQuestion: IQuestion
-
-    // selectedChapters: number[]
+    questions = [
+        {
+            currentAnswer: 'A'
+        },
+        {
+            currentAnswer: 'B'
+        },
+        {
+            currentAnswer: '_'
+        },
+        {
+            currentAnswer: '_'
+        },
+        {
+            currentAnswer: 'D'
+        },
+        {
+            currentAnswer: 'A'
+        },
+        {
+            currentAnswer: 'B'
+        }
+    ]
 
     constructor(
-        // private router: Router,
-        // private routerExtensions: RouterExtensions,
-        // private route: ActivatedRoute,
-        // private questionGenerator: QuestionGenerator,
-        // private mockExamService: MockExamManagerService) {
+        private router: Router,
+        private routerExtensions: RouterExtensions,
+        private route: ActivatedRoute,
+        private questionGenerator: QuestionGenerator,
+        private mockExamService: MockExamManagerService
+    ) {
+        this.router.routeReuseStrategy.shouldReuseRoute = function () {
+            return false;
+        }
 
-        // console.log('loading up!')
-        // console.log('MOCK EXAM LOADING UOOPP!@P#!@#! @#d', environment.apiUrl);
+        mockExamService.timer.subscribe(([hours, minutes, seconds]: [string, string, string]) => {
 
-        // this.router.routeReuseStrategy.shouldReuseRoute = function () {
-        //     return false;
-        // }
+            this.hoursRemaining = hours
+            this.minutesRemaining = minutes
+            this.secondsRemaining = seconds
+        })
 
-        // mockExamService.startTimer();
-        // mockExamService.timer.subscribe(([hours, minutes, seconds]: [string, string, string]) => {
-
-        //     this.hoursRemaining = hours
-        //     this.minutesRemaining = minutes
-        //     this.secondsRemaining = seconds
-
-        //     //
-        //     console.log(`got a new time! ${hours}:${minutes}:${seconds}`)
-
-        ) {}
-
-    //     route.params.subscribe(async args => {
-
-    //         // this.selectedChapters = args.selectedChapters
-    //         // this.selectedChapters = [1, 2, 3]
-
-    //         console.log('selectedChapters: ', this.selectedChapters)
-
-    //         this.currentQuestion = await questionGenerator.getQuestionFromValidChapter('1,2,3')
-    //         // this.currentQuestion = await questionGenerator.getQuestionFromValidChapter(args.selectedChapters)
-
-    //         console.log('selected q: ', this.currentQuestion)
-
-    //         this.textAnswerChoices = Object.values(this.currentQuestion.shuffledAnswerChoices);
-    //         this.answerChoicesArray = Object.keys(this.currentQuestion.shuffledAnswerChoices);
-
-    //     })
-
-    // }
-
-    ngOnInit(): void {
-        console.log('loading up hello2!')
+        route.params.subscribe(async args => {
+            console.log('got route args: ', args)
+        })
 
     }
 
-    // onDrawerButtonTap(): void {
-    //     const sideDrawer = <RadSideDrawer>app.getRootView();
-    //     sideDrawer.showDrawer();
-    // }
+    ngOnInit(): void {
+        console.log('loading up review answers component!')
 
-    // onTap(choice: string) {
+    }
 
-    //     console.log('answered with: ', choice);
+    onBackToQuestionsBtnTap(): void {
+        console.log('onBackToQuestionsBtnTapped')
+    }
 
-    //     this.answerChoice = choice
+    submitExamBtnTap(): void {
+        console.log('submitExamBtnTapped')
+    }
 
-    //     console.log('chose it: ', this.answerChoice)
+    onViewQuestionTap(): void {
+        console.log('onViewQuestionTap')
+    }
 
-    //     this.answered = true
-
-    // }
-
-    // resetQuestion() {
-    //     this.answered = false;
-    // }
-
-    // nextQuestion() {
-
-    //     this.routerExtensions.navigate(['/ffq', { selectedChapters: this.selectedChapters }], {
-    //         transition: {
-    //             name: "fade"
-    //         }
-    //     })
-    // }
+    onDrawerButtonTap(): void {
+        const sideDrawer = <RadSideDrawer>app.getRootView();
+        sideDrawer.showDrawer();
+    }
 
 }

@@ -8,38 +8,45 @@ import { environment } from '../../environments/environment'
 })
 export class LoaderService {
 
+    initialized = false
+
     private notes = []
     private chapters = []
     private questionBank = []
 
     async getChapters() {
-        await this.init()
+
+        if (!this.initialized)
+            await this.init()
+
         console.log('getting chapters...', this.chapters)
         return this.chapters
     }
-    
+
     async getQuestionBank() {
-        await this.init()
+        if (!this.initialized)
+            await this.init()
 
         console.log('bank is: ', this.questionBank)
         return this.questionBank
     }
-    
+
     async getNotes() {
-        
-        await this.init()
-        
+
+        if (!this.initialized)
+            await this.init()
+
         return this.notes
-        
+
     }
-    
+
     private async init() {
-        
+
         console.log('initializing...', this.notes.length, this.chapters.length)
-        if (this.notes.length === 0) {
-            
+        if (!this.initialized) {
+
             let chaptersData = (await import(`../data/${environment.theme}/chapters`));
-            
+
             this.chapters = [...chaptersData.chapters];
 
             console.log('got data ', chaptersData.chapters)
@@ -50,6 +57,8 @@ export class LoaderService {
             this.buildNotes(this.chapters, this.questionBank);
 
             console.log("theme: ", environment.theme)
+
+            this.initialized = true
         }
     }
 
@@ -59,9 +68,6 @@ export class LoaderService {
         const questionBank = [...realQuestionBank]
 
         while (chaptersData.length > 0 || questionBank.length > 0) {
-
-            // console.log('lengths: ', chaptersData.length, ' ', questionBank.length)
-            // console.log('comparing: ', chaptersData[0].index, ' ', questionBank[0].chapterIndex)
 
             if (chaptersData.length > 0 && chaptersData[0].index <= questionBank[0].chapterIndex) {
                 const nextItem = chaptersData.shift()

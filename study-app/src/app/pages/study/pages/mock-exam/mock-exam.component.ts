@@ -4,6 +4,7 @@ import * as app from "tns-core-modules/application";
 import { EventData } from "tns-core-modules/ui/page/page";
 import { RouterExtensions } from "nativescript-angular/router";
 import { ListPicker } from "tns-core-modules/ui/list-picker";
+import { MockExamManagerService } from "./mock-exam-question/mock-exam-manager.service";
 
 @Component({
     selector: "mock-exam",
@@ -12,7 +13,8 @@ import { ListPicker } from "tns-core-modules/ui/list-picker";
 })
 export class MockExamComponent implements OnInit {
 
-    constructor(private routerExtensions: RouterExtensions) {}
+    constructor(private routerExtensions: RouterExtensions,
+        private readonly mockExamManager: MockExamManagerService) { }
 
     public years: Array<number> = [1980, 1990, 2000, 2010, 2020];
     public exams: Array<string> = ['Business', 'Accounting', 'Other stuff'];
@@ -36,20 +38,26 @@ export class MockExamComponent implements OnInit {
         // Init your component properties here.
     }
 
-    onDrawerButtonTap(): void {
-        const sideDrawer = <RadSideDrawer>app.getRootView();
-        sideDrawer.showDrawer();
-    }
 
-    onTap(args: EventData) {
+    async onTap(args: EventData) {
 
-        console.log('clicked!')
+        console.log('start exam clicked!');
+        console.log(`choosing questions based on examSelected: ${this.examSelected} and time selected: ${this.timeSelected}` );        
 
-        this.routerExtensions.navigate(['/meq', { exam: this.examSelected, time: this.timeSelected }], {
+        // generate exam questions
+
+        await this.mockExamManager.generateExamQuestions(20, '1,2,3,4,5,6,7,8,9,10,11,12')
+
+        this.routerExtensions.navigate(['/meq', { questionIndex: 0 }], {
             transition: {
                 name: "fade"
             }
         })
 
+    }
+    
+    onDrawerButtonTap(): void {
+        const sideDrawer = <RadSideDrawer>app.getRootView();
+        sideDrawer.showDrawer();
     }
 }

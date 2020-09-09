@@ -30,13 +30,14 @@
     color: #1a1110;
 }
 
-.question-text {
+.exam-review-header {
     color: #1a1110;
     font-size: 27;
-    padding-top: 10;
+    padding-top: 20;
     padding-bottom: 20;
     padding-left: 20;
     padding-right: 15;
+    margin-bottom: 35;
 }
 
 .single-line {
@@ -83,4 +84,22 @@ Button {
 
 .answered {
     background-color: darkblue;
+}
+
+.review-answers-q-text {
+    font-size: 24;
+    padding: 20 15;
+    text-align: center;
+}
+
+.review-page-answer-btn {
+    background-color: rgba(98, 177, 18, 0.755);
+}
+
+.review-answer-row {
+    margin: 17 0;
+}
+
+.submit-exam-btn {
+    margin-top: 40;
 }
