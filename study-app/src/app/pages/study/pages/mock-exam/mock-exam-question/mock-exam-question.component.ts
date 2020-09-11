@@ -4,7 +4,7 @@ import * as app from "tns-core-modules/application";
 import { RouterExtensions } from "nativescript-angular/router";
 import { ActivatedRoute, Router } from "@angular/router";
 import { QuestionGenerator } from "~/app/utils/question-generator/question-generator.service";
-import { IQuestion } from "~/app/data/_data.models/question.model";
+import { IQuestion, AnswerChoice } from "~/app/data/_data.models/question.model";
 import { MockExamManagerService } from "./mock-exam-manager.service";
 
 @Component({
@@ -65,8 +65,9 @@ export class MockExamQuestionComponent implements OnInit {
             console.log('textAnswerChoices: ', this.textAnswerChoices)
 
             this.answerChoicesArray = Object.keys(this.currentQuestion.shuffledAnswerChoices);
-           
     
+            if (this.currentQuestion.currentAnswerChoice)
+                this.answerChoice = this.currentQuestion.currentAnswerChoice
         })
 
     }
@@ -84,6 +85,8 @@ export class MockExamQuestionComponent implements OnInit {
         console.log('chose it: ', this.answerChoice)
 
         this.answered = true
+
+        this.mockExamService.setAnswerChoice(this.currentQuestionIndex, choice as AnswerChoice)
     }
 
     resetQuestion() {
@@ -102,7 +105,7 @@ export class MockExamQuestionComponent implements OnInit {
 
     reviewAnswersTap() {
 
-        this.routerExtensions.navigate(['/review-answers'], {
+        this.routerExtensions.navigate(['/review-answers', { indexOfQuestionUserCameFrom: this.currentQuestionIndex }], {
             transition: {
                 name: "fade"
             }

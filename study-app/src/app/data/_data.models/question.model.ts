@@ -21,5 +21,6 @@ export interface IQuestion {
         moreExplanation: string
         shuffledAnswerChoices?: PartialRecord<AnswerChoice, string>,
         // shuffledAnswerChoices?: any,
-        shuffledCorrectAnswer?: AnswerChoice
+        shuffledCorrectAnswer?: AnswerChoice,
+        currentAnswerChoice?: AnswerChoice
 }

@@ -1,13 +1,17 @@
 import { Injectable } from "@angular/core";
 import { BehaviorSubject } from "rxjs";
-import { IQuestion } from "../../../../../data/_data.models/question.model";
+import { IQuestion, AnswerChoice } from "../../../../../data/_data.models/question.model";
 import { QuestionGenerator } from "../../../../../utils/question-generator/question-generator.service";
+import { IGrade, CorrectOrIncorrect, IGradedQuestion } from "~/app/data/_data.models/grade.model";
+
+const PASSING_CUTOFF_PERCENTAGE = 75
+
 
 @Injectable({
     providedIn: 'root'
 })
 export class MockExamManagerService {
-
+    
     private seconds: number
     private minutes: number
     private hours: number
@@ -21,6 +25,8 @@ export class MockExamManagerService {
     examQuestions: IQuestion[]
 
     examAnswers: any[]
+
+    grade: IGrade
 
     constructor(private readonly questionGenerator: QuestionGenerator) {
         this.initializeTimer();
@@ -101,13 +107,83 @@ export class MockExamManagerService {
         this.examQuestions = [];
         
         for (let i = 0; i < numberOfQuestions; i++) {
+            // this.examQuestions.push(await cloneDeep(this.questionGenerator.getRandomQuestion()))
             this.examQuestions.push(await this.questionGenerator.getRandomQuestion())
         }
 
     }
 
+    getMockExamQuestions(): IQuestion[] {
+        return this.examQuestions
+    }
+
     getMockExamQuestion(questionIndex: any): IQuestion {
         return this.examQuestions[questionIndex]
+    }
+    
+    setAnswerChoice(currentQuestionIndex: number, choice: AnswerChoice) {
+        this.examQuestions[currentQuestionIndex].currentAnswerChoice = choice
+    }
+
+    gradeExam(): IGrade {
+
+        let correctAnswers = 0
+        let totalQuestions = 0
+
+        const questionGrades: IGradedQuestion[] = this.examQuestions.map( (question: IQuestion) => {
+            totalQuestions++
+
+            const gradedQuestion: IGradedQuestion = {
+                isCorrect: false,
+                correctAnswerChoice: question.shuffledCorrectAnswer,
+                userAnswerChoice: question.currentAnswerChoice
+            }
+            
+            if (question.currentAnswerChoice === question.shuffledCorrectAnswer) {
+                correctAnswers++
+                gradedQuestion.isCorrect = true;
+            }
+
+            return gradedQuestion
+
+        })
+
+        const percentageCorrect = Math.round(100 * (correctAnswers / totalQuestions))
+
+        const gradedExam = {
+            correctAnswers,
+            totalQuestions,
+            percentageCorrect,
+            questionGrades,
+            pass: percentageCorrect > PASSING_CUTOFF_PERCENTAGE
+        }
+
+        this.grade = gradedExam
+
+        return gradedExam
+
+    }
+
+    getCurrentGrade(): IGrade {
+
+        if (!this.grade)
+            this.gradeExam()
+
+        return this.grade
+
+    }
+
+    resetExam() {
+        
+        // this.isTimerRunning = false
+    
+        // this.timerExpired.next(false)
+    
+        // this.examQuestions = []
+    
+        // this.examAnswers = []
+    
+        // this.grade = 
     }
 
 }

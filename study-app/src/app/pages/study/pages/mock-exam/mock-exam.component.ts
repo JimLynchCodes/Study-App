@@ -44,8 +44,9 @@ export class MockExamComponent implements OnInit {
         console.log('start exam clicked!');
         console.log(`choosing questions based on examSelected: ${this.examSelected} and time selected: ${this.timeSelected}` );        
 
-        // generate exam questions
+        this.mockExamManager.resetExam();
 
+        // generates 20 exam questions, randomly choosing from all 20 chapters
         await this.mockExamManager.generateExamQuestions(20, '1,2,3,4,5,6,7,8,9,10,11,12')
 
         this.routerExtensions.navigate(['/meq', { questionIndex: 0 }], {

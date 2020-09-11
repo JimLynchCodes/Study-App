@@ -47,11 +47,23 @@ Button {
     font-size: 21;
 }
 
+.question-btn {
+    text-align: left;
+}
+
 .first-button {
     margin-top: 25;
 }
 
 .hacky-hr {
     margin-top: 15;
+    margin-bottom: 15;
+}
+
+.back-to-exam-results-btn {
+    font-size: 15;
+    background-color: darkkhaki;
+    color: white;
+    max-width: 300;
     margin-bottom: 15;
 }

@@ -21,29 +21,9 @@ export class ReviewAnswersComponent implements OnInit {
     minutesRemaining = '37'
     secondsRemaining = '12'
 
-    questions = [
-        {
-            currentAnswer: 'A'
-        },
-        {
-            currentAnswer: 'B'
-        },
-        {
-            currentAnswer: '_'
-        },
-        {
-            currentAnswer: '_'
-        },
-        {
-            currentAnswer: 'D'
-        },
-        {
-            currentAnswer: 'A'
-        },
-        {
-            currentAnswer: 'B'
-        }
-    ]
+    indexOfQuestionUserCameFrom: number = 0;
+
+    questions: IQuestion[] = []
 
     constructor(
         private router: Router,
@@ -65,6 +45,8 @@ export class ReviewAnswersComponent implements OnInit {
 
         route.params.subscribe(async args => {
             console.log('got route args: ', args)
+
+            this.indexOfQuestionUserCameFrom = args.indexOfQuestionUserCameFrom
         })
 
     }
@@ -72,18 +54,51 @@ export class ReviewAnswersComponent implements OnInit {
     ngOnInit(): void {
         console.log('loading up review answers component!')
 
+        this.questions = this.mockExamService.getMockExamQuestions();
+
     }
 
     onBackToQuestionsBtnTap(): void {
         console.log('onBackToQuestionsBtnTapped')
+
+        this.routerExtensions.navigate(['/meq', { questionIndex: this.indexOfQuestionUserCameFrom }], {
+            transition: {
+                name: "fade"
+            }
+        })
     }
 
     submitExamBtnTap(): void {
         console.log('submitExamBtnTapped')
+
+        this.submitAreYouSureYes();
+
     }
 
-    onViewQuestionTap(): void {
-        console.log('onViewQuestionTap')
+    submitAreYouSureYes() {
+        
+        this.mockExamService.gradeExam();
+        
+        this.routerExtensions.navigate(['/results'], {
+            transition: {
+                name: "fade"
+            }
+        })
+
+    }
+
+    submitAreYouSureCancel() {
+
+    }
+
+    onViewQuestionTap(questionIndex: number): void {
+        console.log('onViewQuestionTap', questionIndex)
+
+        this.routerExtensions.navigate(['/meq', { questionIndex }], {
+            transition: {
+                name: "fade"
+            }
+        })
     }
 
     onDrawerButtonTap(): void {

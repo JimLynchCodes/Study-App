@@ -11,12 +11,14 @@
     -->
     <ActionItem icon="res://menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()" ios.position="left">
     </ActionItem>
-    <Label text="Fast Feedback"></Label>
+    <Label text="Review Question"></Label>
 </ActionBar>
 
 <ScrollView>
 
     <StackLayout class="page__content">
+
+        <Button text="Back To Exam Results" textWrap="true" class="back-to-exam-results-btn" (tap)="backToResultsBtn()"></Button>
 
         <FlexLayout backgroundColor="lightgray">
 
@@ -84,15 +86,17 @@
         <!-- <Label *ngIf="answered && moreDetailsExpanded && currentQuestion.explanations[answerChoice] !== ''"
             class="readable-p" textWrap="true"
             text="{{currentQuestion.explanations[currentQuestion.shuffledCorrectAnswer]}} {{answerChoice !== currentQuestion.shuffledCorrectAnswer ? '&#X0D;&#X0D;' + currentQuestion.explanations[answerChoice] : '' }} &#X0D;&#X0D;">
-        </Label> -->
+        </Label>
 
         <Label *ngIf="answered && moreDetailsExpanded" textWrap="true" text="{{currentQuestion.moreExplanation}}"
             class="readable-p">
-        </Label>
+        </Label> -->
+
+        <!-- ======================================================================= -->
 
         <Label width="100%" height="15" text="" *ngIf="answered && moreDetailsExpanded"></Label> <!-- Spacer -->
 
-        <Button *ngIf="answered" text="Next Question" (tap)="nextQuestion()" class="-primary"></Button>
+        <Button *ngIf="answered" text="Next Question" (tap)="reviewNextQ()" class="-primary"></Button>
 
         <Label width="100%" height="15" text=""></Label> <!-- Spacer -->
 

@@ -1,0 +1,62 @@
+<ActionBar>
+    <!-- 
+    Use the NavigationButton as a side-drawer button in Android
+    because ActionItems are shown on the right side of the ActionBar
+    -->
+    <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
+    <!-- 
+    Use the ActionItem for IOS with position set to left. Using the
+    NavigationButton as a side-drawer button in iOS is not possible,
+    because its function is to always navigate back in the application.
+    -->
+    <ActionItem icon="res://menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()" ios.position="left">
+    </ActionItem>
+    <Label text="Mock Exam Results"></Label>
+</ActionBar>
+
+<ScrollView>
+    
+    <StackLayout class="page__content">
+
+        <FlexLayout backgroundColor="lightgray">
+            <Label class="page__content-placeholder exam-review-header" width="100%" backgroundColor="#DCDCDC"
+                text="Results For ___ Exam" textWrap="true">
+            </Label>
+        </FlexLayout>
+        
+        <FlexLayout>
+            <Label *ngIf="grade.pass === true" class="page__content-placeholder exam-review-header" width="100%" backgroundColor="#DCDCDC"
+                text="You passed!!" textWrap="true">
+            </Label>
+            <Label *ngIf="grade.pass === false" class="page__content-placeholder exam-review-header" width="100%" backgroundColor="#DCDCDC"
+                text="Better luck next time!" textWrap="true">
+            </Label>
+        </FlexLayout>
+        
+        <FlexLayout>
+            <Label class="page__content-placeholder exam-review-header" width="100%" backgroundColor="#DCDCDC"
+                text="Percentage Correct: {{grade.percentageCorrect}}%" textWrap="true">
+            </Label>
+        </FlexLayout>
+        
+        <FlexLayout>
+            <Label class="page__content-placeholder exam-review-header" width="100%" backgroundColor="#DCDCDC"
+                text="You correctly answered {{grade.correctAnswers}} of {{grade.totalQuestions}} questions." textWrap="true">
+            </Label>
+        </FlexLayout>
+        
+        <FlexLayout *ngFor="let questionGrade of grade.questionGrades; let i = index;" width="100%">
+            <Label class="page__content-placeholder" width="100%" backgroundColor="#DCDCDC"
+                text="Q {{i}}) - {{questionGrade.isCorrect === true ? ' ✓' : '  [X]'}}" textWrap="true">
+            </Label>
+            
+            <Label class="page__content-placeholder" width="100%" backgroundColor="#DCDCDC"
+                text="Answer: {{questionGrade.userAnswerChoice ? questionGrade.userAnswerChoice : '_'}}, Correct Answer: {{questionGrade.correctAnswerChoice}}" textWrap="true">
+            </Label>
+
+            <Button text="Review Q" textWrap="true" class="review-answers-btn" (tap)="reviewQ(i)"></Button>
+
+        </FlexLayout>
+
+    </StackLayout>
+</ScrollView>

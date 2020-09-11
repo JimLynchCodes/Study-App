@@ -19,102 +19,37 @@
     <StackLayout class="page__content">
 
         <FlexLayout backgroundColor="darkgray" flexDirection="row">
-
             <Label class="time-remaining-label"
                 text="Time Remaining - {{hoursRemaining}}:{{minutesRemaining}}:{{secondsRemaining}}"></Label>
         </FlexLayout>
 
-        <FlexLayout backgroundColor="darkgray" flexDirection="row">
-
-            <!-- <Label class="time-remaining-label"
-                text="Time Remaining - {{hoursRemaining}}:{{minutesRemaining}}:{{secondsRemaining}}"></Label> -->
-
-            <!-- <Button  text="Review Answers" textWrap="true" class="review-answers-btn"></Button> -->
-
+        <FlexLayout backgroundColor="lightgray">
+            <Button text="Back to the Questions" textWrap="true" class="-primary"
+                (tap)="onBackToQuestionsBtnTap()"></Button>
         </FlexLayout>
 
         <FlexLayout backgroundColor="lightgray">
-
-            <Button text="Back to the Questions" textWrap="true" class="-primary" (tap)="onBackToQuestionsBtnTap()"></Button>
-
-        </FlexLayout>
-       
-        <FlexLayout backgroundColor="lightgray">
-
-            <!-- <Label text="FOO"></Label> -->
-
             <Label class="page__content-placeholder exam-review-header" width="100%" backgroundColor="#DCDCDC"
                 text="Exam Review" textWrap="true">
             </Label>
-
-            <!-- <Label class="question-index-label" width="100%" backgroundColor="#DCDCDC"
-                text="Q {{currentQuestion.chapterIndex}}.{{currentQuestion.questionIndex}}"></Label>
-
-            <Label text="derp {{answered}}" class="page__content-placeholder question-text"></Label>
-            <Label text="derp {{answerChoice}}" class="page__content-placeholder question-text"></Label>
-            <Label text="derp {{answerChoicesArray[0]}}" class="page__content-placeholder question-text"></Label> -->
-
-            <!-- <Label> class="page__content-placeholder question-text" text="foo" </Label> -->
-            <!-- <Label> class="page__content-placeholder question-text" text="foo {{answeredChoice}}" backgroundColor="#DCDCDC" fontSize="30"</Label> -->
-            <!-- <Label>text="bar {{answerChoicesArray[0]}}"</Label> -->
         </FlexLayout>
 
-        <FlexboxLayout justifyContent="space-around"  width="80%"
-            *ngFor="let question of questions; let i = index" class="review-answer-row">
-            <Label text="Q{{i+1}}) &nbsp; &nbsp; {{question.currentAnswer}}" width="auto"
-                textWrap="true"
+        <FlexboxLayout justifyContent="space-around" width="80%" *ngFor="let question of questions; let i = index;"
+            class="review-answer-row">
+            <Label text="Q{{i+1}}) &nbsp; &nbsp; {{question.currentAnswerChoice || '_'}}" width="auto" textWrap="true"
                 class="review-answers-q-text"></Label>
 
-                <Button *ngIf="question.currentAnswer === '_'" text="Answer" textWrap="true" class="-primary review-page-answer-btn" width="40%" (tap)="onViewQuestionTap(question.qId)"></Button>
+            <Button *ngIf="!question.currentAnswerChoice" text="Answer" textWrap="true"
+                class="-primary review-page-answer-btn" width="40%" (tap)="onViewQuestionTap(i)"></Button>
 
-                <Button *ngIf="question.currentAnswer !== '_'" text="Review" textWrap="true" class="-primary" width="40%" (tap)="onViewQuestionTap(question.qId)"></Button>
-
-            <!-- <Switch [checked]="chapterToggle ? chapterToggle.checked : true" row="0" col="1" class="radio-switch"
-                (checkedChange)="onCheckedChange($event.value, chapterToggle.chapter)"></Switch> -->
+            <Button *ngIf="question.currentAnswerChoice" text="Review" textWrap="true" class="-primary" width="40%"
+                (tap)="onViewQuestionTap(i)"></Button>
         </FlexboxLayout>
 
         <FlexLayout>
-
-            <Button text="Submit Exam" textWrap="true" class="-primary submit-exam-btn" (tap)="submitExamBtnTap()"></Button>
-
+            <Button text="Submit Exam" textWrap="true" class="-primary submit-exam-btn"
+                (tap)="submitExamBtnTap()"></Button>
         </FlexLayout>
-
-
-        <!-- *ngFor="let answerChoice in currentQuestion.shuffledAnswerChoices"  -->
-        <!-- <Button *ngIf="false" text="{{answerChoice}})" textWrap="true" class="default-button" [ngClass]="{}"></Button> -->
-
-        <!-- (tap)="onTap(answerChoice[0])" -->
-
-        <!-- Button 0, 'A' Choice -->
-        <!-- <Button text="A)  {{textAnswerChoices[0]}}" (tap)="onTap(answerChoicesArray[0])" textWrap="true"
-            class="default-button -primary" [ngClass]="{'answered': answerChoice === answerChoicesArray[0]}"></Button> -->
-
-        <!-- Button 1, 'B' Choice -->
-        <!-- <Button text="B)  {{textAnswerChoices[1]}}" (tap)="onTap(answerChoicesArray[1])" textWrap="true"
-            class="default-button -primary" [ngClass]="{'answered': answerChoice === answerChoicesArray[1]}"></Button> -->
-
-        <!-- Button 2, 'C' Choice -->
-        <!-- <Button text="C)  {{textAnswerChoices[2]}}" (tap)="onTap(answerChoicesArray[2])" textWrap="true"
-            class="default-button -primary" [ngClass]="{'answered': answerChoice === answerChoicesArray[2]}"></Button> -->
-
-        <!-- Button 3, 'D' Choice -->
-        <!-- <Button text="D)  {{textAnswerChoices[3]}}" (tap)="onTap(answerChoicesArray[3])" textWrap="true"
-            class="default-button -primary" [ngClass]="{'answered': answerChoice === answerChoicesArray[3]}"></Button> -->
-
-        <!-- Button 4, 'E' Choice -->
-        <!-- <Button *ngIf="textAnswerChoices ? textAnswerChoices.length > 4 : false" text="E)  {{textAnswerChoices[4]}}"
-            (tap)="onTap(answerChoicesArray[4])" textWrap="true" class="default-button -primary"
-            [ngClass]="{'answered': answerChoice === answerChoicesArray[4]}"></Button>
-
-        <Label *ngIf="answered" class="hacky-hr" width="100%" height="3" backgroundColor="#DCDCDC" text=""></Label>
-
-        <Label width="100%" height="15" text="" *ngIf="answered && moreDetailsExpanded"></Label> <!-- Spacer -->
-
-        <!-- <Button *ngIf="answered" text="Next Question" (tap)="nextQuestion()" class="-primary"></Button> -->
-
-        <!-- <Label width="100%" height="15" text=""></Label> Spacer --> -->
-
-        <!-- <Button *ngIf="answered" text="Reset" (tap)="resetQuestion()" class="-primary"></Button> -->
 
     </StackLayout>
 </ScrollView>
