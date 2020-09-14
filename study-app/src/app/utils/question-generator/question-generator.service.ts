@@ -57,7 +57,10 @@ export class QuestionGenerator {
 
         console.log('getting q from bank: ', this.questionBank.length)
 
-        return this.shuffleQuestionAnswers(this.questionBank[randomIndexWithinBounds]);
+        return {
+            ...this.shuffleQuestionAnswers(this.questionBank[randomIndexWithinBounds]),
+            currentAnswerChoice: null
+        }
     }
 
     private shuffleQuestionAnswers(question: IQuestion): IQuestion {

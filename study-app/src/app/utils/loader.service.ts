@@ -67,6 +67,7 @@ export class LoaderService {
         const chaptersData = [...realChaptersData]
         const questionBank = [...realQuestionBank]
 
+        console.log('question bank length: ', questionBank.length)
         while (chaptersData.length > 0 || questionBank.length > 0) {
 
             if (chaptersData.length > 0 && chaptersData[0].index <= questionBank[0].chapterIndex) {

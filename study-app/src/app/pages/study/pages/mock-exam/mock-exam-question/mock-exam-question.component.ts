@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewContainerRef, ElementRef, ViewChild } from "@angular/core";
 import { RadSideDrawer } from "nativescript-ui-sidedrawer";
 import * as app from "tns-core-modules/application";
 import { RouterExtensions } from "nativescript-angular/router";
@@ -6,6 +6,8 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { QuestionGenerator } from "~/app/utils/question-generator/question-generator.service";
 import { IQuestion, AnswerChoice } from "~/app/data/_data.models/question.model";
 import { MockExamManagerService } from "./mock-exam-manager.service";
+import { ModalDialogOptions, ModalDialogService } from "nativescript-angular/common";
+import { TimesUpModalComponent } from "../times-up.modal";
 
 @Component({
     selector: "FeaturedQuestion",
@@ -30,12 +32,16 @@ export class MockExamQuestionComponent implements OnInit {
     selectedChapters: number[]
     currentQuestionIndex: number;
 
+    @ViewChild('scrollablePage', {static: false}) private scrollablePage: ElementRef;
+
     constructor(
         private router: Router,
         private routerExtensions: RouterExtensions,
         private route: ActivatedRoute,
         private questionGenerator: QuestionGenerator,
-        private mockExamService: MockExamManagerService) {
+        private mockExamService: MockExamManagerService,
+        private modalService: ModalDialogService,
+        private viewContainerRef: ViewContainerRef) {
 
         console.log('loading up!')
 
@@ -45,7 +51,7 @@ export class MockExamQuestionComponent implements OnInit {
 
         if (!mockExamService.isTimerRunning)
             mockExamService.startTimer();
-            
+
         mockExamService.timer.subscribe(([hours, minutes, seconds]: [string, string, string]) => {
 
             this.hoursRemaining = hours
@@ -55,19 +61,49 @@ export class MockExamQuestionComponent implements OnInit {
         })
 
         route.params.subscribe(async args => {
-            
+
             this.currentQuestionIndex = +args.questionIndex
-            
+
             this.currentQuestion = mockExamService.getMockExamQuestion(this.currentQuestionIndex)
             console.log('currentQuestion: ', this.currentQuestion)
-            
+
             this.textAnswerChoices = Object.values(this.currentQuestion.shuffledAnswerChoices)
             console.log('textAnswerChoices: ', this.textAnswerChoices)
 
             this.answerChoicesArray = Object.keys(this.currentQuestion.shuffledAnswerChoices);
-    
-            if (this.currentQuestion.currentAnswerChoice)
+
+            if (this.currentQuestion.currentAnswerChoice) {
                 this.answerChoice = this.currentQuestion.currentAnswerChoice
+                this.answered = true;
+            }
+        })
+
+        mockExamService.timerExpired.subscribe(isExpired => {
+
+            console.log('timer expired: ', isExpired);
+
+            if (isExpired) {
+                const options: ModalDialogOptions = {
+                    viewContainerRef: this.viewContainerRef,
+                    fullscreen: false,
+                    context: 'foo',
+                };
+
+                this.modalService.showModal(TimesUpModalComponent, options)
+                    .then(() => {
+                        console.log('times up, going to results')
+
+                        setTimeout(() => {
+
+                            this.routerExtensions.navigate(['/results'], {
+                                transition: {
+                                    name: "fade"
+                                }
+                            })
+
+                        }, 300)
+                    })
+            }
         })
 
     }
@@ -87,6 +123,11 @@ export class MockExamQuestionComponent implements OnInit {
         this.answered = true
 
         this.mockExamService.setAnswerChoice(this.currentQuestionIndex, choice as AnswerChoice)
+    
+        setTimeout(() => {
+            const scrollableHeight = this.scrollablePage.nativeElement.scrollableHeight;
+            this.scrollablePage.nativeElement.scrollToVerticalOffset(scrollableHeight, true)
+        }, 300);
     }
 
     resetQuestion() {
@@ -95,12 +136,26 @@ export class MockExamQuestionComponent implements OnInit {
 
     nextQuestion() {
 
-        this.routerExtensions.navigate(['/meq', { questionIndex: this.currentQuestionIndex + 1 }], {
-            transition: {
-                name: "fade"
-            }
-        })
+        const totalNumberOfQuestions = this.mockExamService.getMockExamQuestions().length
 
+        if (this.currentQuestionIndex === totalNumberOfQuestions - 1) {
+            console.log('on the last question!')
+
+            this.routerExtensions.navigate(['/review-answers', { indexOfQuestionUserCameFrom: this.currentQuestionIndex + 1 }], {
+                transition: {
+                    name: "fade"
+                }
+            })
+        }
+        else {
+
+            this.routerExtensions.navigate(['/meq', { questionIndex: this.currentQuestionIndex + 1 }], {
+                transition: {
+                    name: "fade"
+                }
+            })
+
+        }
     }
 
     reviewAnswersTap() {

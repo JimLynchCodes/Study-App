@@ -14,7 +14,7 @@
     <Label text="Fast Feedback"></Label>
 </ActionBar>
 
-<ScrollView>
+<ScrollView #scrollablePage>
 
     <StackLayout class="page__content">
 
@@ -43,7 +43,7 @@
                 }"></Button>
 
         <!-- Button 1, 'B' Choice -->
-        <Button text="B)  {{textAnswerChoices[1]}}" (tap)="onTap(answerChoicesArray[1])" textWrap="true"
+        <Button *ngIf="textAnswerChoices.length > 1" text="B)  {{textAnswerChoices[1]}}" (tap)="onTap(answerChoicesArray[1])" textWrap="true"
             class="default-button question-btn" [ngClass]="{
                     '-primary': answered === false || answered === true && answerChoice !== answerChoicesArray[1] && currentQuestion.shuffledCorrectAnswer !== answerChoicesArray[1],
                     'correct-green': answered === true && currentQuestion.shuffledCorrectAnswer === answerChoicesArray[1],
@@ -51,7 +51,7 @@
                 }"></Button>
 
         <!-- Button 2, 'C' Choice -->
-        <Button text="C)  {{textAnswerChoices[2]}}" (tap)="onTap(answerChoicesArray[2])" textWrap="true"
+        <Button *ngIf="textAnswerChoices.length > 2" text="C)  {{textAnswerChoices[2]}}" (tap)="onTap(answerChoicesArray[2])" textWrap="true"
             class="default-button question-btn" [ngClass]="{
                     '-primary': answered === false || answered === true && answerChoice !== answerChoicesArray[2] && currentQuestion.shuffledCorrectAnswer !== answerChoicesArray[2],
                     'correct-green': answered === true && currentQuestion.shuffledCorrectAnswer === answerChoicesArray[2],
@@ -59,7 +59,7 @@
                 }"></Button>
 
         <!-- Button 3, 'D' Choice -->
-        <Button text="D)  {{textAnswerChoices[3]}}" (tap)="onTap(answerChoicesArray[3])" textWrap="true"
+        <Button *ngIf="textAnswerChoices.length > 3" text="D)  {{textAnswerChoices[3]}}" (tap)="onTap(answerChoicesArray[3])" textWrap="true"
             class="default-button question-btn" [ngClass]="{
                     '-primary': answered === false || answered === true && answerChoice !== answerChoicesArray[3] && currentQuestion.shuffledCorrectAnswer !== answerChoicesArray[3],
                     'correct-green': answered === true && currentQuestion.shuffledCorrectAnswer === answerChoicesArray[3],
@@ -67,7 +67,7 @@
         }"></Button>
 
         <!-- Button 4, 'E' Choice -->
-        <Button *ngIf="textAnswerChoices ? textAnswerChoices.length > 4 : false" text="E)  {{textAnswerChoices[4]}}"
+        <Button *ngIf="textAnswerChoices.length > 4" text="E)  {{textAnswerChoices[4]}}"
             (tap)="onTap(answerChoicesArray[4])" textWrap="true" class="default-button question-btn" [ngClass]="{
                     '-primary': answered === false || answered === true && answerChoice !== answerChoicesArray[4] && currentQuestion.shuffledCorrectAnswer !== answerChoicesArray[4],
                     'correct-green': answered === true && currentQuestion.shuffledCorrectAnswer === answerChoicesArray[4],

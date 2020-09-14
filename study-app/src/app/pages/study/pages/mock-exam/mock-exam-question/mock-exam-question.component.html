@@ -14,7 +14,7 @@
     <Label text="Mock Exam"></Label>
 </ActionBar>
 
-<ScrollView>
+<ScrollView #scrollablePage>
 
     <StackLayout class="page__content">
 
@@ -51,19 +51,19 @@
             class="default-button -primary question-btn" [ngClass]="{'answered': answerChoice === answerChoicesArray[0]}"></Button>
 
         <!-- Button 1, 'B' Choice -->
-        <Button text="B)  {{textAnswerChoices[1]}}" (tap)="onTap(answerChoicesArray[1])" textWrap="true"
+        <Button *ngIf="textAnswerChoices.length > 1" text="B)  {{textAnswerChoices[1]}}" (tap)="onTap(answerChoicesArray[1])" textWrap="true"
             class="default-button -primary question-btn" [ngClass]="{'answered': answerChoice === answerChoicesArray[1]}"></Button>
 
         <!-- Button 2, 'C' Choice -->
-        <Button text="C)  {{textAnswerChoices[2]}}" (tap)="onTap(answerChoicesArray[2])" textWrap="true"
+        <Button *ngIf="textAnswerChoices.length > 2" text="C)  {{textAnswerChoices[2]}}" (tap)="onTap(answerChoicesArray[2])" textWrap="true"
             class="default-button -primary question-btn" [ngClass]="{'answered': answerChoice === answerChoicesArray[2]}"></Button>
 
         <!-- Button 3, 'D' Choice -->
-        <Button text="D)  {{textAnswerChoices[3]}}" (tap)="onTap(answerChoicesArray[3])" textWrap="true"
+        <Button *ngIf="textAnswerChoices.length > 3" text="D)  {{textAnswerChoices[3]}}" (tap)="onTap(answerChoicesArray[3])" textWrap="true"
             class="default-button -primary question-btn" [ngClass]="{'answered': answerChoice === answerChoicesArray[3]}"></Button>
 
         <!-- Button 4, 'E' Choice -->
-        <Button *ngIf="textAnswerChoices ? textAnswerChoices.length > 4 : false" text="E)  {{textAnswerChoices[4]}}"
+        <Button *ngIf="textAnswerChoices.length > 4" text="E)  {{textAnswerChoices[4]}}"
             (tap)="onTap(answerChoicesArray[4])" textWrap="true" class="default-button -primary question-btn"
             [ngClass]="{'answered': answerChoice === answerChoicesArray[4]}"></Button>
 

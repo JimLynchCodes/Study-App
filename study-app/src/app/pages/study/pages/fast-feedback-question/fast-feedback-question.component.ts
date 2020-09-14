@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewChild, ElementRef } from "@angular/core";
 import { RadSideDrawer } from "nativescript-ui-sidedrawer";
 import * as app from "tns-core-modules/application";
 import { RouterExtensions } from "nativescript-angular/router";
@@ -29,11 +29,14 @@ export class FastFeedbackQuestionComponent implements OnInit {
 
     selectedChapters: number[]
 
+    @ViewChild('scrollablePage', {static: false}) private scrollablePage: ElementRef;
+    
     constructor(
         private router: Router,
         private routerExtensions: RouterExtensions,
         private route: ActivatedRoute,
         private questionGenerator: QuestionGenerator) {
+
 
             console.log('loading up!')
             console.log('ffq sees env: ', environment.apiUrl);
@@ -85,6 +88,11 @@ export class FastFeedbackQuestionComponent implements OnInit {
             }
 
             this.answered = true
+
+            setTimeout(() => {
+                const scrollableHeight = this.scrollablePage.nativeElement.scrollableHeight;
+                this.scrollablePage.nativeElement.scrollToVerticalOffset(scrollableHeight, true)
+            }, 300);
 
         }
     }

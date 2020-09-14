@@ -16,9 +16,9 @@ Start in dev mode (real device via preview app):
 tns preview
 ```
 
-Start in dev mode (ios simulator):
+Start in dev mode (default ios simulator):
 ```
-tns run ios tns run ios --env.environment="sat.dev"
+tns run ios --env.environment="sat.dev"
 
 tns run ios --env.environment="enrolled-agent.dev"
 
@@ -27,9 +27,16 @@ tns run ios --env.environment="enrolled-agent.prod"
 tns run ios --env.environment="random-trivia.dev"
 ```
 
-Start with different environment (defaults to enrolled agent app)
-```
+_To use a specific iOS device simulator_
 
+To find available devices:
+- Open XCode
+- Go to Window -> Devices and Simulators
+- Click Simulators
+- Copy the identifier of the device you'd like to use.
+- Then do "tns run" specifying this device
+```
+tns run ios --device="53958EA9-A127-4BF9-A319-747D32FD29A1"
 ```
 
 
@@ -52,7 +59,7 @@ tns platform clean ios
 
 First, find the available provisioning ids:
 ```
-tns build ios --for-device --release --provision Ea-9-8b-profile --env.environment="enrolled-agent.dev" --env.uglify 
+tns build ios --for-device --release --provision
 ```
 
 Optional: you can "prepare" the iOS app if build doesn't work:

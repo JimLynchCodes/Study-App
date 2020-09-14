@@ -6,6 +6,8 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { QuestionGenerator } from "./utils/question-generator/question-generator.service";
 import { SettingsModalComponent } from "./pages/settings/modal/settings.modal";
+import { AreYouSureExamSubmitModalComponent } from "./pages/study/pages/mock-exam/review-answers/are-you-sure-exam-submit.modal";
+import { TimesUpModalComponent } from "./pages/study/pages/mock-exam/times-up.modal";
 
 @NgModule({
     bootstrap: [
@@ -18,7 +20,9 @@ import { SettingsModalComponent } from "./pages/settings/modal/settings.modal";
     ],
     declarations: [
         AppComponent,
-        SettingsModalComponent
+        SettingsModalComponent,
+        AreYouSureExamSubmitModalComponent,
+        TimesUpModalComponent
     ],
     providers: [
         QuestionGenerator
@@ -27,7 +31,9 @@ import { SettingsModalComponent } from "./pages/settings/modal/settings.modal";
         NO_ERRORS_SCHEMA
     ],
     entryComponents: [
-        SettingsModalComponent
+        SettingsModalComponent,
+        AreYouSureExamSubmitModalComponent,
+        TimesUpModalComponent
     ]
 })
 export class AppModule { }

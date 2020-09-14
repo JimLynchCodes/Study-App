@@ -20,7 +20,7 @@
 
         <FlexLayout backgroundColor="lightgray">
             <Label class="page__content-placeholder exam-review-header" width="100%" backgroundColor="#DCDCDC"
-                text="Results For ___ Exam" textWrap="true">
+                text="Results For {{currentEaExam}} Exam" textWrap="true">
             </Label>
         </FlexLayout>
         
@@ -46,15 +46,15 @@
         </FlexLayout>
         
         <FlexLayout *ngFor="let questionGrade of grade.questionGrades; let i = index;" width="100%">
-            <Label class="page__content-placeholder" width="100%" backgroundColor="#DCDCDC"
-                text="Q {{i}}) - {{questionGrade.isCorrect === true ? ' ✓' : '  [X]'}}" textWrap="true">
+            <Label class="page__content-placeholder q-result-label" width="100%" backgroundColor="#DCDCDC"
+                text="Q)  {{i+1}}  - {{questionGrade.isCorrect === true ? '  ✓' : '  [X]'}}" textWrap="true">
             </Label>
             
-            <Label class="page__content-placeholder" width="100%" backgroundColor="#DCDCDC"
-                text="Answer: {{questionGrade.userAnswerChoice ? questionGrade.userAnswerChoice : '_'}}, Correct Answer: {{questionGrade.correctAnswerChoice}}" textWrap="true">
+            <Label class="page__content-placeholder q-result-label" width="100%" backgroundColor="#DCDCDC"
+                text="Your Answer:  {{questionGrade.userAnswerChoice ? questionGrade.userAnswerChoice : '_'}}    Correct: {{questionGrade.correctAnswerChoice}}" textWrap="true">
             </Label>
 
-            <Button text="Review Q" textWrap="true" class="review-answers-btn" (tap)="reviewQ(i)"></Button>
+            <Button text="Review Q) {{i+1}}" textWrap="true" class="review-answers-btn" (tap)="reviewQ(i)"></Button>
 
         </FlexLayout>
 

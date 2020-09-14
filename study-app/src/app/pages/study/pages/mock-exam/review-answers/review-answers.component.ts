@@ -1,19 +1,21 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewContainerRef } from "@angular/core";
 import { RadSideDrawer } from "nativescript-ui-sidedrawer";
 import * as app from "tns-core-modules/application";
 import { RouterExtensions } from "nativescript-angular/router";
 import { ActivatedRoute, Router } from "@angular/router";
 import { QuestionGenerator } from "~/app/utils/question-generator/question-generator.service";
 import { IQuestion } from "~/app/data/_data.models/question.model";
-// import { IQuestion, AnswerChoice } from "../../../../data/_data.models/question.model";
-// import { QuestionGenerator } from "../../../../utils/question-generator/question-generator.service";
 import { environment } from "../../../../../../environments/environment"
 import { MockExamManagerService } from "../mock-exam-question/mock-exam-manager.service";
+import { ModalDialogService, ModalDialogOptions, ModalDialogParams } from "nativescript-angular/common";
+import { AreYouSureExamSubmitModalComponent } from "./are-you-sure-exam-submit.modal";
+import { TimesUpModalComponent } from "../times-up.modal";
 
 @Component({
     selector: "review-answers",
     templateUrl: "./review-answers.component.html",
-    styleUrls: ["./review-answers.component.scss"]
+    styleUrls: ["./review-answers.component.scss"],
+    providers: [ModalDialogService]
 })
 export class ReviewAnswersComponent implements OnInit {
 
@@ -30,7 +32,9 @@ export class ReviewAnswersComponent implements OnInit {
         private routerExtensions: RouterExtensions,
         private route: ActivatedRoute,
         private questionGenerator: QuestionGenerator,
-        private mockExamService: MockExamManagerService
+        private mockExamService: MockExamManagerService,
+        private modalService: ModalDialogService,
+        private viewContainerRef: ViewContainerRef
     ) {
         this.router.routeReuseStrategy.shouldReuseRoute = function () {
             return false;
@@ -47,6 +51,34 @@ export class ReviewAnswersComponent implements OnInit {
             console.log('got route args: ', args)
 
             this.indexOfQuestionUserCameFrom = args.indexOfQuestionUserCameFrom
+        })
+
+        mockExamService.timerExpired.subscribe(isExpired => {
+
+            console.log('timer expired: ', isExpired);
+
+            if (isExpired) {
+                const options: ModalDialogOptions = {
+                    viewContainerRef: this.viewContainerRef,
+                    fullscreen: false,
+                    context: 'foo',
+                };
+
+                this.modalService.showModal(TimesUpModalComponent, options)
+                    .then((confirmSubmit: boolean) => {
+
+                        console.log('times up, going to results')
+                        if (confirmSubmit) {
+
+                            this.routerExtensions.navigate(['/results'], {
+                                transition: {
+                                    name: "fade"
+                                }
+                            })
+
+                        }
+                    });
+            }
         })
 
     }
@@ -71,19 +103,31 @@ export class ReviewAnswersComponent implements OnInit {
     submitExamBtnTap(): void {
         console.log('submitExamBtnTapped')
 
-        this.submitAreYouSureYes();
+        const options: ModalDialogOptions = {
+            viewContainerRef: this.viewContainerRef,
+            fullscreen: false,
+            context: 'foo',
+        };
+
+        this.modalService.showModal(AreYouSureExamSubmitModalComponent, options)
+            .then((confirmSubmit: boolean) => {
+                if (confirmSubmit)
+                    this.submitAreYouSureYes();
+            });
 
     }
 
     submitAreYouSureYes() {
-        
+
         this.mockExamService.gradeExam();
-        
-        this.routerExtensions.navigate(['/results'], {
-            transition: {
-                name: "fade"
-            }
-        })
+
+        setTimeout(() => {
+            this.routerExtensions.navigate(['/results'], {
+                transition: {
+                    name: "fade"
+                }
+            })
+        }, 300);
 
     }
 

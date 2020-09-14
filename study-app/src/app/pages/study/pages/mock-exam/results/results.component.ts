@@ -10,6 +10,7 @@ import { IQuestion } from "~/app/data/_data.models/question.model";
 import { environment } from "../../../../../../environments/environment"
 import { MockExamManagerService } from "../mock-exam-question/mock-exam-manager.service";
 import { IGrade } from "~/app/data/_data.models/grade.model";
+import { EaExam } from "../ea-exam.model";
 
 @Component({
     selector: "results",
@@ -19,6 +20,7 @@ import { IGrade } from "~/app/data/_data.models/grade.model";
 export class ResultsComponent implements OnInit {
 
     grade: IGrade
+    currentEaExam: EaExam;
 
     constructor(private router: Router,
         private routerExtensions: RouterExtensions,
@@ -28,6 +30,7 @@ export class ResultsComponent implements OnInit {
         console.log('loading up review answers component!')
 
         this.grade = this.mockExamService.getCurrentGrade();
+        this.currentEaExam = this.mockExamService.getCurrentExam();
 
     }
 

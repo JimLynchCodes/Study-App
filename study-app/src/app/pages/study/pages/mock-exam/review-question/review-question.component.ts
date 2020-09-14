@@ -4,7 +4,6 @@ import * as app from "tns-core-modules/application";
 import { RouterExtensions } from "nativescript-angular/router";
 import { ActivatedRoute, Router } from "@angular/router";
 import { IQuestion } from "../../../../../data/_data.models/question.model";
-import { QuestionGenerator } from "../../../../../utils/question-generator/question-generator.service";
 import { environment } from "../../../../../../environments/environment"
 import { MockExamManagerService } from "../mock-exam-question/mock-exam-manager.service";
 
@@ -35,7 +34,6 @@ export class ReviewQuestionComponent implements OnInit {
         private router: Router,
         private routerExtensions: RouterExtensions,
         private route: ActivatedRoute,
-        private questionGenerator: QuestionGenerator,
         private mockExamService: MockExamManagerService) {
 
         console.log('loading up!')
@@ -47,13 +45,10 @@ export class ReviewQuestionComponent implements OnInit {
 
         route.params.subscribe(async args => {
 
-            // this.selectedChapters = args.selectedChapters
-
             console.log('received question index: ', args.questionIndex)
 
             this.examQuestionIndex = +args.questionIndex
-            // this.currentQuestion = await questionGenerator.getQuestionFromValidChapter(args.selectedChapters)
-
+   
             this.currentQuestion = this.mockExamService.getMockExamQuestion(args.questionIndex)
 
             console.log('selected q: ', this.currentQuestion)
@@ -77,8 +72,7 @@ export class ReviewQuestionComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        console.log('loading up hello2!')
-
+        console.log('loading up review question component!')
     }
 
     onDrawerButtonTap(): void {
@@ -87,13 +81,7 @@ export class ReviewQuestionComponent implements OnInit {
     }
 
     onTap(choice: string) {
-
-        console.log('answered with: ', choice);
-
-        // if (!this.answered) {
-
-
-        // }
+        console.log('clicked answer: ', choice);
     }
 
     resetQuestion() {

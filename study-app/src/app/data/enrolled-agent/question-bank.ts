@@ -2,9 +2,25 @@ import { IQuestion, AnswerChoice } from "../_data.models/question.model";
 
 // TEST / DEV Questions
 
-// export const questionBank: IQuestion[] = [
-//
-// ]
+export const questionBank2: IQuestion[] = [
+    {
+        chapterIndex: 1,
+        questionIndex: 7,
+        qId: `q3-7`,
+        tags: [],
+        questionText: 'Generally, a taxpayer must depreciate MACRS (Modified Accelerated Cost Recovery System) property that was acquired in a like-kind exchange of other MACRS property over the remaining period of the exchanged property, and continue to use the same depreciation method.',
+        answerChoices: {
+            [AnswerChoice.A]: 'True',
+            [AnswerChoice.B]: 'False',
+        },
+        correctAnswer: AnswerChoice.A,
+        explanations: {
+            [AnswerChoice.A]: 'The answer is A because...',
+            [AnswerChoice.B]: 'The answer is not b because...'
+        },
+        moreExplanation: `more explanation...`
+    }
+]
 
 /**
  * Prod Questions!
@@ -244,8 +260,7 @@ export const questionBank: IQuestion[] = [
             [AnswerChoice.A]: 'A tax year common to the partners with an interest of 3% or more in the partnership profits or capital',
             [AnswerChoice.B]: 'A tax year common to all of the partnerships principal partners',
             [AnswerChoice.C]: 'The tax year of a majority of its partners',
-            [AnswerChoice.D]: 'The tax year that results in the least aggregate deferral of income',
-            [AnswerChoice.E]: '',
+            [AnswerChoice.D]: 'The tax year that results in the least aggregate deferral of income'
         },
         correctAnswer: AnswerChoice.A,
         explanations: {
@@ -448,9 +463,7 @@ export const questionBank: IQuestion[] = [
         correctAnswer: AnswerChoice.A,
         explanations: {
             [AnswerChoice.A]: 'The answer is A because...',
-            [AnswerChoice.B]: 'The answer is not b because...',
-            [AnswerChoice.C]: 'The answer is not c because...',
-            [AnswerChoice.D]: 'The answer is not d because...'
+            [AnswerChoice.B]: 'The answer is not b because...'
         },
         moreExplanation: `Tree may NOT use the cash method of accounting. `
     },
@@ -796,9 +809,7 @@ export const questionBank: IQuestion[] = [
         correctAnswer: AnswerChoice.A,
         explanations: {
             [AnswerChoice.A]: 'The answer is A because...',
-            [AnswerChoice.B]: 'The answer is not b because...',
-            [AnswerChoice.C]: 'The answer is not c because...',
-            [AnswerChoice.D]: 'The answer is not d because...'
+            [AnswerChoice.B]: 'The answer is not b because...'
         },
         moreExplanation: `If taxpayer acquires a trade or business, allocate the purchase price to the various assets acquired. For asset acquisitions occurring after January 5, 2000, the allocation must be made among the following assets in proportion to (but not more than) their fair market value on the purchase date in the following order:
        Certificates of deposit, U.S. Government securities, foreign currency, and actively traded personal property, including stock and securities
@@ -1203,9 +1214,7 @@ export const questionBank: IQuestion[] = [
         correctAnswer: AnswerChoice.A,
         explanations: {
             [AnswerChoice.A]: 'The answer is A because...',
-            [AnswerChoice.B]: 'The answer is not b because...',
-            [AnswerChoice.C]: 'The answer is not c because...',
-            [AnswerChoice.D]: 'The answer is not d because...'
+            [AnswerChoice.B]: 'The answer is not b because...'
         },
         moreExplanation: `more explanation...`
     },
@@ -2394,9 +2403,7 @@ export const questionBank: IQuestion[] = [
         correctAnswer: AnswerChoice.A,
         explanations: {
             [AnswerChoice.A]: 'The answer is A because...',
-            [AnswerChoice.B]: 'The answer is not b because...',
-            [AnswerChoice.C]: 'The answer is not c because...',
-            [AnswerChoice.D]: 'The answer is not d because...'
+            [AnswerChoice.B]: 'The answer is not b because...'
         },
         moreExplanation: `Employers generally can deduct as a business expense salaries, wages, and other forms of pay made to employees for personal services.`
     },
@@ -2619,9 +2626,7 @@ export const questionBank: IQuestion[] = [
         correctAnswer: AnswerChoice.A,
         explanations: {
             [AnswerChoice.A]: 'The answer is A because...',
-            [AnswerChoice.B]: 'The answer is not b because...',
-            [AnswerChoice.C]: 'The answer is not c because...',
-            [AnswerChoice.D]: 'The answer is not d because...'
+            [AnswerChoice.B]: 'The answer is not b because...'
         },
         moreExplanation: `If taxpayer uses the cash method of accounting, he generally deducts insurance premiums in the tax year he actually paid them, even if he incurred them in an earlier year.`
     },
