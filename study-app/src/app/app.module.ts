@@ -5,6 +5,7 @@ import { NativeScriptUISideDrawerModule } from "nativescript-ui-sidedrawer/angul
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { QuestionGenerator } from "./utils/question-generator/question-generator.service";
+import { VideoAdManagerService } from "./utils/video-ad-manager/video-ad-manager.service";
 import { SettingsModalComponent } from "./pages/settings/modal/settings.modal";
 import { AreYouSureExamSubmitModalComponent } from "./pages/study/pages/mock-exam/review-answers/are-you-sure-exam-submit.modal";
 import { TimesUpModalComponent } from "./pages/study/pages/mock-exam/times-up.modal";
@@ -25,7 +26,8 @@ import { TimesUpModalComponent } from "./pages/study/pages/mock-exam/times-up.mo
         TimesUpModalComponent
     ],
     providers: [
-        QuestionGenerator
+        QuestionGenerator,
+        VideoAdManagerService
     ],
     schemas: [
         NO_ERRORS_SCHEMA

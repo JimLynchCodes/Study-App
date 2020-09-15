@@ -3,6 +3,7 @@ import { RadSideDrawer } from "nativescript-ui-sidedrawer";
 import * as app from "tns-core-modules/application";
 import { ModalDialogService, ModalDialogOptions } from "nativescript-angular/common";
 import { SettingsModalComponent } from "./modal/settings.modal";
+import { VideoAdManagerService } from "~/app/utils/video-ad-manager/video-ad-manager.service";
 
 @Component({
     selector: "Settings",
@@ -11,12 +12,19 @@ import { SettingsModalComponent } from "./modal/settings.modal";
 })
 export class SettingsComponent implements OnInit {
 
-    constructor(private modalService: ModalDialogService, private viewContainerRef: ViewContainerRef) {
-        // Use the component constructor to inject providers.
+    message = "haven't yet watched the video!"
+
+    constructor(private modalService: ModalDialogService, 
+        private viewContainerRef: ViewContainerRef,
+        private videoAdManager: VideoAdManagerService) {
+        
     }
 
     ngOnInit(): void {
         // Init your component properties here.
+
+        this.videoAdManager.preloadVideoAd()
+
     }
 
     openModalBtnClick() {
@@ -28,7 +36,15 @@ export class SettingsComponent implements OnInit {
             context: {}
         };
         this.modalService.showModal(SettingsModalComponent, options);
-        
+
+        this.videoAdManager.showVideoAd((reward: boolean) => {
+
+            console.log('heard reward fired! ', reward)
+
+            if (reward)
+                this.message = "You watched the video!"
+        })
+
     }
 
     onDrawerButtonTap(): void {

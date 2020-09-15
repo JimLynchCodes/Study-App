@@ -15,9 +15,12 @@
     <Label text="Settings"></Label>
 </ActionBar>
 
-<GridLayout class="page__content">
+<StackLayout class="page__content">
     <Label class="page__content-icon fas" text="&#xf013;"></Label>
     <Label class="page__content-placeholder" text="Your Settings..."></Label>
-
+    
     <Button text="Open Modal" (tap)="openModalBtnClick()" class="-primary default-button"></Button>
-</GridLayout>
+    
+    <Label class="page__content-placeholder" text="{{message}}"></Label>
+
+</StackLayout>
