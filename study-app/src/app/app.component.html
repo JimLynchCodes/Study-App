@@ -5,9 +5,9 @@ https://docs.nativescript.org/angular/ui/professional-ui-components/ng-SideDrawe
 -->
 <RadSideDrawer [drawerTransition]="sideDrawerTransition">
     <GridLayout tkDrawerContent rows="auto, *" class="nt-drawer__content">
-        <StackLayout row="0" class="nt-drawer__header">
-            <Image class="nt-drawer__header-image fas t-36" style="color: white; margin: 10;" src="font://&#xf2bd;"></Image>
-            <Label class="nt-drawer__header-brand" text="Guest"></Label>
+        <StackLayout row="0" class="nt-drawer__header" (tap)="onDrawerAvatarClick()">
+            <Image class="nt-drawer__header-image fas t-36" style="color: white; margin: 10;" src="{{userPicture || 'font://&#xf2bd;'}}"></Image>
+            <Label class="nt-drawer__header-brand" text="{{userName || 'Guest'}}"></Label>
             <Label class="nt-drawer__header-footnote" text="--"></Label>
         </StackLayout>
     

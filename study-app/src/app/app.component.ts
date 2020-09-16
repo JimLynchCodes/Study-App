@@ -6,6 +6,7 @@ import { filter } from "rxjs/operators";
 import * as app from "tns-core-modules/application";
 
 import { environment } from '../environments/environment';
+import { Auth0 } from 'nativescript-auth0';
 
 @Component({
     selector: "ns-app",
@@ -14,6 +15,11 @@ import { environment } from '../environments/environment';
 export class AppComponent implements OnInit {
     private _activatedUrl: string;
     private _sideDrawerTransition: DrawerTransitionBase;
+
+    auth0 = new Auth0('X2GJeUYQF8ZHmDzn53r345iRHiBpdMgw', 'enrolled-agent-study-app.us.auth0.com');
+    
+    userName: string;
+    userPicture: string;
 
     constructor(private router: Router, private routerExtensions: RouterExtensions) {
         // Use the component constructor to inject services.
@@ -49,4 +55,29 @@ export class AppComponent implements OnInit {
         const sideDrawer = <RadSideDrawer>app.getRootView();
         sideDrawer.closeDrawer();
     }
+
+    onDrawerAvatarClick() {
+        console.log('clicked drawer!')
+
+        this.auth0.webAuthentication({
+            scope: 'openid profile'
+        }).then(async (res) => {
+
+            console.log('logged in! ', res)
+
+            const userInfo = await this.auth0.getUserInfo(res.accessToken)
+
+            console.log('user data: ', JSON.stringify(userInfo));
+
+            this.userName = userInfo.name
+            this.userPicture = userInfo.pictureURL ? userInfo.pictureURL : (userInfo as any).picture
+
+        }, (error) => {
+            console.log('error logging in: ', error)
+
+        });
+
+
+    }
+
 }
