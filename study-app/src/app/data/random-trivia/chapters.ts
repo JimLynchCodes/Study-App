@@ -2,7 +2,7 @@ import { Chapter } from "../_data.models/chapter.model";
 
 export const chapters: Chapter[] = [
     {
-        title: 'Science',
+        title: 'Animals',
         index: 1,
         chapter: '1'
     },
@@ -13,6 +13,11 @@ export const chapters: Chapter[] = [
     },
     {
         title: 'History',
+        index: 3,
+        chapter: '3'
+    },
+    {
+        title: 'Outer Space',
         index: 3,
         chapter: '3'
     },
