@@ -16,46 +16,45 @@ export class VideoAdManagerService {
         console.log('loading?')
     }
 
-    preloadVideoAd() {
+    preloadVideoAd(): Promise<void> {
 
+        // admob.preloadInterstitial({
+        //     testing: true,
+        //     iosInterstitialId: "ca-app-pub-5959386651087574~4497233380",
+        //     androidInterstitialId: "", // add your own
+        //     iosTestDeviceIds: [],
+        //     keywords: ["keyword1", "keyword2"], // add keywords for ad targeting
+        //     onAdClosed: function () { console.log("interstitial closed") }
+        // }).then(
+        //     function () {
+        //         console.log("interstitial preloaded - you can now call 'showInterstitial' whenever you're ready to do so");
+        //     },
+        //     function (error) {
+        //         console.log("admob preloadInterstitial error: " + error);
+        //     }
+        // )
 
-        admob.preloadRewardedVideoAd({
-            testing: true,
-            iosAdPlacementId: "ca-app-pub-5959386651087574~4497233380",
-            androidAdPlacementId: "",
-            keywords: ["keyword1", "keyword2"], // add keywords for ad targeting
-        }).then(
-            function () {
-                console.log("RewardedVideoAd preloaded - you can now call 'showRewardedVideoAd' whenever you're ready to do so");
-            },
-            function (error) {
-                console.log("admob preloadRewardedVideoAd error: " + error);
-            }
-        )
+        return new Promise((resolve, reject) => {
+
+            admob.preloadRewardedVideoAd({
+                testing: true,
+                iosAdPlacementId: "ca-app-pub-5959386651087574~4497233380",
+                iosInterstitialId: "ca-app-pub-5959386651087574~4497233380",
+                androidAdPlacementId: "",
+                iosTestDeviceIds: [],
+                keywords: [], // add keywords for ad targeting
+            }).then(
+                function () {
+                    console.log("RewardedVideoAd preloaded - you can now call 'showRewardedVideoAd' whenever you're ready to do so");
+                    resolve()
+                },
+                function (error) {
+                    console.log("admob preloadRewardedVideoAd error: " + error);
+                    reject()
+                })
+        })
     }
 
-    showVideoAd(callback: Function) {
-        admob.showRewardedVideoAd({
-            onRewarded: (reward) => {
-                console.log("onRewarded");
 
-                callback(true)
-            },
-            onRewardedVideoAdLeftApplication: () => console.log("onRewardedVideoAdLeftApplication"),
-            onRewardedVideoAdClosed: () => console.log("onRewardedVideoAdClosed"),
-            onRewardedVideoAdOpened: () => console.log("onRewardedVideoAdOpened"),
-            onRewardedVideoStarted: () => console.log("onRewardedVideoStarted"),
-            onRewardedVideoCompleted: () => console.log("onRewardedVideoCompleted"),
-        }).then(
-            function () {
-                console.log("RewardedVideoAd showing");
-            },
-            function (error) {
-
-                callback(false)
-                console.log("admob showRewardedVideoAd error: " + error);
-            }
-        )
-    }
 
 }

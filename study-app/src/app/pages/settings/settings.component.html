@@ -9,8 +9,7 @@
     NavigationButton as a side-drawer button in iOS is not possible,
     because its function is to always navigate back in the application.
     -->
-    <ActionItem icon="res://menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()"
-        ios.position="left">
+    <ActionItem icon="res://menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()" ios.position="left">
     </ActionItem>
     <Label text="Settings"></Label>
 </ActionBar>
@@ -18,9 +17,18 @@
 <StackLayout class="page__content">
     <Label class="page__content-icon fas" text="&#xf013;"></Label>
     <Label class="page__content-placeholder" text="Your Settings..."></Label>
-    
-    <Button text="Open Modal" (tap)="openModalBtnClick()" class="-primary default-button"></Button>
-    
+
+    <Button text="Open Modal" (tap)="openModalBtnClick()" class="-primary default-button button-spacer"></Button>
+
+    <Label class="page__content-placeholder" text=""></Label>
+    <Label class="page__content-placeholder" text=""></Label>
+    <Label class="page__content-placeholder" text=""></Label>
+
+    <Label class="page__content-placeholder" text="{{videoAdLabelText}}"></Label>
+
+    <Button text="Show Video Ad" (tap)="showVideoAd()" [ngClass]="{'disabled-btn': adPreloadingFinished !== true}"
+        [disabled]="!adPreloadingFinished" class="-primary default-button button-spacer"></Button>
+
     <Label class="page__content-placeholder" text="{{message}}"></Label>
 
 </StackLayout>

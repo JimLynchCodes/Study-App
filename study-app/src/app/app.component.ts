@@ -17,7 +17,7 @@ export class AppComponent implements OnInit {
     private _sideDrawerTransition: DrawerTransitionBase;
 
     auth0 = new Auth0('X2GJeUYQF8ZHmDzn53r345iRHiBpdMgw', 'enrolled-agent-study-app.us.auth0.com');
-    
+
     userName: string;
     userPicture: string;
 
@@ -33,8 +33,8 @@ export class AppComponent implements OnInit {
         this._sideDrawerTransition = new SlideInOnTopTransition();
 
         this.router.events
-        .pipe(filter((event: any) => event instanceof NavigationEnd))
-        .subscribe((event: NavigationEnd) => this._activatedUrl = event.urlAfterRedirects);
+            .pipe(filter((event: any) => event instanceof NavigationEnd))
+            .subscribe((event: NavigationEnd) => this._activatedUrl = event.urlAfterRedirects);
     }
 
     get sideDrawerTransition(): DrawerTransitionBase {
@@ -56,13 +56,18 @@ export class AppComponent implements OnInit {
         sideDrawer.closeDrawer();
     }
 
-    onDrawerAvatarClick() {
+    async onDrawerAvatarClick() {
         console.log('clicked drawer!')
 
-        this.auth0.webAuthentication({
-            scope: 'openid profile'
-        }).then(async (res) => {
+        console.log('auth0 is ', this.auth0)
 
+        console.log('auth0 is ', this.auth0.webAuthentication)
+
+        try {
+
+            const res = await this.auth0.webAuthentication({
+                scope: 'openid profile'
+            })
             console.log('logged in! ', res)
 
             const userInfo = await this.auth0.getUserInfo(res.accessToken)
@@ -72,11 +77,11 @@ export class AppComponent implements OnInit {
             this.userName = userInfo.name
             this.userPicture = userInfo.pictureURL ? userInfo.pictureURL : (userInfo as any).picture
 
-        }, (error) => {
+        }
+
+        catch (error) {
             console.log('error logging in: ', error)
-
-        });
-
+        }
 
     }
 

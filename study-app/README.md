@@ -16,6 +16,8 @@ Start in dev mode (real device via preview app):
 tns preview
 ```
 
+Note - since adding admob and auth0 plugins, `tns preview` sadly won't work anymore (expected limitation of tns preview). 😢
+
 Start in dev mode (default ios simulator):
 ```
 tns run ios --env.environment="sat.dev"
@@ -29,14 +31,21 @@ tns run ios --env.environment="random-trivia.dev"
 
 _To use a specific iOS device simulator_
 
+```
+tns device ios --available-devices
+```
+
+(or)
+
 To find available devices:
 - Open XCode
 - Go to Window -> Devices and Simulators
 - Click Simulators
 - Copy the identifier of the device you'd like to use.
 - Then do "tns run" specifying this device
+
 ```
-tns run ios --device="53958EA9-A127-4BF9-A319-747D32FD29A1"
+tns run ios --device="0F60E57C-F0E0-4E4B-B581-2A8C980F589D"
 ```
 
 
