@@ -152,7 +152,7 @@ export class MockExamManagerService {
         return this.examQuestions
     }
 
-    getMockExamQuestion(questionIndex: any): IQuestion {
+    getMockExamQuestion(questionIndex: number): IQuestion {
         return this.examQuestions[questionIndex]
     }
 

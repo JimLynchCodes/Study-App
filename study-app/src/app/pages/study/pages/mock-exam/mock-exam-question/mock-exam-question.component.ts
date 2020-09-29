@@ -141,7 +141,7 @@ export class MockExamQuestionComponent implements OnInit {
         if (this.currentQuestionIndex === totalNumberOfQuestions - 1) {
             console.log('on the last question!')
 
-            this.routerExtensions.navigate(['/review-answers', { indexOfQuestionUserCameFrom: this.currentQuestionIndex + 1 }], {
+            this.routerExtensions.navigate(['/review-answers', { indexOfQuestionUserCameFrom: 0 }], {
                 transition: {
                     name: "fade"
                 }

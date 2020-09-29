@@ -5,11 +5,11 @@
       "version": "*"
     },
     "tns-ios": {
-      "version": "6.5.2"
+      "version": "*"
     }
   },
-  "description": "NativeScript Application",
-  "license": "SEE LICENSE IN <your-license-filename>",
+  "description": "Study App",
+  "license": "see LICENSE",
   "repository": "<fill-your-repository-here>",
   "scripts": {
     "start": "tns run ios --env.environment=\"enrolled-agent.dev\" --device=\"E36E2FEF-8EDB-45E7-9A51-E60C6EA3EE74\"",
