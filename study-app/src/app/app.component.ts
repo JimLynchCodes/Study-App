@@ -7,6 +7,7 @@ import * as app from "tns-core-modules/application";
 
 import { environment } from '../environments/environment';
 import { Auth0 } from 'nativescript-auth0';
+import { Sentry } from "nativescript-sentry";
 
 @Component({
     selector: "ns-app",
@@ -81,6 +82,7 @@ export class AppComponent implements OnInit {
 
         catch (error) {
             console.log('error logging in: ', error)
+            Sentry.captureException(error, {});
         }
 
     }
