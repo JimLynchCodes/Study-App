@@ -11,6 +11,9 @@ import { IQuestion, AnswerChoice } from "../_data.models/question.model";
  */
 
 export const questionBank: IQuestion[] = [
+   
+    // Chapter 1 - Animals
+   
     {
         chapterIndex: 1,
         questionIndex: 1,
@@ -475,30 +478,8 @@ export const questionBank: IQuestion[] = [
     //     },
     //     moreExplanation: ``,
     // },
-    // {
-    //     chapterIndex: 1,
-    //     questionIndex: 20,
-    //     qId: `q1-20`,
-    //     tags: [],
-    //     questionText: '',
-    //     answerChoices: {
-    //         [AnswerChoice.A]: '',
-    //         [AnswerChoice.B]: '',
-    //         [AnswerChoice.C]: '',
-    //         [AnswerChoice.D]: '',
-    //         [AnswerChoice.E]: '',
-    //     },
-    //     correctAnswer: AnswerChoice.C,
-    //     explanations: {
-    //         [AnswerChoice.A]: '',
-    //         [AnswerChoice.B]: '',
-    //         [AnswerChoice.C]: '',
-    //         [AnswerChoice.D]: ''
-    //     },
-    //     moreExplanation: ``,
-    // },
    
-    // Chapter 2
+    // Chapter 2 - Health
     {
         chapterIndex: 2,
         questionIndex: 1,
@@ -736,63 +717,476 @@ export const questionBank: IQuestion[] = [
         moreExplanation: `Although bodies stop growing, noses and ears do not.`,
     },
 
-    // Chapter 3
+    // Chapter 3 - Geography
     {
         chapterIndex: 3,
         questionIndex: 1,
         qId: `q3-1`,
         tags: [],
-        questionText: 'On April 6, Sue Thompson bought a house to use as residential rental property. She made several repairs and had it ready for rent on July 5. She did not actually rent the property until August 1, and the family moved in on August 15.',
+        questionText: 'What is the largest Ocean?',
         answerChoices: {
-            [AnswerChoice.A]: 'April 6',
-            [AnswerChoice.B]: 'August 1',
-            [AnswerChoice.C]: 'August 15',
-            [AnswerChoice.D]: 'July 5'
+            [AnswerChoice.A]: 'Pacific',
+            [AnswerChoice.B]: 'Atlantic',
+            [AnswerChoice.C]: 'Arctic',
+            [AnswerChoice.D]: 'Indian',
+            [AnswerChoice.E]: 'Mediterranean',
+        },
+        correctAnswer: AnswerChoice.A,
+        explanations: {
+            [AnswerChoice.A]: '',
+            [AnswerChoice.B]: '',
+            [AnswerChoice.C]: '',
+            [AnswerChoice.D]: ''
+        },
+        moreExplanation: `The Pacific Ocean is the largets ocean, containing around 63 million square miles.
+        
+        It is followed by the Atlantic Ocean which covers around 25 million miles of Earth.`,
+    },
+    {
+        chapterIndex: 3,
+        questionIndex: 2,
+        qId: `q3-2`,
+        tags: [],
+        questionText: 'What is the smallest sountry in the world?',
+        answerChoices: {
+            [AnswerChoice.A]: 'Monaco',
+            [AnswerChoice.B]: 'Vatican City',
+            [AnswerChoice.C]: 'Nauru',
+            [AnswerChoice.D]: 'San Marino',
+            [AnswerChoice.E]: 'France',
+        },
+        correctAnswer: AnswerChoice.B,
+        explanations: {
+            [AnswerChoice.A]: '',
+            [AnswerChoice.B]: '',
+            [AnswerChoice.C]: '',
+            [AnswerChoice.D]: ''
+        },
+        moreExplanation: `The smallest city is The Vatican City State, with an area of with an area of 526,235 square yards.`,
+    },
+    {
+        chapterIndex: 3,
+        questionIndex: 3,
+        qId: `q3-3`,
+        tags: [],
+        questionText: 'Which of these is NOT a body of water?',
+        answerChoices: {
+            [AnswerChoice.A]: 'Bay',
+            [AnswerChoice.B]: 'Channel',
+            [AnswerChoice.C]: 'Estuary',
+            [AnswerChoice.D]: 'Range',
+            [AnswerChoice.E]: 'Strait',
         },
         correctAnswer: AnswerChoice.D,
         explanations: {
             [AnswerChoice.A]: '',
             [AnswerChoice.B]: '',
             [AnswerChoice.C]: '',
-            [AnswerChoice.D]: 'July 5'
+            [AnswerChoice.D]: ''
         },
-        moreExplanation: `The house is considered placed in service on July 5th when it was ready and available for rent. She can begin to depreciate it in July.
-
-        Property is placed in service when it is ready and available for a specific use, whether in a business activity, an income-producing activity, or a personal activity. Even if the property is not being used, it is in service when it is ready and available for its specific use.`,
+        moreExplanation: `A range, in geography, means a chain of hills or mountains.
+        
+        All the other answers are types of bodies of water.`,
     },
-
-     // Chapter 4
-
     {
-        chapterIndex: 4,
-        questionIndex: 1,
-        qId: `q4-1`,
+        chapterIndex: 3,
+        questionIndex: 4,
+        qId: `q3-4`,
         tags: [],
-        questionText: 'A disposition of property includes:',
+        questionText: 'What is a word for, "A flat, treeless area where the soil is permanently frozen"?',
         answerChoices: {
-            [AnswerChoice.A]: 'Abandoned property',
-            [AnswerChoice.B]: 'Property transferred to satisfy a debt',
-            [AnswerChoice.C]: 'All of these choices',
-            [AnswerChoice.D]: 'Property exchanged for other property'
+            [AnswerChoice.A]: 'froyo',
+            [AnswerChoice.B]: 'freezoa',
+            [AnswerChoice.C]: 'tundra',
+            [AnswerChoice.D]: 'range',
+            [AnswerChoice.E]: 'frostland',
         },
         correctAnswer: AnswerChoice.C,
         explanations: {
             [AnswerChoice.A]: '',
             [AnswerChoice.B]: '',
-            [AnswerChoice.C]: 'All of these choices',
+            [AnswerChoice.C]: '',
             [AnswerChoice.D]: ''
         },
-        moreExplanation: `A disposition of property includes the following transactions:
-
-        Property is sold for cash or other property.
-        Property is exchanged for other property.
-        Money may be received as a tenant for the cancellation of a lease.
-        Property may be transferred to satisfy a debt.
-        Property may be abandoned.
-        A bank or other financial institution may foreclose on a mortgage or repossesses the financed property.
-        
-        (Not a complete list.)`,
+        moreExplanation: `A tundra is a flat, treeless area where the soil is permanently frozen `,
     },
+    {
+        chapterIndex: 3,
+        questionIndex: 5,
+        qId: `q3-5`,
+        tags: [],
+        questionText: 'What is a butte?',
+        answerChoices: {
+            [AnswerChoice.A]: 'an isolated hill with steep sides and a flat top',
+            [AnswerChoice.B]: 'a chain of steep hills',
+            [AnswerChoice.C]: 'a short but wide hill',
+            [AnswerChoice.D]: 'a steep hill that comes right up against a body of water',
+            [AnswerChoice.E]: 'a hill completely covered by forest',
+        },
+        correctAnswer: AnswerChoice.C,
+        explanations: {
+            [AnswerChoice.A]: '',
+            [AnswerChoice.B]: '',
+            [AnswerChoice.C]: '',
+            [AnswerChoice.D]: ''
+        },
+        moreExplanation: `A butte (pronounced like, "byoot") is an isolated hill with steep sides and a flat top`,
+    },
+    {
+        chapterIndex: 3,
+        questionIndex: 6,
+        qId: `q3-6`,
+        tags: [],
+        questionText: 'What is a word for, "A ring of coral that makes an island"?',
+        answerChoices: {
+            [AnswerChoice.A]: 'Atoll',
+            [AnswerChoice.B]: 'Archipelago',
+            [AnswerChoice.C]: 'Basin',
+            [AnswerChoice.D]: 'Reefoid',
+            [AnswerChoice.E]: 'Round',
+        },
+        correctAnswer: AnswerChoice.A,
+        explanations: {
+            [AnswerChoice.A]: '',
+            [AnswerChoice.B]: '',
+            [AnswerChoice.C]: '',
+            [AnswerChoice.D]: ''
+        },
+        moreExplanation: `An atoll is a ring-shaped coral reef, island, or series of islets. An atoll surrounds a body of water called a lagoon.`,
+    },
+    {
+        chapterIndex: 3,
+        questionIndex: 7,
+        qId: `q3-7`,
+        tags: [],
+        questionText: 'An archipelago is a series of what?',
+        answerChoices: {
+            [AnswerChoice.A]: 'Islands',
+            [AnswerChoice.B]: 'Hills',
+            [AnswerChoice.C]: 'Basins',
+            [AnswerChoice.D]: 'Mountain Peaks',
+            [AnswerChoice.E]: 'Cities',
+        },
+        correctAnswer: AnswerChoice.C,
+        explanations: {
+            [AnswerChoice.A]: '',
+            [AnswerChoice.B]: '',
+            [AnswerChoice.C]: '',
+            [AnswerChoice.D]: ''
+        },
+        moreExplanation: `An archipelago is a series of islands that are connected under water.`,
+    },
+    {
+        chapterIndex: 3,
+        questionIndex: 8,
+        qId: `q3-8`,
+        tags: [],
+        questionText: 'The name for the end of a river is the _______?',
+        answerChoices: {
+            [AnswerChoice.A]: 'mouth',
+            [AnswerChoice.B]: 'foot',
+            [AnswerChoice.C]: 'head',
+            [AnswerChoice.D]: 'floor',
+            [AnswerChoice.E]: 'bed',
+        },
+        correctAnswer: AnswerChoice.C,
+        explanations: {
+            [AnswerChoice.A]: '',
+            [AnswerChoice.B]: '',
+            [AnswerChoice.C]: '',
+            [AnswerChoice.D]: ''
+        },
+        moreExplanation: `The end of the river, where it empties into another body of water, is the mouth.`,
+    },
+    {
+        chapterIndex: 3,
+        questionIndex: 9,
+        qId: `q3-9`,
+        tags: [],
+        questionText: 'What is a, "deep narrow inlet from the ocean with high cliffs on three sides"?',
+        answerChoices: {
+            [AnswerChoice.A]: 'fjord',
+            [AnswerChoice.B]: 'quilm',
+            [AnswerChoice.C]: 'straight',
+            [AnswerChoice.D]: 'inlet',
+            [AnswerChoice.E]: 'inpass',
+        },
+        correctAnswer: AnswerChoice.A,
+        explanations: {
+            [AnswerChoice.A]: '',
+            [AnswerChoice.B]: '',
+            [AnswerChoice.C]: '',
+            [AnswerChoice.D]: ''
+        },
+        moreExplanation: `A fjord is a deep, narrow inlet from the ocean with high cliffs on three sides.`,
+    },
+    {
+        chapterIndex: 3,
+        questionIndex: 10,
+        qId: `q3-10`,
+        tags: [],
+        questionText: 'What is the word for the point where the elevation becomes too high for trees to grow?',
+        answerChoices: {
+            [AnswerChoice.A]: 'timberline',
+            [AnswerChoice.B]: 'timberpoint',
+            [AnswerChoice.C]: 'timberpole',
+            [AnswerChoice.D]: 'timerspot',
+            [AnswerChoice.E]: 'timbertip',
+        },
+        correctAnswer: AnswerChoice.A,
+        explanations: {
+            [AnswerChoice.A]: '',
+            [AnswerChoice.B]: '',
+            [AnswerChoice.C]: '',
+            [AnswerChoice.D]: ''
+        },
+        moreExplanation: `An alpine timberline is the point where the elevation is too high and the soil is too dry for tree growth.`,
+    },
+    // {
+    //     chapterIndex: 3,
+    //     questionIndex: ,
+    //     qId: `q3-`,
+    //     tags: [],
+    //     questionText: '',
+    //     answerChoices: {
+    //         [AnswerChoice.A]: '',
+    //         [AnswerChoice.B]: '',
+    //         [AnswerChoice.C]: '',
+    //         [AnswerChoice.D]: '',
+    //         [AnswerChoice.E]: '',
+    //     },
+    //     correctAnswer: AnswerChoice.C,
+    //     explanations: {
+    //         [AnswerChoice.A]: '',
+    //         [AnswerChoice.B]: '',
+    //         [AnswerChoice.C]: '',
+    //         [AnswerChoice.D]: ''
+    //     },
+    //     moreExplanation: ``,
+    // },
+
+     // Chapter 4
+
+    // {
+    //     chapterIndex: 3,
+    //     questionIndex: ,
+    //     qId: `q3-`,
+    //     tags: [],
+    //     questionText: '',
+    //     answerChoices: {
+    //         [AnswerChoice.A]: '',
+    //         [AnswerChoice.B]: '',
+    //         [AnswerChoice.C]: '',
+    //         [AnswerChoice.D]: '',
+    //         [AnswerChoice.E]: '',
+    //     },
+    //     correctAnswer: AnswerChoice.C,
+    //     explanations: {
+    //         [AnswerChoice.A]: '',
+    //         [AnswerChoice.B]: '',
+    //         [AnswerChoice.C]: '',
+    //         [AnswerChoice.D]: ''
+    //     },
+    //     moreExplanation: ``,
+    // },
+    // {
+    //     chapterIndex: 3,
+    //     questionIndex: ,
+    //     qId: `q3-`,
+    //     tags: [],
+    //     questionText: '',
+    //     answerChoices: {
+    //         [AnswerChoice.A]: '',
+    //         [AnswerChoice.B]: '',
+    //         [AnswerChoice.C]: '',
+    //         [AnswerChoice.D]: '',
+    //         [AnswerChoice.E]: '',
+    //     },
+    //     correctAnswer: AnswerChoice.C,
+    //     explanations: {
+    //         [AnswerChoice.A]: '',
+    //         [AnswerChoice.B]: '',
+    //         [AnswerChoice.C]: '',
+    //         [AnswerChoice.D]: ''
+    //     },
+    //     moreExplanation: ``,
+    // },
+    // {
+    //     chapterIndex: 3,
+    //     questionIndex: ,
+    //     qId: `q3-`,
+    //     tags: [],
+    //     questionText: '',
+    //     answerChoices: {
+    //         [AnswerChoice.A]: '',
+    //         [AnswerChoice.B]: '',
+    //         [AnswerChoice.C]: '',
+    //         [AnswerChoice.D]: '',
+    //         [AnswerChoice.E]: '',
+    //     },
+    //     correctAnswer: AnswerChoice.C,
+    //     explanations: {
+    //         [AnswerChoice.A]: '',
+    //         [AnswerChoice.B]: '',
+    //         [AnswerChoice.C]: '',
+    //         [AnswerChoice.D]: ''
+    //     },
+    //     moreExplanation: ``,
+    // },
+    // {
+    //     chapterIndex: 3,
+    //     questionIndex: ,
+    //     qId: `q3-`,
+    //     tags: [],
+    //     questionText: '',
+    //     answerChoices: {
+    //         [AnswerChoice.A]: '',
+    //         [AnswerChoice.B]: '',
+    //         [AnswerChoice.C]: '',
+    //         [AnswerChoice.D]: '',
+    //         [AnswerChoice.E]: '',
+    //     },
+    //     correctAnswer: AnswerChoice.C,
+    //     explanations: {
+    //         [AnswerChoice.A]: '',
+    //         [AnswerChoice.B]: '',
+    //         [AnswerChoice.C]: '',
+    //         [AnswerChoice.D]: ''
+    //     },
+    //     moreExplanation: ``,
+    // },
+    // {
+    //     chapterIndex: 3,
+    //     questionIndex: ,
+    //     qId: `q3-`,
+    //     tags: [],
+    //     questionText: '',
+    //     answerChoices: {
+    //         [AnswerChoice.A]: '',
+    //         [AnswerChoice.B]: '',
+    //         [AnswerChoice.C]: '',
+    //         [AnswerChoice.D]: '',
+    //         [AnswerChoice.E]: '',
+    //     },
+    //     correctAnswer: AnswerChoice.C,
+    //     explanations: {
+    //         [AnswerChoice.A]: '',
+    //         [AnswerChoice.B]: '',
+    //         [AnswerChoice.C]: '',
+    //         [AnswerChoice.D]: ''
+    //     },
+    //     moreExplanation: ``,
+    // },
+    // {
+    //     chapterIndex: 3,
+    //     questionIndex: ,
+    //     qId: `q3-`,
+    //     tags: [],
+    //     questionText: '',
+    //     answerChoices: {
+    //         [AnswerChoice.A]: '',
+    //         [AnswerChoice.B]: '',
+    //         [AnswerChoice.C]: '',
+    //         [AnswerChoice.D]: '',
+    //         [AnswerChoice.E]: '',
+    //     },
+    //     correctAnswer: AnswerChoice.C,
+    //     explanations: {
+    //         [AnswerChoice.A]: '',
+    //         [AnswerChoice.B]: '',
+    //         [AnswerChoice.C]: '',
+    //         [AnswerChoice.D]: ''
+    //     },
+    //     moreExplanation: ``,
+    // },
+    // {
+    //     chapterIndex: 3,
+    //     questionIndex: ,
+    //     qId: `q3-`,
+    //     tags: [],
+    //     questionText: '',
+    //     answerChoices: {
+    //         [AnswerChoice.A]: '',
+    //         [AnswerChoice.B]: '',
+    //         [AnswerChoice.C]: '',
+    //         [AnswerChoice.D]: '',
+    //         [AnswerChoice.E]: '',
+    //     },
+    //     correctAnswer: AnswerChoice.C,
+    //     explanations: {
+    //         [AnswerChoice.A]: '',
+    //         [AnswerChoice.B]: '',
+    //         [AnswerChoice.C]: '',
+    //         [AnswerChoice.D]: ''
+    //     },
+    //     moreExplanation: ``,
+    // },
+    // {
+    //     chapterIndex: 3,
+    //     questionIndex: ,
+    //     qId: `q3-`,
+    //     tags: [],
+    //     questionText: '',
+    //     answerChoices: {
+    //         [AnswerChoice.A]: '',
+    //         [AnswerChoice.B]: '',
+    //         [AnswerChoice.C]: '',
+    //         [AnswerChoice.D]: '',
+    //         [AnswerChoice.E]: '',
+    //     },
+    //     correctAnswer: AnswerChoice.C,
+    //     explanations: {
+    //         [AnswerChoice.A]: '',
+    //         [AnswerChoice.B]: '',
+    //         [AnswerChoice.C]: '',
+    //         [AnswerChoice.D]: ''
+    //     },
+    //     moreExplanation: ``,
+    // },
+    // {
+    //     chapterIndex: 3,
+    //     questionIndex: ,
+    //     qId: `q3-`,
+    //     tags: [],
+    //     questionText: '',
+    //     answerChoices: {
+    //         [AnswerChoice.A]: '',
+    //         [AnswerChoice.B]: '',
+    //         [AnswerChoice.C]: '',
+    //         [AnswerChoice.D]: '',
+    //         [AnswerChoice.E]: '',
+    //     },
+    //     correctAnswer: AnswerChoice.C,
+    //     explanations: {
+    //         [AnswerChoice.A]: '',
+    //         [AnswerChoice.B]: '',
+    //         [AnswerChoice.C]: '',
+    //         [AnswerChoice.D]: ''
+    //     },
+    //     moreExplanation: ``,
+    // },
+    // {
+    //     chapterIndex: 3,
+    //     questionIndex: ,
+    //     qId: `q3-`,
+    //     tags: [],
+    //     questionText: '',
+    //     answerChoices: {
+    //         [AnswerChoice.A]: '',
+    //         [AnswerChoice.B]: '',
+    //         [AnswerChoice.C]: '',
+    //         [AnswerChoice.D]: '',
+    //         [AnswerChoice.E]: '',
+    //     },
+    //     correctAnswer: AnswerChoice.C,
+    //     explanations: {
+    //         [AnswerChoice.A]: '',
+    //         [AnswerChoice.B]: '',
+    //         [AnswerChoice.C]: '',
+    //         [AnswerChoice.D]: ''
+    //     },
+    //     moreExplanation: ``,
+    // },
 
     // Chapter 5
 
