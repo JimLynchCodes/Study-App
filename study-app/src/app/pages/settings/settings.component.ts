@@ -4,7 +4,7 @@ import * as app from "tns-core-modules/application";
 import { ModalDialogService, ModalDialogOptions } from "nativescript-angular/common";
 import { SettingsModalComponent } from "./modal/settings.modal";
 import { VideoAdManagerService } from "~/app/utils/video-ad-manager/video-ad-manager.service";
-import { Sentry } from 'nativescript-sentry';
+// import { Sentry } from 'nativescript-sentry';
 
 const admob = require("nativescript-admob");
 
@@ -110,11 +110,11 @@ export class SettingsComponent implements OnInit {
                 },
                 function (error) {
                     console.log("admob showRewardedVideoAd error: " + error);
-                    Sentry.captureException(error, {});
+                    // Sentry.captureException(error, {});
                 })
 
         } catch (err) {
-            Sentry.captureException(err, {});
+            // Sentry.captureException(err, {});
         }
 
     }
