@@ -6,7 +6,7 @@ import { SettingsModalComponent } from "./modal/settings.modal";
 import { VideoAdManagerService } from "~/app/utils/video-ad-manager/video-ad-manager.service";
 // import { Sentry } from 'nativescript-sentry';
 
-const admob = require("nativescript-admob");
+const firebase = require("nativescript-plugin-firebase");
 
 @Component({
     selector: "Settings",
@@ -66,7 +66,7 @@ export class SettingsComponent implements OnInit {
         this.adPreloadingFinished = false
 
         try {
-            admob.showRewardedVideoAd({
+            firebase.admob.showRewardedVideoAd({
                 onRewarded: (reward) => {
                     console.log("onRewarded");
 
@@ -83,7 +83,21 @@ export class SettingsComponent implements OnInit {
                         this.message = `You watched ${amount} video${sOrNot}. Now you get ${amount} reward${sOrNot}!`
                     });
                 },
-                onRewardedVideoAdLeftApplication: () => console.log("onRewardedVideoAdLeftApplication"),
+                onClosed: () => {
+
+                    console.log('Ad Closed2!')
+
+                    setTimeout(() => {
+
+                        console.log('timeout fired!')
+
+                        this.zone.run(async () => {
+                            await this.preloadVideo('loading another video...')
+                        })
+
+                    }, 2000)
+
+                },
                 onRewardedVideoAdClosed: () => {
 
                     console.log('Ad Closed!')
@@ -99,9 +113,9 @@ export class SettingsComponent implements OnInit {
                     }, 2000)
 
                 },
-                onRewardedVideoAdOpened: () => console.log("onRewardedVideoAdOpened"),
-                onRewardedVideoStarted: () => console.log("onRewardedVideoStarted"),
-                onRewardedVideoCompleted: () => {
+                onOpened: () => console.log("onRewardedVideoAdOpened"),
+                onStarted: () => console.log("onRewardedVideoStarted"),
+                onCompleted: () => {
                     console.log("onRewardedVideoCompleted")
                 },
             }).then(
@@ -112,8 +126,9 @@ export class SettingsComponent implements OnInit {
                     console.log("admob showRewardedVideoAd error: " + error);
                     // Sentry.captureException(error, {});
                 })
-
-        } catch (err) {
+                
+            } catch (err) {
+                console.log("admob err: " + err);
             // Sentry.captureException(err, {});
         }
 

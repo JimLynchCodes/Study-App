@@ -7,7 +7,9 @@ import * as app from "tns-core-modules/application";
 
 import { environment } from '../environments/environment';
 import { Auth0 } from 'nativescript-auth0';
-// import { Sentry } from "nativescript-sentry";
+
+
+const firebase = require("nativescript-plugin-firebase");
 
 @Component({
     selector: "ns-app",
@@ -16,22 +18,39 @@ import { Auth0 } from 'nativescript-auth0';
 export class AppComponent implements OnInit {
     private _activatedUrl: string;
     private _sideDrawerTransition: DrawerTransitionBase;
-
-    auth0 = new Auth0('X2GJeUYQF8ZHmDzn53r345iRHiBpdMgw', 'enrolled-agent-study-app.us.auth0.com');
-
+    
+    auth0 
+    
     userName: string;
     userPicture: string;
-
+    
     constructor(private router: Router, private routerExtensions: RouterExtensions) {
         // Use the component constructor to inject services.
-
+        
         console.log('app component sees env: ', environment.apiUrl);
-
+        
     }
-
-    ngOnInit(): void {
+    
+    async ngOnInit(): Promise<void> {
         this._activatedUrl = "/home";
         this._sideDrawerTransition = new SlideInOnTopTransition();
+        
+        const appConfig = (await import(`./data/${environment.theme}/config`)).config;
+
+        this.auth0 = new Auth0(appConfig.auth0_clientId, appConfig.auth0_domain);
+
+        firebase.init({
+            // Optionally pass in properties for database, authentication and cloud messaging,
+            // see their respective docs.
+        }).then(
+            () => {
+                console.log("firebase.init done");
+            },
+            error => {
+                console.log(`firebase.init error: ${error}`);
+            }
+        );
+
 
         this.router.events
             .pipe(filter((event: any) => event instanceof NavigationEnd))

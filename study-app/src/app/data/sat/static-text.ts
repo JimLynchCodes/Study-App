@@ -12,5 +12,26 @@ export const appText: StaticText = {
     If you have any questions or feedback, please send them to: 
     
     studyapptechnologies@gmail.com
-    `
+    `,
+    mockExamTitle: 'Mock Exam',
+    chooseExamLabel: 'Choose an exam:',
+    examChoices: [
+        {
+            title: 'Individuals',
+            chapters: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+        },
+        {
+            title: 'Business',
+            chapters: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+        },
+        {
+            title: 'Representation, Practice and Procedures',
+            chapters: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+        }
+    ],
+    mockExamHowLongPickerLabel: 'Choose an exam duration:',
+    mockExamHowLongQuestion: 'How much time can you spend right now on this practice exam?',
+    mockExamGoodLuckText: `Your exam will begin immediately after pressing the start button.
+    Good Luck!`,
+    mockExamStartBtnLabel: 'Start Exam'
 }

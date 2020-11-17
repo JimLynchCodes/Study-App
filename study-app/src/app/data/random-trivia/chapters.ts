@@ -17,10 +17,34 @@ export const chapters: Chapter[] = [
         chapter: '3'
     },
     {
-        title: 'Vocabulary',
+        title: 'Sports',
         index: 4,
         chapter: '4'
     },
+    {
+        title: 'Technology',
+        index: 5,
+        chapter: '5'
+    },
+    {
+        title: 'Finance',
+        index: 6,
+        chapter: '6'
+    },
+
+
+    // {
+    //     title: 'Finance',
+    //     index: 5,
+    //     chapter: '5'
+    // },
+
+
+    // {
+    //     title: 'Vocabulary',
+    //     index: 4,
+    //     chapter: '4'
+    // },
     // {
     //     title: 'History',
     //     index: 3,
@@ -51,5 +75,5 @@ export const chapters: Chapter[] = [
     //     index: 7,
     //     chapter: '7'
     // }
-    
+
 ]
