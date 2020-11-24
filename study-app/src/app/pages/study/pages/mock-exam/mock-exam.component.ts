@@ -6,6 +6,7 @@ import { RouterExtensions } from "nativescript-angular/router";
 import { ListPicker } from "tns-core-modules/ui/list-picker";
 import { MockExamManagerService } from "./mock-exam-question/mock-exam-manager.service";
 import { EaExam, ExamTime } from "./ea-exam.model";
+import { environment } from '../../../../../environments/environment'
 
 @Component({
     selector: "mock-exam",
@@ -14,14 +15,25 @@ import { EaExam, ExamTime } from "./ea-exam.model";
 })
 export class MockExamComponent implements OnInit {
 
+    staticText = '' 
+    chooseExamLabel = '' 
+    mockExamHowLongPickerLabel = '' 
+    mockExamHowLongQuestion = '' 
+    mockExamGoodLuckText = '' 
+    mockExamStartBtnLabel = '' 
+
     constructor(private routerExtensions: RouterExtensions,
         private readonly mockExamManager: MockExamManagerService) { }
 
-    public exams: Array<string> = [
-        EaExam.Individuals,
-        EaExam.Business,
-        EaExam.RepresentationPracticeProcedures
-    ];
+    // public exams: Array<string> = [
+    //     EaExam.Individuals,
+    //     EaExam.Business,
+    //     EaExam.RepresentationPracticeProcedures
+    // ];
+
+    public exams: Array<string> = []
+
+    mockExamTitle: string = ''
 
     private examSelected
 
@@ -48,8 +60,27 @@ export class MockExamComponent implements OnInit {
         this.timeSelected = this.times[picker.selectedIndex]
     }
 
-    ngOnInit(): void {
-        // Init your component properties here.
+    async ngOnInit(): Promise<void> {
+        const appTextData = await import(`../../../../data/${environment.theme}/static-text`);
+
+        console.log('got appText: ', appTextData.appText)
+
+        this.staticText = appTextData.appText
+        this.mockExamTitle = appTextData.appText.mockExamTitle
+        this.chooseExamLabel = appTextData.appText.chooseExamLabel
+        this.mockExamHowLongPickerLabel = appTextData.appText.mockExamHowLongPickerLabel
+        this.mockExamHowLongQuestion = appTextData.appText.mockExamHowLongQuestion
+        this.mockExamGoodLuckText = appTextData.appText.mockExamGoodLuckText
+        this.mockExamStartBtnLabel = appTextData.appText.mockExamStartBtnLabel
+
+        appTextData.appText.examChoices.forEach( choiceObj => {
+            console.log('got a choice! ', choiceObj.title)
+            this.exams.push(choiceObj.title)
+        })
+
+        // this.exams = appTextData.appText ? appTextData.appText.examChoices.map( choice => choice.title ) : []
+
+        console.log('exams are', this.exams)
     }
 
 

@@ -61,31 +61,27 @@ Run tests:
 tns platform clean ios
 ```
 
-0b. Edit the ios Info.plist in App_Resources
+1. Set ap bundle Id
+
+[check] enrolled-agent.study-app
+
+[check] random-trivia.study-app
+
+- change package.json "id" under "nativescript".
+
+- change bundleId in iOS plist (only used by auth0)
+
+2. Update App Name (visible on user's home screen)
+change the ios Info.plist in App_Resources
 (Increment the verison, ensure "CFBundleName" and "CFBundleDisplayName" are what you want to be shown for your app on the iphone home screen)
 
-1. set app id in package.json
+3. Use correct Firebase Files
 
-First, find the available provisioning ids:
-```
-tns build ios --for-device --release --provision
-```
+- under App_Resources/iOS, delete the file beginning with "GoogleService-Info". 
 
-Optional: you can "prepare" the iOS app if build doesn't work:
-```
-tns prepare ios --release --for-device --provision Ea-9-8b-profile
-```
+Copy the relevant one for this app from `mob-files/iOS` to `App_Resources/iOS` and rename it to `GoogleService-Info.plist`.
 
-- open xcode project
- --> change version number to correct one
- --> stange display name (id should be correctly taken from package.json)
-
-Then build with the same provision id:
-```
-tns build ios --release --for-device --provision Ea-9-8b-profile --env.environment="enrolled-agent.dev" --env.uglify
-```
-
-### Regenerating Icons and Splash Screens
+4. Regenerate Icons and Splash Screens
 
 (use a 1024 x 1024px image)
 
@@ -110,15 +106,45 @@ tns resources generate splashes  ../artwork/app-icon/hax-computer-guy/hax-comput
 tns resources generate splashes ../artwork/app-icon/enrolled-agent-lightbulb-brain/enrolled-agent-lightbulb-brain-guy.png --background "#173890"
 
 // Random Trivia App
-tns resources generate splashes ../artwork/app-icon/random-trivia/random-trivia-logo.png --background "#37B7C5"
+tns resources generate splashes ../artwork/app-icon/random-trivia/random-trivia-logo.png --background "#12AAC8"
+```
+
+## 5. Build
+First, find the available provisioning ids:
+```
+tns build ios --for-device --release --provision
+```
+
+Optional: you can "prepare" the iOS app if build doesn't work:
+```
+tns prepare ios --release --for-device --provision Ea-9-8b-profile
+
+ - open xcode project
+ --> change version number to correct one
+ --> stange display name (id should be correctly taken from package.json)
 ```
 
 
-### 3. Publish
+Then build with the same provision id:
+
+** Good Ones **
+
+Enrolled Agent
+```
+tns build ios --release --for-device --provision Ea-9-8b-profile --env.environment="enrolled-agent.prod" --env.uglify
+```
+
+Random Trivia
+```
+tns build ios --release --for-device --provision Ea-9-8b-profile --env.environment="random-trivia.prod" --env.uglify
+```
+
+
+## 6. Publish
 ```
 tns publish ios ______@gmail.com --ipa ./platforms/ios/build/Release-iphoneos/studyapp.ipa --appleApplicationSpecificPassword <app-specific-pwd>
 ```
-
+Rndm-Trivia.ipa
 
 Note: Provision profiles should be placed here:
 ```
@@ -162,3 +188,9 @@ Iphone 11 2nd Gen
 ```
 tns run ios --env.environment="random-trivia.dev" --device="C3062EA8-1662-4F77-B028-E14DAB0575B7"
 ```
+
+
+### Auth0
+
+Errthing under jim's gmail.
+

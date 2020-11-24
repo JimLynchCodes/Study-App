@@ -32,7 +32,7 @@ export const questionBank: IQuestion[] = [
         questionIndex: 1,
         qId: `q1-1`,
         tags: [],
-        questionText: 'A domestic LLC with at least two members that does NOT file Form 8832 is classified as a ____________ for Federal income tax purposes.',
+        questionText: 'A domestic LLC with at least two members that does NOT file Form 8832 is classified as a ____________ with Federal income tax purposes.',
         answerChoices: {
             [AnswerChoice.A]: 'Partnership',
             [AnswerChoice.B]: 'Corporation',
@@ -282,7 +282,6 @@ export const questionBank: IQuestion[] = [
         a.The partnership can establish that there is a business purpose for the tax year.
         b.The partnership elects under section 444 to have a tax year other than a required tax year by filing Form 8716, Election to Have a Tax Year Other Than a Required Tax Year. For a partnership to have this election in effect, it must make the payments required by section 7519 and file Form 8752.`,
     },
-
     {
         chapterIndex: 1,
         questionIndex: 11,
@@ -311,7 +310,6 @@ export const questionBank: IQuestion[] = [
        PRINCIPAL PARTNER. If there is no majority interest tax year, the partnership must use the tax year of all its principal partners.
        LEAST AGGREGATE DEFERRAL OF INCOME. If there is no majority interest tax year and the principal partners do not have the same tax year, the partnership generally must use a tax year that results in the least aggregate deferral of income to the partners.`
     },
-
     {
         chapterIndex: 1,
         questionIndex: 12,

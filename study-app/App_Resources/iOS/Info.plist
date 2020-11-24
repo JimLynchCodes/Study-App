@@ -1,25 +1,25 @@
-<?xml version="1.15" encoding="UTF-8"?>
+<?xml version="1.18" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.15">
+<plist version="1.18">
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>Study EA</string>
+	<string>Rndm Trivia</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>Study EA</string>
+	<string>Rndm Trivia</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.15</string>
+	<string>1.18</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>1.15</string>
+	<string>1.18</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>
@@ -48,10 +48,7 @@
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 		<false/>
 	<key>GADApplicationIdentifier</key>
-		<string>ca-app-pub-9517346003011652~2508636525</string>
-	<key>GADInterstitialIdentifier</key>
-		<string>ca-app-pub-9517346003011652~2508636525</string>
-	
+		<string>ca-app-pub-5959386651087574~4497233380</string>
 
 	<key>CFBundleURLTypes</key>
 	<array>
@@ -62,7 +59,7 @@
 			<string>auth0</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>enrolled-agent.study-app</string>
+				<string>random.trivia</string>
 			</array>
 		</dict>
 	</array>

@@ -11,7 +11,7 @@
     -->
     <ActionItem icon="res://menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()" ios.position="left">
     </ActionItem>
-    <Label text="Mock Exam"></Label>
+    <Label text="{{mockExamTitle}}"></Label>
 </ActionBar>
 
 <ScrollView>
@@ -21,11 +21,9 @@
         <Label class="page__content-placeholder" text="" width="100%" height="50"></Label>
         <Label class="page__content-icon fas" text="📚"></Label>
         <Label class="page__content-placeholder" text="" width="100%" height="25"></Label>
-        <Label class="page__content-placeholder" text=""></Label>
-        <Label class="page__content-placeholder" text="Mock Exam"></Label>
         <Label class="page__content-placeholder" text="" width="100%" height="30"></Label>
         <Label class="page__content-placeholder" text=""></Label>
-        <Label class="page__content-placeholder" text="Choose an exam:" padding="10" class="choose-exam-label" backgroundColor="rgb(169, 169, 169)"></Label>
+        <Label class="page__content-placeholder" text="{{chooseExamLabel}}" padding="10" class="choose-exam-label" backgroundColor="rgb(169, 169, 169)" textWrap="true"></Label>
         
         <Label class="page__content-placeholder underneath-label-text" text="Which section of the enrolled agent exams would you like to take a practice test on?" padding="10" textWrap="true"></Label>
         
@@ -33,9 +31,9 @@
         </ListPicker>
         
         <Label class="page__content-placeholder" text=""></Label>
-        <Label class="page__content-placeholder" text="Choose an exam duration:" padding="10" class="choose-exam-label" backgroundColor="rgb(169, 169, 169)"></Label>
+        <Label class="page__content-placeholder" text="{{mockExamHowLongPickerLabel}}" padding="10" class="choose-exam-label" backgroundColor="rgb(169, 169, 169)" textWrap="true"></Label>
         
-        <Label class="page__content-placeholder underneath-label-text" text="How much time can you spend right now on this practice exam?" padding="10" textWrap="true"></Label>
+        <Label class="page__content-placeholder underneath-label-text" text="{{staticText.mockExamHowLongQuestion}}" padding="10" textWrap="true"></Label>
         <ListPicker 
         [items]="times"
         selectedIndex="0"
@@ -45,14 +43,14 @@
     
     
     <Label class="page__content-placeholder" text=""></Label>
-    <Label class="page__content-placeholder" text="Your exam will begin"></Label>
-    <Label class="page__content-placeholder" text="immediately after pressing start."></Label>
+    <Label class="page__content-placeholder  good-luck-text" text="{{staticText.mockExamGoodLuckText}}" textWrap="true"></Label>
+    <!-- <Label class="page__content-placeholder" text="immediately after pressing start."></Label>
     <Label class="page__content-placeholder" text="" height="15"></Label>
-    <Label class="page__content-placeholder" text="Good luck!"></Label>
+    <Label class="page__content-placeholder" text="Good luck!"></Label> -->
     
     <Label class="page__content-placeholder" text="" width="100%" height="20"></Label>
     
-    <Button text="Start Exam" (tap)="onTap('/meq')" class="-primary"></Button>
+    <Button text="{{staticText.mockExamStartBtnLabel}}" (tap)="onTap('/meq')" class="-primary" textWrap="true"></Button>
     
     <Label class="page__content-placeholder" text="" width="100%" height="10"></Label>
     

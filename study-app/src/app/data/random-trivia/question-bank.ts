@@ -11,9 +11,9 @@ import { IQuestion, AnswerChoice } from "../_data.models/question.model";
  */
 
 export const questionBank: IQuestion[] = [
-   
+
     // Chapter 1 - Animals
-   
+
     {
         chapterIndex: 1,
         questionIndex: 1,
@@ -263,13 +263,13 @@ export const questionBank: IQuestion[] = [
         questionIndex: 10,
         qId: `q1-10`,
         tags: [],
-        questionText: '',
+        questionText: 'What is the length of the average giraffe\'s neck?',
         answerChoices: {
-            [AnswerChoice.A]: '',
-            [AnswerChoice.B]: '',
-            [AnswerChoice.C]: '',
-            [AnswerChoice.D]: '',
-            [AnswerChoice.E]: '',
+            [AnswerChoice.A]: '6 feet',
+            [AnswerChoice.B]: '8 feet',
+            [AnswerChoice.C]: '4 feet',
+            [AnswerChoice.D]: '10 feet',
+            [AnswerChoice.E]: '12 feet',
         },
         correctAnswer: AnswerChoice.C,
         explanations: {
@@ -278,7 +278,9 @@ export const questionBank: IQuestion[] = [
             [AnswerChoice.C]: '',
             [AnswerChoice.D]: ''
         },
-        moreExplanation: ``,
+        moreExplanation: `And average giraffe neck measures about 6 feet long.
+        
+        Girraffe's over time have evolved to have long necks so that they can feed on high leaves that other mammals cannot reach.`,
     },
     // {
     //     chapterIndex: 1,
@@ -478,7 +480,7 @@ export const questionBank: IQuestion[] = [
     //     },
     //     moreExplanation: ``,
     // },
-   
+
     // Chapter 2 - Health
     {
         chapterIndex: 2,
@@ -965,210 +967,512 @@ export const questionBank: IQuestion[] = [
     //     moreExplanation: ``,
     // },
 
-     // Chapter 4
+    // Chapter 4 - Sports
+
+    {
+        chapterIndex: 4,
+        questionIndex: 1,
+        qId: `q4-1`,
+        tags: [],
+        questionText: 'In tennis, what’s the Min number of games you need to win in order to win a set?',
+        answerChoices: {
+            [AnswerChoice.A]: '4',
+            [AnswerChoice.B]: '5',
+            [AnswerChoice.C]: '6',
+            [AnswerChoice.D]: '12',
+            [AnswerChoice.E]: '10',
+        },
+        correctAnswer: AnswerChoice.C,
+        explanations: {
+            [AnswerChoice.A]: '',
+            [AnswerChoice.B]: '',
+            [AnswerChoice.C]: '',
+            [AnswerChoice.D]: ''
+        },
+        moreExplanation: `Generally, winning 7 games wins the set. 
+    
+    If the set goes to a tiebreak at 6-6, the winnter of the set will have won 7 games for the set.`,
+    },
+
+    {
+        chapterIndex: 4,
+        questionIndex: 2,
+        qId: `q4-2`,
+        tags: [],
+        questionText: 'What does love mean in tennis?',
+        answerChoices: {
+            [AnswerChoice.A]: 'Zero points in a game.',
+            [AnswerChoice.B]: 'Zero games in a set.',
+            [AnswerChoice.C]: 'Winning a set.',
+            [AnswerChoice.D]: 'Hitting a shot past an opponent.',
+            [AnswerChoice.E]: 'Winning the entire match.',
+        },
+        correctAnswer: AnswerChoice.C,
+        explanations: {
+            [AnswerChoice.A]: '',
+            [AnswerChoice.B]: '',
+            [AnswerChoice.C]: '',
+            [AnswerChoice.D]: ''
+        },
+        moreExplanation: `When a player has zero points in a game, his or her score of that game is referred to as "love" when saying the score.`,
+    },
+    {
+        chapterIndex: 4,
+        questionIndex: 3,
+        qId: `q4-3`,
+        tags: [],
+        questionText: 'In tennis, what it called when the score of a game is tied and both players have won at least two points during the game?',
+        answerChoices: {
+            [AnswerChoice.A]: 'Deuce',
+            [AnswerChoice.B]: 'Push',
+            [AnswerChoice.C]: 'Break',
+            [AnswerChoice.D]: 'Same',
+            [AnswerChoice.E]: 'Vueu',
+        },
+        correctAnswer: AnswerChoice.A,
+        explanations: {
+            [AnswerChoice.A]: '',
+            [AnswerChoice.B]: '',
+            [AnswerChoice.C]: '',
+            [AnswerChoice.D]: ''
+        },
+        moreExplanation: `In tennis, a game ends with a player winning by two points.
+        
+        If the game is tied at 40-40, instead of winning the game the next player is set to have "advantage". 
+        
+        If this player wins the next point as well, he or she wins the game. If not, the scores is tied again and is referred to as, "duece".`,
+    },
+
+    {
+        chapterIndex: 4,
+        questionIndex: 4,
+        qId: `q4-4`,
+        tags: [],
+        questionText: 'In tennis, what is called when a player\'s serve hits the net and goes in?',
+        answerChoices: {
+            [AnswerChoice.A]: 'Let',
+            [AnswerChoice.B]: 'Right',
+            [AnswerChoice.C]: 'Ace',
+            [AnswerChoice.D]: 'Fault',
+            [AnswerChoice.E]: 'Set',
+        },
+        correctAnswer: AnswerChoice.C,
+        explanations: {
+            [AnswerChoice.A]: '',
+            [AnswerChoice.B]: '',
+            [AnswerChoice.C]: '',
+            [AnswerChoice.D]: ''
+        },
+        moreExplanation: `In tennis, if a players' serve hits the net but still goes in the service box it is referred to as a "let".
+        
+        The point is re-played, no points are awarded to either side, and the serve does not count as a fault.`,
+    },
+
+    {
+        chapterIndex: 4,
+        questionIndex: 5,
+        qId: `q4-5`,
+        tags: [],
+        questionText: 'In football, what it called when a team goes down with the ball in their own end zone, scoring points for the other team?',
+        answerChoices: {
+            [AnswerChoice.A]: 'Safety',
+            [AnswerChoice.B]: 'Touchdown',
+            [AnswerChoice.C]: 'Field Goal',
+            [AnswerChoice.D]: 'Sac',
+            [AnswerChoice.E]: 'Special Temas',
+        },
+        correctAnswer: AnswerChoice.A,
+        explanations: {
+            [AnswerChoice.A]: '',
+            [AnswerChoice.B]: '',
+            [AnswerChoice.C]: '',
+            [AnswerChoice.D]: ''
+        },
+        moreExplanation: `If a team is taken down in their own endzone, it is referred to as a "safety".
+        
+        The defending team which forced the safety is awarded 2 points and reeives a punt that the downded team must kick from their own endzone.`,
+    },
+    {
+        chapterIndex: 4,
+        questionIndex: 6,
+        qId: `q4-6`,
+        tags: [],
+        questionText: 'How many points are awarded for a “safety” in football?',
+        answerChoices: {
+            [AnswerChoice.A]: '1',
+            [AnswerChoice.B]: '2',
+            [AnswerChoice.C]: '3',
+            [AnswerChoice.D]: '5',
+            [AnswerChoice.E]: '7',
+        },
+        correctAnswer: AnswerChoice.B,
+        explanations: {
+            [AnswerChoice.A]: '',
+            [AnswerChoice.B]: '',
+            [AnswerChoice.C]: '',
+            [AnswerChoice.D]: ''
+        },
+        moreExplanation: `If a team is taken down in their own endzone, it is referred to as a "safety".
+        
+        The defending team which forced the safety is awarded 2 points and reeives a punt that the downded team must kick from their own endzone.`,
+    },
+
+    {
+        chapterIndex: 4,
+        questionIndex: 7,
+        qId: `q4-7`,
+        tags: [],
+        questionText: 'What it a word referring to the event where a baseball batter is hit by a pitch?',
+        answerChoices: {
+            [AnswerChoice.A]: 'Beanball',
+            [AnswerChoice.B]: 'Beanbag',
+            [AnswerChoice.C]: 'Deadball',
+            [AnswerChoice.D]: 'Walk',
+            [AnswerChoice.E]: 'Ball',
+        },
+        correctAnswer: AnswerChoice.A,
+        explanations: {
+            [AnswerChoice.A]: '',
+            [AnswerChoice.B]: '',
+            [AnswerChoice.C]: '',
+            [AnswerChoice.D]: ''
+        },
+        moreExplanation: `A player being hit by a pitch is referred to as a "beanball".`,
+    },
+
+    {
+        chapterIndex: 4,
+        questionIndex: 8,
+        qId: `q4-8`,
+        tags: [],
+        questionText: 'In football, What is it called when the quarterback goes down with the ball behind the line of scrimmage?',
+        answerChoices: {
+            [AnswerChoice.A]: 'Sac',
+            [AnswerChoice.B]: 'Spike',
+            [AnswerChoice.C]: 'Foul',
+            [AnswerChoice.D]: 'Slam',
+            [AnswerChoice.E]: 'Draw',
+        },
+        correctAnswer: AnswerChoice.A,
+        explanations: {
+            [AnswerChoice.A]: '',
+            [AnswerChoice.B]: '',
+            [AnswerChoice.C]: '',
+            [AnswerChoice.D]: ''
+        },
+        moreExplanation: `In football, the quarterback being taken down behind the line of scrimmage is referred to as a sac.`,
+    },
+
+    {
+        chapterIndex: 4,
+        questionIndex: 9,
+        qId: `q4-9`,
+        tags: [],
+        questionText: 'What\’s the max number of points a team can get from a touchdown?',
+        answerChoices: {
+            [AnswerChoice.A]: '2',
+            [AnswerChoice.B]: '3',
+            [AnswerChoice.C]: '7',
+            [AnswerChoice.D]: '8',
+            [AnswerChoice.E]: '10',
+        },
+        correctAnswer: AnswerChoice.D,
+        explanations: {
+            [AnswerChoice.A]: '',
+            [AnswerChoice.B]: '',
+            [AnswerChoice.C]: '',
+            [AnswerChoice.D]: ''
+        },
+        moreExplanation: `A team is immediately awarded 6 points when running or catching the ball in the endzone, and with a successful 2-point conversion they can bring the total number of points up to eight.`,
+    },
+
+    {
+        chapterIndex: 4,
+        questionIndex: 10,
+        qId: `q4-10`,
+        tags: [],
+        questionText: 'In football, which player generally catches the farthest thrown passes?',
+        answerChoices: {
+            [AnswerChoice.A]: 'Tight end',
+            [AnswerChoice.B]: 'Wide receiver',
+            [AnswerChoice.C]: 'Fullback',
+            [AnswerChoice.D]: 'Linebacker',
+            [AnswerChoice.E]: 'Center',
+        },
+        correctAnswer: AnswerChoice.B,
+        explanations: {
+            [AnswerChoice.A]: '',
+            [AnswerChoice.B]: '',
+            [AnswerChoice.C]: '',
+            [AnswerChoice.D]: ''
+        },
+        moreExplanation: `The wide receivers are usually the players to run the deepest routes and catch the farthest thrown balls.`,
+    },
+
+    {
+        chapterIndex: 4,
+        questionIndex: 11,
+        qId: `q4-11`,
+        tags: [],
+        questionText: 'In tennis, what is it called when you hit a serve that goes in and your opponents racquet does not even touch it ?',
+        answerChoices: {
+            [AnswerChoice.A]: 'Ace',
+            [AnswerChoice.B]: 'Pass',
+            [AnswerChoice.C]: 'Threough',
+            [AnswerChoice.D]: 'Straight',
+            [AnswerChoice.E]: 'Let',
+        },
+        correctAnswer: AnswerChoice.C,
+        explanations: {
+            [AnswerChoice.A]: '',
+            [AnswerChoice.B]: '',
+            [AnswerChoice.C]: '',
+            [AnswerChoice.D]: ''
+        },
+        moreExplanation: `An ace is when a player hits a serve the goes in and is hit so well that the opponent cannot even get a raquet on the ball.`,
+    },
+
+    {
+        chapterIndex: 4,
+        questionIndex: 12,
+        qId: `q4-12`,
+        tags: [],
+        questionText: 'How many players are on the court in doubles tennis match?',
+        answerChoices: {
+            [AnswerChoice.A]: '2',
+            [AnswerChoice.B]: '4',
+            [AnswerChoice.C]: '6',
+            [AnswerChoice.D]: '7',
+            [AnswerChoice.E]: '8',
+        },
+        correctAnswer: AnswerChoice.B,
+        explanations: {
+            [AnswerChoice.A]: '',
+            [AnswerChoice.B]: '',
+            [AnswerChoice.C]: '',
+            [AnswerChoice.D]: ''
+        },
+        moreExplanation: `Doubles tennis involes 2 teams with 2 players on each team, or four players total.`,
+    },
+    {
+        chapterIndex: 4,
+        questionIndex: 13,
+        qId: `q4-13`,
+        tags: [],
+        questionText: 'In football, How many players per team are allowed on the field during a play?',
+        answerChoices: {
+            [AnswerChoice.A]: '10',
+            [AnswerChoice.B]: '11',
+            [AnswerChoice.C]: '12',
+            [AnswerChoice.D]: '13',
+            [AnswerChoice.E]: '14',
+        },
+        correctAnswer: AnswerChoice.B,
+        explanations: {
+            [AnswerChoice.A]: '',
+            [AnswerChoice.B]: '',
+            [AnswerChoice.C]: '',
+            [AnswerChoice.D]: ''
+        },
+        moreExplanation: `A football game is played between two teams of 11 players each.
+        
+        Playing with more on the field is punishable by a penalty.`,
+    },
+    {
+        chapterIndex: 4,
+        questionIndex: 14,
+        qId: `q4-14`,
+        tags: [],
+        questionText: 'In soccer, How many players per team are allowed on the field during a play?',
+        answerChoices: {
+            [AnswerChoice.A]: '11',
+            [AnswerChoice.B]: '12',
+            [AnswerChoice.C]: '13',
+            [AnswerChoice.D]: '14',
+            [AnswerChoice.E]: '15',
+        },
+        correctAnswer: AnswerChoice.C,
+        explanations: {
+            [AnswerChoice.A]: '',
+            [AnswerChoice.B]: '',
+            [AnswerChoice.C]: '',
+            [AnswerChoice.D]: ''
+        },
+        moreExplanation: `Although soccer can be played with fewer players, there are generally 11 players on the field per team during a soccer game.
+        
+        Each team has 10 field players and a goalkeeper.`,
+    },
+
+    {
+        chapterIndex: 4,
+        questionIndex: 15,
+        qId: `q4-15`,
+        tags: [],
+        questionText: 'In basketball, How many players per team are allowed on the counrt during a play ?',
+        answerChoices: {
+            [AnswerChoice.A]: '4',
+            [AnswerChoice.B]: '5',
+            [AnswerChoice.C]: '6',
+            [AnswerChoice.D]: '7',
+            [AnswerChoice.E]: '8',
+        },
+        correctAnswer: AnswerChoice.B,
+        explanations: {
+            [AnswerChoice.A]: '',
+            [AnswerChoice.B]: '',
+            [AnswerChoice.C]: '',
+            [AnswerChoice.D]: ''
+        },
+        moreExplanation: `Five players from each team may be on the court at one time.`,
+    },
+
+
+    {
+        chapterIndex: 4,
+        questionIndex: 16,
+        qId: `q4-16`,
+        tags: [],
+        questionText: 'In lacrosse, How many players per team are allowed on the field during a play ?',
+        answerChoices: {
+            [AnswerChoice.A]: '9',
+            [AnswerChoice.B]: '10',
+            [AnswerChoice.C]: '11',
+            [AnswerChoice.D]: '12',
+            [AnswerChoice.E]: '13',
+        },
+        correctAnswer: AnswerChoice.B,
+        explanations: {
+            [AnswerChoice.A]: '',
+            [AnswerChoice.B]: '',
+            [AnswerChoice.C]: '',
+            [AnswerChoice.D]: ''
+        },
+        moreExplanation: `There are generally ten lacrosse players on the field at given time: three attackmen, three midfielders, three defensemen, and one goalie.`,
+    },
+
+    {
+        chapterIndex: 4,
+        questionIndex: 17,
+        qId: `q4-17`,
+        tags: [],
+        questionText: 'Which is these is NOT a weightlighting move ?',
+        answerChoices: {
+            [AnswerChoice.A]: 'Torque',
+            [AnswerChoice.B]: 'Squat',
+            [AnswerChoice.C]: 'Clean',
+            [AnswerChoice.D]: 'natch',
+            [AnswerChoice.E]: 'Jerk',
+        },
+        correctAnswer: AnswerChoice.A,
+        explanations: {
+            [AnswerChoice.A]: '',
+            [AnswerChoice.B]: '',
+            [AnswerChoice.C]: '',
+            [AnswerChoice.D]: ''
+        },
+        moreExplanation: `All of these are weightlifting exercises except "torque".`,
+    },
+
+    {
+        chapterIndex: 4,
+        questionIndex: 18,
+        qId: `q4-18`,
+        tags: [],
+        questionText: 'In tennis, what is it called when a player hits an oppopents shot before the ball ever hits the ground?',
+        answerChoices: {
+            [AnswerChoice.A]: 'Volley',
+            [AnswerChoice.B]: 'Ace',
+            [AnswerChoice.C]: 'Net',
+            [AnswerChoice.D]: 'Let',
+            [AnswerChoice.E]: 'Serve',
+        },
+        correctAnswer: AnswerChoice.A,
+        explanations: {
+            [AnswerChoice.A]: '',
+            [AnswerChoice.B]: '',
+            [AnswerChoice.C]: '',
+            [AnswerChoice.D]: ''
+        },
+        moreExplanation: `A volley in tennis is a shot in which the ball is struck before it bounces on the ground.
+        
+        Generally a player hits a volley while standing near the net, although it can be executed farther back, in the middle of the tennis court or even near the baseline.`,
+    },
+
+    {
+        chapterIndex: 4,
+        questionIndex: 19,
+        qId: `q4-19`,
+        tags: [],
+        questionText: 'What is it the name of an extreme version of a pullup where the athlete\'s upper body ends up completely above the bar?',
+        answerChoices: {
+            [AnswerChoice.A]: 'Muscle Up',
+            [AnswerChoice.B]: 'Super Up',
+            [AnswerChoice.C]: 'Extra Up',
+            [AnswerChoice.D]: 'Power Up',
+            [AnswerChoice.E]: 'Spike Up',
+        },
+        correctAnswer: AnswerChoice.A,
+        explanations: {
+            [AnswerChoice.A]: '',
+            [AnswerChoice.B]: '',
+            [AnswerChoice.C]: '',
+            [AnswerChoice.D]: ''
+        },
+        moreExplanation: `This exercise, the muscle up, can also we described as a combination of a radial pull-up followed by a dip`,
+    },
+    {
+        chapterIndex: 4,
+        questionIndex: 20,
+        qId: `q4-20`,
+        tags: [],
+        questionText: 'Which of these is generally NOT a cardiovascular exercise?',
+        answerChoices: {
+            [AnswerChoice.A]: 'Running',
+            [AnswerChoice.B]: 'Deadlifts',
+            [AnswerChoice.C]: 'Rowing',
+            [AnswerChoice.D]: 'Jumping Rope',
+            [AnswerChoice.E]: 'Boxing',
+        },
+        correctAnswer: AnswerChoice.B,
+        explanations: {
+            [AnswerChoice.A]: '',
+            [AnswerChoice.B]: '',
+            [AnswerChoice.C]: '',
+            [AnswerChoice.D]: ''
+        },
+        moreExplanation: `Cardiovascular exercise is any vigorous activity that increases heart rate and respiration and raises oxygen and blood flow throughout the body while using large muscle groups of the body repetitively and rhythmically.
+
+    Though deadlifts can be utlized in cardio exercises that increase heartrate, it's often a controlled, focused exercise aimed at breaking down and strengthening the back and leg muscles.`,
+    },
+    {
+        chapterIndex: 4,
+        questionIndex: 21,
+        qId: `q4-21`,
+        tags: [],
+        questionText: 'Which of these exercises does NOT focus on the chest muscles?',
+        answerChoices: {
+            [AnswerChoice.A]: 'Benchpress',
+            [AnswerChoice.B]: 'Dips',
+            [AnswerChoice.C]: 'Incline Press',
+            [AnswerChoice.D]: 'Pushups',
+            [AnswerChoice.E]: 'Military Press',
+        },
+        correctAnswer: AnswerChoice.E,
+        explanations: {
+            [AnswerChoice.A]: '',
+            [AnswerChoice.B]: '',
+            [AnswerChoice.C]: '',
+            [AnswerChoice.D]: ''
+        },
+        moreExplanation: `Military press is a seated exercise where a bar is raised straight above the athlete's head.
+
+    This exercises focuses more on the shoulder muscles rather than the chest.`,
+    },
 
     // {
-    //     chapterIndex: 3,
+    //     chapterIndex: 4,
     //     questionIndex: ,
-    //     qId: `q3-`,
-    //     tags: [],
-    //     questionText: '',
-    //     answerChoices: {
-    //         [AnswerChoice.A]: '',
-    //         [AnswerChoice.B]: '',
-    //         [AnswerChoice.C]: '',
-    //         [AnswerChoice.D]: '',
-    //         [AnswerChoice.E]: '',
-    //     },
-    //     correctAnswer: AnswerChoice.C,
-    //     explanations: {
-    //         [AnswerChoice.A]: '',
-    //         [AnswerChoice.B]: '',
-    //         [AnswerChoice.C]: '',
-    //         [AnswerChoice.D]: ''
-    //     },
-    //     moreExplanation: ``,
-    // },
-    // {
-    //     chapterIndex: 3,
-    //     questionIndex: ,
-    //     qId: `q3-`,
-    //     tags: [],
-    //     questionText: '',
-    //     answerChoices: {
-    //         [AnswerChoice.A]: '',
-    //         [AnswerChoice.B]: '',
-    //         [AnswerChoice.C]: '',
-    //         [AnswerChoice.D]: '',
-    //         [AnswerChoice.E]: '',
-    //     },
-    //     correctAnswer: AnswerChoice.C,
-    //     explanations: {
-    //         [AnswerChoice.A]: '',
-    //         [AnswerChoice.B]: '',
-    //         [AnswerChoice.C]: '',
-    //         [AnswerChoice.D]: ''
-    //     },
-    //     moreExplanation: ``,
-    // },
-    // {
-    //     chapterIndex: 3,
-    //     questionIndex: ,
-    //     qId: `q3-`,
-    //     tags: [],
-    //     questionText: '',
-    //     answerChoices: {
-    //         [AnswerChoice.A]: '',
-    //         [AnswerChoice.B]: '',
-    //         [AnswerChoice.C]: '',
-    //         [AnswerChoice.D]: '',
-    //         [AnswerChoice.E]: '',
-    //     },
-    //     correctAnswer: AnswerChoice.C,
-    //     explanations: {
-    //         [AnswerChoice.A]: '',
-    //         [AnswerChoice.B]: '',
-    //         [AnswerChoice.C]: '',
-    //         [AnswerChoice.D]: ''
-    //     },
-    //     moreExplanation: ``,
-    // },
-    // {
-    //     chapterIndex: 3,
-    //     questionIndex: ,
-    //     qId: `q3-`,
-    //     tags: [],
-    //     questionText: '',
-    //     answerChoices: {
-    //         [AnswerChoice.A]: '',
-    //         [AnswerChoice.B]: '',
-    //         [AnswerChoice.C]: '',
-    //         [AnswerChoice.D]: '',
-    //         [AnswerChoice.E]: '',
-    //     },
-    //     correctAnswer: AnswerChoice.C,
-    //     explanations: {
-    //         [AnswerChoice.A]: '',
-    //         [AnswerChoice.B]: '',
-    //         [AnswerChoice.C]: '',
-    //         [AnswerChoice.D]: ''
-    //     },
-    //     moreExplanation: ``,
-    // },
-    // {
-    //     chapterIndex: 3,
-    //     questionIndex: ,
-    //     qId: `q3-`,
-    //     tags: [],
-    //     questionText: '',
-    //     answerChoices: {
-    //         [AnswerChoice.A]: '',
-    //         [AnswerChoice.B]: '',
-    //         [AnswerChoice.C]: '',
-    //         [AnswerChoice.D]: '',
-    //         [AnswerChoice.E]: '',
-    //     },
-    //     correctAnswer: AnswerChoice.C,
-    //     explanations: {
-    //         [AnswerChoice.A]: '',
-    //         [AnswerChoice.B]: '',
-    //         [AnswerChoice.C]: '',
-    //         [AnswerChoice.D]: ''
-    //     },
-    //     moreExplanation: ``,
-    // },
-    // {
-    //     chapterIndex: 3,
-    //     questionIndex: ,
-    //     qId: `q3-`,
-    //     tags: [],
-    //     questionText: '',
-    //     answerChoices: {
-    //         [AnswerChoice.A]: '',
-    //         [AnswerChoice.B]: '',
-    //         [AnswerChoice.C]: '',
-    //         [AnswerChoice.D]: '',
-    //         [AnswerChoice.E]: '',
-    //     },
-    //     correctAnswer: AnswerChoice.C,
-    //     explanations: {
-    //         [AnswerChoice.A]: '',
-    //         [AnswerChoice.B]: '',
-    //         [AnswerChoice.C]: '',
-    //         [AnswerChoice.D]: ''
-    //     },
-    //     moreExplanation: ``,
-    // },
-    // {
-    //     chapterIndex: 3,
-    //     questionIndex: ,
-    //     qId: `q3-`,
-    //     tags: [],
-    //     questionText: '',
-    //     answerChoices: {
-    //         [AnswerChoice.A]: '',
-    //         [AnswerChoice.B]: '',
-    //         [AnswerChoice.C]: '',
-    //         [AnswerChoice.D]: '',
-    //         [AnswerChoice.E]: '',
-    //     },
-    //     correctAnswer: AnswerChoice.C,
-    //     explanations: {
-    //         [AnswerChoice.A]: '',
-    //         [AnswerChoice.B]: '',
-    //         [AnswerChoice.C]: '',
-    //         [AnswerChoice.D]: ''
-    //     },
-    //     moreExplanation: ``,
-    // },
-    // {
-    //     chapterIndex: 3,
-    //     questionIndex: ,
-    //     qId: `q3-`,
-    //     tags: [],
-    //     questionText: '',
-    //     answerChoices: {
-    //         [AnswerChoice.A]: '',
-    //         [AnswerChoice.B]: '',
-    //         [AnswerChoice.C]: '',
-    //         [AnswerChoice.D]: '',
-    //         [AnswerChoice.E]: '',
-    //     },
-    //     correctAnswer: AnswerChoice.C,
-    //     explanations: {
-    //         [AnswerChoice.A]: '',
-    //         [AnswerChoice.B]: '',
-    //         [AnswerChoice.C]: '',
-    //         [AnswerChoice.D]: ''
-    //     },
-    //     moreExplanation: ``,
-    // },
-    // {
-    //     chapterIndex: 3,
-    //     questionIndex: ,
-    //     qId: `q3-`,
-    //     tags: [],
-    //     questionText: '',
-    //     answerChoices: {
-    //         [AnswerChoice.A]: '',
-    //         [AnswerChoice.B]: '',
-    //         [AnswerChoice.C]: '',
-    //         [AnswerChoice.D]: '',
-    //         [AnswerChoice.E]: '',
-    //     },
-    //     correctAnswer: AnswerChoice.C,
-    //     explanations: {
-    //         [AnswerChoice.A]: '',
-    //         [AnswerChoice.B]: '',
-    //         [AnswerChoice.C]: '',
-    //         [AnswerChoice.D]: ''
-    //     },
-    //     moreExplanation: ``,
-    // },
-    // {
-    //     chapterIndex: 3,
-    //     questionIndex: ,
-    //     qId: `q3-`,
+    //     qId: `q4-`,
     //     tags: [],
     //     questionText: '',
     //     answerChoices: {
@@ -1188,47 +1492,44 @@ export const questionBank: IQuestion[] = [
     //     moreExplanation: ``,
     // },
 
-    // Chapter 5
+    // Chapter 5 - Technology
 
     {
         chapterIndex: 5,
         questionIndex: 1,
         qId: `q5-1`,
         tags: [],
-        questionText: 'The film "Casablanca" takes place during which global conflict?',
+        questionText: 'When referring to a website’s address was does the acronym URL stand for?',
         answerChoices: {
-            [AnswerChoice.A]: 'Spanish Revolution',
-            [AnswerChoice.B]: 'World War I',
-            [AnswerChoice.C]: 'World War II',
-            [AnswerChoice.D]: 'American Revolution',
-            [AnswerChoice.D]: 'Hundred Years War'
+            [AnswerChoice.A]: 'Uniform Resource Locator',
+            [AnswerChoice.B]: 'Unique Resource Location',
+            [AnswerChoice.C]: 'Unified Request Locator',
+            [AnswerChoice.D]: 'Unique Response Length',
         },
-        correctAnswer: AnswerChoice.B,
+        correctAnswer: AnswerChoice.A,
         explanations: {
             [AnswerChoice.A]: '',
             [AnswerChoice.B]: '',
             [AnswerChoice.C]: '',
-            [AnswerChoice.D]: '',
-            [AnswerChoice.E]: ''
+            [AnswerChoice.D]: ''
         },
-        moreExplanation: `Business bad debts are deducted as an expense on the business tax return when figuring business income or loss.
-
-        Non-business bad debts are reported as short-term capital losses on Form 8949 and carried to Schedule D (Form 1040). Business bad debts are deducted as an expense.`,
+        moreExplanation: `URL stands for Uniform Resource Locator, colloquially termed a "web address". It is a reference to a web resource that specifies its location on a computer network and a mechanism(s) for retrieving it.`,
     },
+
     {
         chapterIndex: 5,
         questionIndex: 2,
         qId: `q5-2`,
         tags: [],
-        questionText: 'On the cover of the "Let It Be" album, which Beatle had the least amount of facial hair?',
+        questionText: 'In computer programming, which of these things are “invoked”?',
         answerChoices: {
-            [AnswerChoice.A]: 'Paul McCartney',
-            [AnswerChoice.B]: 'George Harrison',
-            [AnswerChoice.C]: 'Ringo Starr',
-            [AnswerChoice.D]: 'John Lennon',
-            [AnswerChoice.D]: 'Chuck Berry'
+            [AnswerChoice.A]: 'functions',
+            [AnswerChoice.B]: 'objects',
+            [AnswerChoice.C]: 'arrays',
+            [AnswerChoice.D]: 'integers',
+            [AnswerChoice.E]: 'strings'
         },
-        correctAnswer: AnswerChoice.B,
+        correctAnswer: AnswerChoice.A,
         explanations: {
             [AnswerChoice.A]: '',
             [AnswerChoice.B]: '',
@@ -1236,19 +1537,302 @@ export const questionBank: IQuestion[] = [
             [AnswerChoice.D]: '',
             [AnswerChoice.E]: ''
         },
-        moreExplanation: ``,
+        moreExplanation: `Invoking, also referred to as calling or evaluating a function means to run the code within the function definition (with some or no parameters).`,
+    },
+    {
+        chapterIndex: 5,
+        questionIndex: 3,
+        qId: `q5-3`,
+        tags: [],
+        questionText: 'HTML and CSS are computer languages primary used to create what?',
+        answerChoices: {
+            [AnswerChoice.A]: 'Websites',
+            [AnswerChoice.B]: 'Socket servers',
+            [AnswerChoice.C]: 'Queuing systems',
+            [AnswerChoice.D]: 'Databases',
+            [AnswerChoice.E]: 'Operating systems '
+        },
+        correctAnswer: AnswerChoice.A,
+        explanations: {
+            [AnswerChoice.A]: '',
+            [AnswerChoice.B]: '',
+            [AnswerChoice.C]: '',
+            [AnswerChoice.D]: '',
+            [AnswerChoice.E]: ''
+        },
+        moreExplanation: `HTML and CSS are used to define front-end UI structure and styles, traditionally for websites and web applications but more recently also for desktop applications and mobile applications.`,
     },
 
-     // Chapter 6
+    {
+        chapterIndex: 5,
+        questionIndex: 4,
+        qId: `q5-4`,
+        tags: [],
+        questionText: 'Which piece of computer hardware might have a size of 1 terabyte ?',
+        answerChoices: {
+            [AnswerChoice.A]: 'Hard drive',
+            [AnswerChoice.B]: 'Motherboard',
+            [AnswerChoice.C]: 'Graphics Card',
+            [AnswerChoice.D]: 'RAM sticks',
+            [AnswerChoice.E]: 'Coaxial Cable'
+        },
+        correctAnswer: AnswerChoice.A,
+        explanations: {
+            [AnswerChoice.A]: '',
+            [AnswerChoice.B]: '',
+            [AnswerChoice.C]: '',
+            [AnswerChoice.D]: '',
+            [AnswerChoice.E]: ''
+        },
+        moreExplanation: `Of these choices, only hard drives and RAM are devices that store memory on the magnitude of terabytes.`,
+    },
+
+    {
+        chapterIndex: 5,
+        questionIndex: 5,
+        qId: `q5-5`,
+        tags: [],
+        questionText: 'During a given in which vehicle do you have the highest likelyhood of being in a fatal accident?',
+        answerChoices: {
+            [AnswerChoice.A]: 'Car',
+            [AnswerChoice.B]: 'Airplane',
+            [AnswerChoice.C]: 'Train',
+            [AnswerChoice.D]: 'Boat',
+            [AnswerChoice.E]: 'Bicycle'
+        },
+        correctAnswer: AnswerChoice.A,
+        explanations: {
+            [AnswerChoice.A]: '',
+            [AnswerChoice.B]: '',
+            [AnswerChoice.C]: '',
+            [AnswerChoice.D]: '',
+            [AnswerChoice.E]: ''
+        },
+        moreExplanation: `Statistically, the average person has the highest chance of dieing in a car accident than in any other verhicle.`,
+    },
+    {
+        chapterIndex: 5,
+        questionIndex: 6,
+        qId: `q5-6`,
+        tags: [],
+        questionText: 'What is the last car of a train called?',
+        answerChoices: {
+            [AnswerChoice.A]: 'Lavoose',
+            [AnswerChoice.B]: 'Madoose',
+            [AnswerChoice.C]: 'Garoose',
+            [AnswerChoice.D]: 'Caboose',
+            [AnswerChoice.E]: 'Bakoose'
+        },
+        correctAnswer: AnswerChoice.D,
+        explanations: {
+            [AnswerChoice.A]: '',
+            [AnswerChoice.B]: '',
+            [AnswerChoice.C]: '',
+            [AnswerChoice.D]: '',
+            [AnswerChoice.E]: ''
+        },
+        moreExplanation: `the last car of a train is called the caboose.`,
+    },
+
+
+    {
+        chapterIndex: 5,
+        questionIndex: 7,
+        qId: `q5-7`,
+        tags: [],
+        questionText: 'At around what speed (in miles per hour) does the average commercial airline fly?',
+        answerChoices: {
+            [AnswerChoice.A]: '500',
+            [AnswerChoice.B]: '1000',
+            [AnswerChoice.C]: '1500',
+            [AnswerChoice.D]: '2000',
+            [AnswerChoice.E]: '2500'
+        },
+        correctAnswer: AnswerChoice.A,
+        explanations: {
+            [AnswerChoice.A]: '',
+            [AnswerChoice.B]: '',
+            [AnswerChoice.C]: '',
+            [AnswerChoice.D]: '',
+            [AnswerChoice.E]: ''
+        },
+        moreExplanation: `Commercial airlines generally fly at a speed of around 540–570 miles per hour.`,
+    },
+
+
+    {
+        chapterIndex: 5,
+        questionIndex: 8,
+        qId: `q5-8`,
+        tags: [],
+        questionText: 'What is a word for the phenomenon that keeps boats afloat?',
+        answerChoices: {
+            [AnswerChoice.A]: 'Abaft',
+            [AnswerChoice.B]: 'Binnacle',
+            [AnswerChoice.C]: 'Dory',
+            [AnswerChoice.D]: 'Buoyancy',
+            [AnswerChoice.E]: 'Gash'
+        },
+        correctAnswer: AnswerChoice.D,
+        explanations: {
+            [AnswerChoice.A]: '',
+            [AnswerChoice.B]: '',
+            [AnswerChoice.C]: '',
+            [AnswerChoice.D]: '',
+            [AnswerChoice.E]: ''
+        },
+        moreExplanation: `Buoyancy is an upward force exerted by a the water that keeps boats afloat.`,
+    },
+
+    {
+        chapterIndex: 5,
+        questionIndex: 9,
+        qId: `q5-9`,
+        tags: [],
+        questionText: 'How many feet of chain has a vessel laid, when it has paid out "two shot”?',
+        answerChoices: {
+            [AnswerChoice.A]: '44',
+            [AnswerChoice.B]: '60',
+            [AnswerChoice.C]: '120',
+            [AnswerChoice.D]: '180',
+            [AnswerChoice.E]: '240'
+        },
+        correctAnswer: AnswerChoice.D,
+        explanations: {
+            [AnswerChoice.A]: '',
+            [AnswerChoice.B]: '',
+            [AnswerChoice.C]: '',
+            [AnswerChoice.D]: '',
+            [AnswerChoice.E]: ''
+        },
+        moreExplanation: `"Two shot" is equivalent to 180 feet (a single “shot” is 15 fathoms, or 90 feet).`,
+    },
+    {
+        chapterIndex: 5,
+        questionIndex: 10,
+        qId: `q5-10`,
+        tags: [],
+        questionText: 'The difference between a sedan and a coupe is the number of __________?',
+        answerChoices: {
+            [AnswerChoice.A]: 'Doors',
+            [AnswerChoice.B]: 'Wheels',
+            [AnswerChoice.C]: 'Headlights',
+            [AnswerChoice.D]: 'Gears',
+            [AnswerChoice.E]: 'Mufflers'
+        },
+        correctAnswer: AnswerChoice.A,
+        explanations: {
+            [AnswerChoice.A]: '',
+            [AnswerChoice.B]: '',
+            [AnswerChoice.C]: '',
+            [AnswerChoice.D]: '',
+            [AnswerChoice.E]: ''
+        },
+        moreExplanation: `The difference between a sedan and a coupe is that a sedan has four doors while a coupe has to doors.`,
+    },
+    {
+        chapterIndex: 5,
+        questionIndex: 11,
+        qId: `q5-11`,
+        tags: [],
+        questionText: 'Which of these is NOT a type of automotive transmission?',
+        answerChoices: {
+            [AnswerChoice.A]: 'Automatic',
+            [AnswerChoice.B]: 'Manual',
+            [AnswerChoice.C]: 'CVT',
+            [AnswerChoice.D]: 'Eastern Standard'
+        },
+        correctAnswer: AnswerChoice.D,
+        explanations: {
+            [AnswerChoice.A]: '',
+            [AnswerChoice.B]: '',
+            [AnswerChoice.C]: '',
+            [AnswerChoice.D]: ''
+        },
+        moreExplanation: `Eastern standard is not a type of automotive transmission.`,
+    },
+
+    {
+        chapterIndex: 5,
+        questionIndex: 12,
+        qId: `q5-12`,
+        tags: [],
+        questionText: 'What is the name of the left - hand side of a boat (from the perspective of standing in it facing forward)',
+        answerChoices: {
+            [AnswerChoice.A]: 'Starborn',
+            [AnswerChoice.B]: 'Port',
+            [AnswerChoice.C]: 'Bow',
+            [AnswerChoice.D]: 'Starboard',
+            [AnswerChoice.E]: 'Sort'
+        },
+        correctAnswer: AnswerChoice.D,
+        explanations: {
+            [AnswerChoice.A]: '',
+            [AnswerChoice.B]: '',
+            [AnswerChoice.C]: '',
+            [AnswerChoice.D]: '',
+            [AnswerChoice.E]: ''
+        },
+        moreExplanation: `When looking forward, toward the bow of a ship, port and starboard refer to the left and right sides, respectively.`,
+    },
+    {
+        chapterIndex: 5,
+        questionIndex: 13,
+        qId: `q5-13`,
+        tags: [],
+        questionText: 'The inventor of cruise control was _____.',
+        answerChoices: {
+            [AnswerChoice.A]: 'a 12-year-old child.',
+            [AnswerChoice.B]: 'a homeless man.',
+            [AnswerChoice.C]: 'a blind man.',
+            [AnswerChoice.D]: 'a robot.',
+            [AnswerChoice.E]: 'a dog.'
+        },
+        correctAnswer: AnswerChoice.C,
+        explanations: {
+            [AnswerChoice.A]: '',
+            [AnswerChoice.B]: '',
+            [AnswerChoice.C]: '',
+            [AnswerChoice.D]: '',
+            [AnswerChoice.E]: ''
+        },
+        moreExplanation: `Modern cruise control was invented in 1948 by mechanical engineer Ralph Teetor who became blind at age five in an accident. His idea was borne out of the frustration of riding in a car driven by his lawyer, who kept speeding up and slowing down as he talked.`,
+    },
+
+
+    // {
+    //     chapterIndex: 5,
+    //     questionIndex: ,
+    //     qId: `q5-`,
+    //     tags: [],
+    //     questionText: '',
+    //     answerChoices: {
+    //         [AnswerChoice.A]: '',
+    //         [AnswerChoice.B]: '',
+    //         [AnswerChoice.C]: '',
+    //         [AnswerChoice.D]: '',
+    //         [AnswerChoice.E]: ''
+    //     },
+    //     correctAnswer: AnswerChoice.B,
+    //     explanations: {
+    //         [AnswerChoice.A]: '',
+    //         [AnswerChoice.B]: '',
+    //         [AnswerChoice.C]: '',
+    //         [AnswerChoice.D]: '',
+    //         [AnswerChoice.E]: ''
+    //     },
+    //     moreExplanation: ``,
+    // },
+
+
+    // Chapter 6 - Finance
 
     {
         chapterIndex: 6,
         questionIndex: 1,
         qId: `q6-1`,
         tags: [],
-        questionText: `A cafeteria plan is a written plan that allows employees to choose between receiving cash or taxable benefits instead of certain qualified benefits for which the law provides an exclusion from wages (deferral).
-
-        Which of the following can be included in a cafeteria plan?`,
+        questionText: `If you buy a call option on a stock, you are making a bet that:`,
         answerChoices: {
             [AnswerChoice.A]: 'Adoption assistance',
             [AnswerChoice.B]: 'Tuition reduction',
@@ -1257,39 +1841,184 @@ export const questionBank: IQuestion[] = [
         },
         correctAnswer: AnswerChoice.A,
         explanations: {
-            [AnswerChoice.A]: 'Adoption assistance can be included in a cafeteria plan.',
+            [AnswerChoice.A]: 'the stock\'s price will go up.',
+            [AnswerChoice.B]: 'the stock\'s price will go down.',
+            [AnswerChoice.C]: 'the stock\'s price will move very little.',
+            [AnswerChoice.D]: 'the the price of oil will go up.'
+        },
+        moreExplanation: `If you buy a call option, your position increases in value as the underlying stock price goes up.`,
+    },
+    {
+        chapterIndex: 6,
+        questionIndex: 2,
+        qId: `q6-2`,
+        tags: [],
+        questionText: 'What is the formula for net working capital?',
+        answerChoices: {
+            [AnswerChoice.A]: 'Assets - Depreciation',
+            [AnswerChoice.B]: 'Liabilities - Depreciation',
+            [AnswerChoice.C]: 'Assets - Liabilities',
+            [AnswerChoice.D]: 'Liabilities - Assets',
+            [AnswerChoice.E]: 'Assets - Variable Costs'
+        },
+        correctAnswer: AnswerChoice.C,
+        explanations: {
+            [AnswerChoice.A]: '',
             [AnswerChoice.B]: '',
             [AnswerChoice.C]: '',
-            [AnswerChoice.D]: ''
+            [AnswerChoice.D]: '',
+            [AnswerChoice.E]: ''
         },
-        moreExplanation: `A cafeteria plan is a written plan that allows employees to choose between receiving cash or taxable benefits instead of certain qualified benefits for which the law provides an exclusion from wages.
-
-        Qualified cafeteria plan benefits INCLUDE the following benefits:
-        
-        a. Accident and health benefits (but not medical savings accounts or long-term care insurance)
-        b. Adoption assistance
-        c. Dependent care assistance
-        d. Group-term life insurance coverage (including costs that cannot be excluded from wages)
-        e. Health savings accounts (HSAs) (Distributions from an HSA may be used to pay eligible long-term care insurance premiums or qualified long-term care services.)
-        
-        A cafeteria plan CANNOT include the following benefits:
-        
-        a. Archer medical savings accounts
-        b. Athletic facilities
-        c. De minimis (minimal) benefits
-        d. Educational assistance
-        e. Employee discounts
-        f. Lodging on the business premises
-        g. Meals
-        h. Moving expense reimbursements
-        i. No-additional-cost services
-        j. Scholarships and fellowships
-        k. Transportation (commuting) benefits
-        l. Tuition reduction
-        m. Working condition benefits
-        
-        It also cannot include scholarships or fellowships.`,
+        moreExplanation: `Net working capital is calculated as the difference of assets minus liabilities.`,
     },
+    {
+        chapterIndex: 6,
+        questionIndex: 3,
+        qId: `q6-3`,
+        tags: [],
+        questionText: 'In the future value formula FV = X * (1 + i)^n, what does i represent?',
+        answerChoices: {
+            [AnswerChoice.A]: 'Number of periods',
+            [AnswerChoice.B]: 'Original investment',
+            [AnswerChoice.C]: 'Interest rate',
+            [AnswerChoice.D]: 'Future Value',
+            [AnswerChoice.E]: 'Asset Price'
+        },
+        correctAnswer: AnswerChoice.C,
+        explanations: {
+            [AnswerChoice.A]: '',
+            [AnswerChoice.B]: '',
+            [AnswerChoice.C]: '',
+            [AnswerChoice.D]: '',
+            [AnswerChoice.E]: ''
+        },
+        moreExplanation: `In the future value formula (and many other finance formulae) the lowercase i represents the interest rate.`,
+    },
+    {
+        chapterIndex: 6,
+        questionIndex: 4,
+        qId: `q6-4`,
+        tags: [],
+        questionText: 'Business assets minus business liabilities equals which of the following?',
+        answerChoices: {
+            [AnswerChoice.A]: 'Accrual method of accounting',
+            [AnswerChoice.B]: 'Net working capital',
+            [AnswerChoice.C]: 'Liabilities',
+            [AnswerChoice.D]: 'Assets',
+            [AnswerChoice.E]: 'Variable Costs'
+        },
+        correctAnswer: AnswerChoice.B,
+        explanations: {
+            [AnswerChoice.A]: '',
+            [AnswerChoice.B]: '',
+            [AnswerChoice.C]: '',
+            [AnswerChoice.D]: '',
+            [AnswerChoice.E]: ''
+        },
+        moreExplanation: `Net working capital is calculated as the difference of assets minus liabilities.`,
+    },
+    {
+        chapterIndex: 6,
+        questionIndex: 5,
+        qId: `q6-5`,
+        tags: [],
+        questionText: 'How any federal reserve banks are ther in the united states?',
+        answerChoices: {
+            [AnswerChoice.A]: '6',
+            [AnswerChoice.B]: '8',
+            [AnswerChoice.C]: '10',
+            [AnswerChoice.D]: '12',
+            [AnswerChoice.E]: '14'
+        },
+        correctAnswer: AnswerChoice.D,
+        explanations: {
+            [AnswerChoice.A]: '',
+            [AnswerChoice.B]: '',
+            [AnswerChoice.C]: '',
+            [AnswerChoice.D]: '',
+            [AnswerChoice.E]: ''
+        },
+        moreExplanation: `There are 12 Federal Reserve Banks, each of which is responsible for member banks located in its district. They are located in Boston, New York, Philadelphia, Cleveland, Richmond, Atlanta, Chicago, St. Louis, Minneapolis, Kansas City, Dallas, and San Francisco.`,
+    },
+
+    // {
+    //     chapterIndex: 5,
+    //     questionIndex: ,
+    //     qId: `q5-`,
+    //     tags: [],
+    //     questionText: '',
+    //     answerChoices: {
+    //         [AnswerChoice.A]: '',
+    //         [AnswerChoice.B]: '',
+    //         [AnswerChoice.C]: '',
+    //         [AnswerChoice.D]: '',
+    //         [AnswerChoice.E]: ''
+    //     },
+    //     correctAnswer: AnswerChoice.B,
+    //     explanations: {
+    //         [AnswerChoice.A]: '',
+    //         [AnswerChoice.B]: '',
+    //         [AnswerChoice.C]: '',
+    //         [AnswerChoice.D]: '',
+    //         [AnswerChoice.E]: ''
+    //     },
+    //     moreExplanation: ``,
+    // },
+
+    // {
+    //     chapterIndex: 5,
+    //     questionIndex: ,
+    //     qId: `q5-`,
+    //     tags: [],
+    //     questionText: '',
+    //     answerChoices: {
+    //         [AnswerChoice.A]: '',
+    //         [AnswerChoice.B]: '',
+    //         [AnswerChoice.C]: '',
+    //         [AnswerChoice.D]: '',
+    //         [AnswerChoice.E]: ''
+    //     },
+    //     correctAnswer: AnswerChoice.B,
+    //     explanations: {
+    //         [AnswerChoice.A]: '',
+    //         [AnswerChoice.B]: '',
+    //         [AnswerChoice.C]: '',
+    //         [AnswerChoice.D]: '',
+    //         [AnswerChoice.E]: ''
+    //     },
+    //     moreExplanation: ``,
+    // },
+
+    // {
+    //     chapterIndex: 5,
+    //     questionIndex: ,
+    //     qId: `q5-`,
+    //     tags: [],
+    //     questionText: '',
+    //     answerChoices: {
+    //         [AnswerChoice.A]: '',
+    //         [AnswerChoice.B]: '',
+    //         [AnswerChoice.C]: '',
+    //         [AnswerChoice.D]: '',
+    //         [AnswerChoice.E]: ''
+    //     },
+    //     correctAnswer: AnswerChoice.B,
+    //     explanations: {
+    //         [AnswerChoice.A]: '',
+    //         [AnswerChoice.B]: '',
+    //         [AnswerChoice.C]: '',
+    //         [AnswerChoice.D]: '',
+    //         [AnswerChoice.E]: ''
+    //     },
+    //     moreExplanation: ``,
+    // },
+
+    // How does the federal reserve change the money supply?
+
+    // In what year was the first dollar bill printed?
+
+    // How many federal reserve Banks are there in the us?
+
 
     // Chapter 7
 
@@ -1320,28 +2049,6 @@ export const questionBank: IQuestion[] = [
     },
 
     // Chapter 8
-
-    {
-        chapterIndex: 8,
-        questionIndex: 1,
-        qId: 'q8-1',
-        tags: [],
-        questionText: 'Which US state is home to Clemson University?',
-        answerChoices: {
-            [AnswerChoice.A]: 'South Carolina',
-            [AnswerChoice.B]: 'New Jersey',
-            [AnswerChoice.C]: 'Virginia',
-            [AnswerChoice.D]: 'California'
-        },
-        correctAnswer: AnswerChoice.A,
-        explanations: {
-            [AnswerChoice.A]: '',
-            [AnswerChoice.B]: '',
-            [AnswerChoice.C]: '',
-            [AnswerChoice.D]: ''
-        },
-        moreExplanation: `no more explanation :/`,
-    },
 
     {
         chapterIndex: 8,
