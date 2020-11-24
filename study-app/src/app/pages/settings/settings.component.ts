@@ -4,7 +4,6 @@ import * as app from "tns-core-modules/application";
 import { ModalDialogService, ModalDialogOptions } from "nativescript-angular/common";
 import { SettingsModalComponent } from "./modal/settings.modal";
 import { VideoAdManagerService } from "~/app/utils/video-ad-manager/video-ad-manager.service";
-// import { Sentry } from 'nativescript-sentry';
 
 const firebase = require("nativescript-plugin-firebase");
 

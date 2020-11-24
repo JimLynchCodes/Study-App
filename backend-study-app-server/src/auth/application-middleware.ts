@@ -14,12 +14,16 @@ export class AuthenticationMiddleware implements NestMiddleware {
         cache: true,
         rateLimit: true,
         jwksRequestsPerMinute: 5,
-        jwksUri: 'https://${DOMAIN}/.well-known/jwks.json',
+        // jwksUri: 'https://${DOMAIN}/.well-known/jwks.json',
+        jwksUri: 'https://study-apps.us.auth0.com/.well-known/jwks.json',
       }),
 
       audience: 'http://localhost:3000',
-      issuer: 'https://${DOMAIN}/',
-      algorithm: 'RS256',
+      // audience: 'random.trivia://study-apps.us.auth0.com/ios/random-trivia/',
+      // audience: 'random.trivia://study-apps.us.auth0.com/ios/random-trivia/',
+      // issuer: 'https://${DOMAIN}/',
+      issuer: 'https://study-apps.us.auth0.com/',
+      algorithms: ['RS256'],
     })(req, res, err => {
       if (err) {
         const status = err.status || 500;
@@ -29,6 +33,11 @@ export class AuthenticationMiddleware implements NestMiddleware {
           message,
         });
       }
+
+      console.log('token looks good!')
+
+      // TODO - decode token and identify a user from it.
+
       next();
     });
   };

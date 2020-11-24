@@ -86,7 +86,9 @@ export class AppComponent implements OnInit {
         try {
 
             const res = await this.auth0.webAuthentication({
-                scope: 'openid profile'
+                scope: 'openid profile',
+                // audience: 'random.trivia://study-apps.us.auth0.com/ios/random-trivia/'
+                audience: 'http://localhost:3000'
             })
             console.log('logged in! ', res)
 
@@ -94,7 +96,7 @@ export class AppComponent implements OnInit {
 
             console.log('user data: ', JSON.stringify(userInfo));
 
-            this.userName = userInfo.name
+            this.userName = userInfo.nickname
             this.userPicture = userInfo.pictureURL ? userInfo.pictureURL : (userInfo as any).picture
 
         }
