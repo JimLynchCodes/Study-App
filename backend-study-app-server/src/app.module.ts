@@ -6,9 +6,14 @@ import { QuestionFeedbackController } from './controllers/question-feedback/ques
 import { JwtValidatorService } from './services/jwt-validator/jwt-validator.service';
 import { UserIdentityService } from './services/user-identity/user-identity.service';
 import { AuthenticationMiddleware } from './auth/application-middleware';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
-  imports: [],
+  imports: [
+    ConfigModule.forRoot({
+      envFilePath: ['.env.development.local', '.env.dev'],
+    })
+  ],
   controllers: [AppController, UsersController, QuestionFeedbackController],
   providers: [AppService, JwtValidatorService, UserIdentityService],
 })

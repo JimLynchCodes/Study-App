@@ -1,0 +1,3 @@
+AUTH0_JWKS_URI="example auth0 jwks_uri"
+AUTH0_AUDIENCE="example auth0 audience"
+AUTH0_ISSUER="example auth0 issuer"
