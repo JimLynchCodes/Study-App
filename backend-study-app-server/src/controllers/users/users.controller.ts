@@ -30,7 +30,7 @@ export class UsersController {
             return new UnauthorizedException()
         }
 
-        return Promise.resolve('all users...')
+        // return Promise.resolve('all users...')
     }
 
     @Get(':app')
