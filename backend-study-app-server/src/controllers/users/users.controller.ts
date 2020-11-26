@@ -1,10 +1,10 @@
-import { Controller, Get, Param, Query, Header, Request, HttpException, UnauthorizedException } from '@nestjs/common';
+import { Controller, Get, Param, Query, Header, Request, HttpException, UnauthorizedException, Post, Put, Patch } from '@nestjs/common';
 import { JwtValidatorService } from 'src/services/jwt-validator/jwt-validator.service';
 
 @Controller('users')
 export class UsersController {
 
-    constructor(private jwtValidator: JwtValidatorService) {}
+    constructor(private jwtValidator: JwtValidatorService) { }
 
     @Get('hello')
     getHello(): string {
@@ -30,6 +30,22 @@ export class UsersController {
         }
 
         return Promise.resolve('all users...')
+    }
+
+    @Get(':app')
+    async getMyUsersDataForApp(@Param('app') appName: string, @Request() req: any): Promise<string | UnauthorizedException> {
+
+        return 'foo'
+    }
+
+    @Patch(':app')
+    async updateMyUsersData(@Param('app') appName: string, @Request() req: any): Promise<string | UnauthorizedException> {
+        return 'foo'
+    }
+
+    @Post(':app/:questionId')
+    addNewUser() {
+
     }
 
 }

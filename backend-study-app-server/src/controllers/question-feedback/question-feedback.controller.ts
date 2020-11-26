@@ -1,4 +1,4 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Post } from '@nestjs/common';
 
 @Controller('question-feedback')
 export class QuestionFeedbackController {
@@ -7,4 +7,20 @@ export class QuestionFeedbackController {
     getHello(): string {
         return 'question-feedback hello'
     }
+
+    @Get(':app/')
+    getFeedbackForAllQuestions() {
+
+    }
+
+    @Get(':app/:questionId')
+    getFeedbackForQuestion() {
+
+    }
+
+    @Post(':app/:questionId')
+    addNewFeedbackForQuestion() {
+
+    }
+
 }
