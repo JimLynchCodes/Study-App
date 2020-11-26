@@ -5,21 +5,23 @@ import { expressJwtSecret } from 'jwks-rsa';
 export class AuthenticationMiddleware implements NestMiddleware {
   use(req, res, next) {
 
+    console.log('jwksUri', process.env.AUTH0_JWKS_URI)
+    console.log('audience', process.env.AUTH0_AUDIENCE)
+    console.log('issuer', process.env.AUTH0_ISSUER)
     console.log('using the auth middleware!')
-
-    // next()
 
     jwt({
       secret: expressJwtSecret({
         cache: true,
         rateLimit: true,
         jwksRequestsPerMinute: 5,
-        jwksUri: 'https://${DOMAIN}/.well-known/jwks.json',
+        jwksUri: `https://${process.env.DOMAIN}/.well-known/jwks.json`,
       }),
 
-      audience: 'http://localhost:3000',
-      issuer: 'https://${DOMAIN}/',
-      algorithm: 'RS256',
+      // audience: 'http://localhost:3000',
+      audience: 'random.trivia://study-apps.us.auth0.com/ios/random.trivia/',
+      issuer: `https://${process.env.DOMAIN}/`,
+      algorithms: ['RS256'],
     })(req, res, err => {
       if (err) {
         const status = err.status || 500;

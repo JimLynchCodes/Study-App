@@ -1,5 +1,6 @@
 import { Controller, Get, Param, Query, Header, Request, HttpException, UnauthorizedException } from '@nestjs/common';
 import { JwtValidatorService } from 'src/services/jwt-validator/jwt-validator.service';
+import { User } from './user.model';
 
 @Controller('users')
 export class UsersController {
@@ -11,8 +12,8 @@ export class UsersController {
         return 'users hello'
     }
 
-    @Get(':app')
-    async getAllUsersForApp(@Param('app') appName: string, @Request() req: any): Promise<string | UnauthorizedException> {
+    @Get(':app')  // where app value is "enrolled-agent", "random-trivia", etc. (and also used as the mongo "database name")
+    async getAllUsersForApp(@Param('app') appName: string, @Request() req: any): Promise<User[] | UnauthorizedException> {
 
         console.log('appName ', appName)
         console.log('req.headers ', req.headers)
