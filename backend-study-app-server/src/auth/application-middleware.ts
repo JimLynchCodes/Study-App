@@ -31,6 +31,11 @@ export class AuthenticationMiddleware implements NestMiddleware {
           message,
         });
       }
+
+      console.log('token looks good!')
+
+      // TODO - decode token and identify a user from it.
+
       next();
     });
   };
