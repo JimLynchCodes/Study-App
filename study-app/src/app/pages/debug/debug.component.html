@@ -1,0 +1,33 @@
+<ActionBar>
+    <!-- 
+    Use the NavigationButton as a side-drawer button in Android
+    because ActionItems are shown on the right side of the ActionBar
+    -->
+    <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
+    <!-- 
+    Use the ActionItem for IOS with position set to left. Using the
+    NavigationButton as a side-drawer button in iOS is not possible,
+    because its function is to always navigate back in the application.
+    -->
+    <ActionItem icon="res://menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()" ios.position="left">
+    </ActionItem>
+    <Label text="Debug"></Label>
+</ActionBar>
+
+<StackLayout class="page__content">
+    <Label class="page__content-icon fas" text="🐛"></Label>
+
+    <Button text="Open Modal" (tap)="openModalBtnClick()" class="-primary default-button button-spacer"></Button>
+
+    <Label class="page__content-placeholder" text=""></Label>
+    <Label class="page__content-placeholder" text=""></Label>
+    <Label class="page__content-placeholder" text=""></Label>
+
+    <Label class="page__content-placeholder" text="{{videoAdLoadingText}}" textWrap="true"></Label>
+
+    <Button text="Show Video Ad" (tap)="showVideoAd()" [ngClass]="{'disabled-btn': adPreloadingFinished !== true}"
+        [disabled]="!adPreloadingFinished" class="-primary default-button button-spacer"></Button>
+
+    <Label class="page__content-placeholder text-center" text="{{message}}" textWrap="true"></Label>
+
+</StackLayout>

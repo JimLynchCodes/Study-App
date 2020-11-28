@@ -5,7 +5,7 @@
     -->
     <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
     <!-- 
-    Use the ActionItem for IOS with position set to left. Using the
+Use the ActionItem for IOS with position set to left. Using the
     NavigationButton as a side-drawer button in iOS is not possible,
     because its function is to always navigate back in the application.
     -->
@@ -16,19 +16,33 @@
 
 <StackLayout class="page__content">
     <Label class="page__content-icon fas" text="&#xf013;"></Label>
-    <Label class="page__content-placeholder" text="Your Settings..."></Label>
+    <Label class="page__content-placeholder" text=" "></Label>
 
-    <Button text="Open Modal" (tap)="openModalBtnClick()" class="-primary default-button button-spacer"></Button>
+    <FlexboxLayout justifyContent="space-between" width="100%" class="primary p-2">
+        <Label class="page__content-placeholder footer-text p-5" text="Coolness" row="0" col="0" width="77%"
+            textWrap="true"></Label>
+        <Switch row="0" col="1" class="radio-switch" (checkedChange)="coolnessToggle()">
+        </Switch>
+    </FlexboxLayout>
 
-    <Label class="page__content-placeholder" text=""></Label>
-    <Label class="page__content-placeholder" text=""></Label>
-    <Label class="page__content-placeholder" text=""></Label>
+    <FlexboxLayout>
+        <Label class="p-5"
+            text="{{isCool === true ? '    You are cool!' : '    Hit the toggle switch if you are cool...'}}" row="0"
+            col="0" width="77%" textWrap="true">
+        </Label>
+    </FlexboxLayout>
 
-    <Label class="page__content-placeholder" text="{{videoAdLabelText}}"></Label>
+    <FlexboxLayout justifyContent="space-between" width="100%" class="primary p-2">
+        <Label class="page__content-placeholder footer-text p-5" text="Dark Mode" row="0" col="0" width="77%"
+            textWrap="true"></Label>
+        <Switch [checked]="darkModeEnabled" row="0" col="1" class="radio-switch"
+            (checkedChange)="onDarkModeToggleClicked()"></Switch>
+    </FlexboxLayout>
 
-    <Button text="Show Video Ad" (tap)="showVideoAd()" [ngClass]="{'disabled-btn': adPreloadingFinished !== true}"
-        [disabled]="!adPreloadingFinished" class="-primary default-button button-spacer"></Button>
-
-    <Label class="page__content-placeholder" text="{{message}}"></Label>
+    <FlexboxLayout>
+        <Label class="p-5" text="    Dark mode is {{darkModeEnabled ? 'enabled!' : 'disabled'}}" row="0" col="0"
+            width="77%" textWrap="true">
+        </Label>
+    </FlexboxLayout>
 
 </StackLayout>

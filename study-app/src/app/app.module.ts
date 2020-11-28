@@ -9,6 +9,8 @@ import { VideoAdManagerService } from "./utils/video-ad-manager/video-ad-manager
 import { SettingsModalComponent } from "./pages/settings/modal/settings.modal";
 import { AreYouSureExamSubmitModalComponent } from "./pages/study/pages/mock-exam/review-answers/are-you-sure-exam-submit.modal";
 import { TimesUpModalComponent } from "./pages/study/pages/mock-exam/times-up.modal";
+import { NativeScriptFormsModule } from "nativescript-angular/forms";
+
 // import { SentryModule } from 'nativescript-sentry/angular';
 
 @NgModule({
@@ -19,13 +21,17 @@ import { TimesUpModalComponent } from "./pages/study/pages/mock-exam/times-up.mo
         AppRoutingModule,
         NativeScriptModule,
         NativeScriptUISideDrawerModule,
+        NativeScriptFormsModule
+        // ExamModule
         // SentryModule.forRoot({dsn: 'https://e552084ca37c4bf787e2bcb14fe3a0ad@o455963.ingest.sentry.io/5448325'})
     ],
     declarations: [
         AppComponent,
         SettingsModalComponent,
         AreYouSureExamSubmitModalComponent,
-        TimesUpModalComponent
+        TimesUpModalComponent,
+        // ExamComponent,
+        // DebugComponent
     ],
     providers: [
         QuestionGenerator,

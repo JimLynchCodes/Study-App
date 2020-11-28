@@ -1,0 +1,36 @@
+<ActionBar>
+    <!-- 
+    Use the NavigationButton as a side-drawer button in Android
+    because ActionItems are shown on the right side of the ActionBar
+    -->
+    <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
+    <!-- 
+    Use the ActionItem for IOS with position set to left. Using the
+    NavigationButton as a side-drawer button in iOS is not possible,
+    because its function is to always navigate back in the application.
+    -->
+    <ActionItem icon="res://menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()" ios.position="left">
+    </ActionItem>
+    <Label text="Continuing Educationnn!!!"></Label>
+</ActionBar>
+
+
+<ScrollView row="1" class="nt-drawer__body">
+
+    <FlexboxLayout flexDirection="column" class="continuing-education-page-container">
+        <Label class="page__content-placeholder" text=" "></Label>
+        <Label class="page__content-placeholder" text=" "></Label>
+        <Label class="page__content-icon fas info-circle" text="&#xf015;"></Label>
+        <!-- <Label class="page__content-placeholder" text="{{continuingEducationTitle}}" class="continuing-education-gray continuing-education-title"
+            textWrap="true"></Label>
+        <Label class="page__content-placeholder" text="{{continuingEducationMessage}}" class="continuing-education-gray continuing-education-message"
+            textWrap="true"></Label> -->
+        <Label class="page__content-placeholder" text=" "></Label>
+
+        <Label class="page__content-placeholder footer-text" text="Continuing Education"></Label>
+        
+        <Label class="page__content-placeholder" text=" "></Label>
+        <Label class="page__content-placeholder" text=" "></Label>
+        
+    </FlexboxLayout>
+</ScrollView>

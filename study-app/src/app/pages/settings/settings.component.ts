@@ -5,6 +5,19 @@ import { ModalDialogService, ModalDialogOptions } from "nativescript-angular/com
 import { SettingsModalComponent } from "./modal/settings.modal";
 import { VideoAdManagerService } from "~/app/utils/video-ad-manager/video-ad-manager.service";
 
+import {
+    getBoolean,
+    // setBoolean,
+    // getNumber,
+    // setNumber,
+    // getString,
+    // setString,
+    // hasKey,
+    // remove,
+    // clear
+} from "tns-core-modules/application-settings";
+
+
 const firebase = require("nativescript-plugin-firebase");
 
 @Component({
@@ -23,27 +36,17 @@ export class SettingsComponent implements OnInit {
 
     rewards = 0
 
+    darkModeEnabled = false
+
+    isCool = false
+
     constructor(private modalService: ModalDialogService,
         private viewContainerRef: ViewContainerRef,
         private videoAdManager: VideoAdManagerService,
         private zone: NgZone) { }
 
     async ngOnInit(): Promise<void> {
-        await this.preloadVideo()
-    }
-
-    private async preloadVideo(loadingText = 'loading video...') {
-
-        this.videoAdLabelText = loadingText
-
-        await this.videoAdManager.preloadVideoAd()
-
-        console.log(loadingText)
-
-        this.videoAdLabelText = 'video ad is ready to play!'
-
-        this.adPreloadingFinished = true
-
+        this.isCool = getBoolean('isCool')
     }
 
     openModalBtnClick() {
@@ -59,83 +62,22 @@ export class SettingsComponent implements OnInit {
 
     }
 
-    async showVideoAd() {
-
-        this.videoAdLabelText = 'video ad is playing...'
-        this.adPreloadingFinished = false
-
-        try {
-            firebase.admob.showRewardedVideoAd({
-                onRewarded: (reward) => {
-                    console.log("onRewarded");
-
-                    ++this.rewards;
-
-                    this.zone.run(() => {
-                        console.log('enabled time travel');
-                        this.videoAdLabelText = 'watched the ad!';
-
-                        const amount = this.rewards === 1 ? 'a' : this.rewards
-
-                        const sOrNot = this.rewards === 1 ? '' : 's'
-
-                        this.message = `You watched ${amount} video${sOrNot}. Now you get ${amount} reward${sOrNot}!`
-                    });
-                },
-                onClosed: () => {
-
-                    console.log('Ad Closed2!')
-
-                    setTimeout(() => {
-
-                        console.log('timeout fired!')
-
-                        this.zone.run(async () => {
-                            await this.preloadVideo('loading another video...')
-                        })
-
-                    }, 2000)
-
-                },
-                onRewardedVideoAdClosed: () => {
-
-                    console.log('Ad Closed!')
-
-                    setTimeout(() => {
-
-                        console.log('timeout fired!')
-
-                        this.zone.run(async () => {
-                            await this.preloadVideo('loading another video...')
-                        })
-
-                    }, 2000)
-
-                },
-                onOpened: () => console.log("onRewardedVideoAdOpened"),
-                onStarted: () => console.log("onRewardedVideoStarted"),
-                onCompleted: () => {
-                    console.log("onRewardedVideoCompleted")
-                },
-            }).then(
-                function () {
-                    console.log("showRewardedVideoAd is playing");
-                },
-                function (error) {
-                    console.log("admob showRewardedVideoAd error: " + error);
-                    // Sentry.captureException(error, {});
-                })
-                
-            } catch (err) {
-                console.log("admob err: " + err);
-            // Sentry.captureException(err, {});
-        }
-
+    onDarkModeToggleClicked(): void {
+        this.darkModeEnabled = !this.darkModeEnabled
     }
 
     onDrawerButtonTap(): void {
         const sideDrawer = <RadSideDrawer>app.getRootView();
         sideDrawer.showDrawer();
+    }
+
+    coolnessToggle(): void {
+        this.isCool = !this.isCool
+        // console.log('coolness toggle changed !', this.isCool)
+
+        // localStorage.setItem('isCool', '' + this.isCool);
+
+        // setBoolean('isCool', this.isCool)
     }
 
 }

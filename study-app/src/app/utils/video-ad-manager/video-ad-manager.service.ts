@@ -1,7 +1,5 @@
 import { Injectable } from "@angular/core";
-import { IQuestion, AnswerChoice } from "../../data/_data.models/question.model";
 import { environment } from '../../../environments/environment'
-import { LoaderService } from "~/app/utils/loader.service";
 
 const firebase = require("nativescript-plugin-firebase");
 
@@ -38,11 +36,14 @@ export class VideoAdManagerService {
 
             firebase.admob.preloadRewardedVideoAd({
                 testing: true,
-                iosAdPlacementId: "ca-app-pub-5959386651087574/7395693610", // add your own
-                androidAdPlacementId: "ca-app-pub-5959386651087574/7395693610", // add your own
+                iosAdPlacementId: environment.admobKey,
+                androidAdPlacementId: environment.admobKey,
                 keywords: ["keyword1", "keyword2"], // add keywords for ad targeting
             }).then(
+
                 function () {
+                    // const ok = 5 / 0
+
                     console.log("RewardedVideoAd preloaded - you can now call 'showRewardedVideoAd' whenever you're ready to do so");
                     resolve()
                 },
@@ -52,26 +53,6 @@ export class VideoAdManagerService {
                 }
             )
 
-            // ca-app-pub-5959386651087574/7395693610
-            //     firebase.admob.preloadRewardedVideoAd({
-            //         testing: true,
-            //         iosAdPlacementId: "ca-app-pub-5959386651087574~4497233380",
-            //         // iosInterstitialId: "ca-app-pub-5959386651087574~4497233380",
-            //         androidAdPlacementId: "ca-app-pub-5959386651087574~4497233380",
-            //         iosTestDeviceIds: [],
-            //         keywords: [], // add keywords for ad targeting
-            //     }).then(
-            //         function () {
-            //             console.log("RewardedVideoAd preloaded - you can now call 'showRewardedVideoAd' whenever you're ready to do so");
-            //             resolve()
-            //         },
-            //         function (error) {
-            //             console.log("admob preloadRewardedVideoAd error: " + error);
-            //             reject()
-            //         })
         })
     }
-
-
-
 }

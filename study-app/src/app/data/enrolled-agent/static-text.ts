@@ -1,4 +1,5 @@
 import { StaticText } from "../_data.models/static-text.model";
+import { ContinuingEducationComponent } from "~/app/pages/continuing-education/continuing-education.component";
 
 export const appText: StaticText = {
     homeTitle: "Welcome to EA Study App!",
@@ -32,5 +33,9 @@ export const appText: StaticText = {
     mockExamHowLongQuestion: 'How much time can you spend right now on this practice exam?',
     mockExamGoodLuckText: `Your exam will begin immediately after pressing the start button.
     Good Luck!`,
-    mockExamStartBtnLabel: 'Start Exam'
+    mockExamStartBtnLabel: 'Start Exam',
+    examP1: `The official source on information for registering and taking the exam can be found here.`,
+    examP2: `The official source on information for registering and taking the exam can be found here.`,
+    continuingEducationP1: `continuing education 1...`,
+    continuingEducationP2: `continuing education 2...`
 }

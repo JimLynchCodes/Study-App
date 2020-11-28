@@ -18,6 +18,8 @@ const firebase = require("nativescript-plugin-firebase");
 export class AppComponent implements OnInit {
     private _activatedUrl: string;
     private _sideDrawerTransition: DrawerTransitionBase;
+
+    firebaseInitialized = false;
     
     auth0 
     
@@ -39,18 +41,21 @@ export class AppComponent implements OnInit {
 
         this.auth0 = new Auth0(appConfig.auth0_clientId, appConfig.auth0_domain);
 
+        if (!this.firebaseInitialized)
         firebase.init({
             // Optionally pass in properties for database, authentication and cloud messaging,
             // see their respective docs.
+            crashlyticsCollectionEnabled: true
         }).then(
             () => {
+
+                this.firebaseInitialized = true;
                 console.log("firebase.init done");
             },
             error => {
                 console.log(`firebase.init error: ${error}`);
             }
         );
-
 
         this.router.events
             .pipe(filter((event: any) => event instanceof NavigationEnd))

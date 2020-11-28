@@ -16,5 +16,9 @@ export interface StaticText {
     mockExamHowLongPickerLabel: string,
     mockExamHowLongQuestion: string,
     mockExamGoodLuckText: string,
-    mockExamStartBtnLabel: string
+    mockExamStartBtnLabel: string,
+    examP1: string,
+    examP2: string,
+    continuingEducationP1: string,
+    continuingEducationP2: string,
 }

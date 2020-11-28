@@ -36,5 +36,9 @@ export const appText: StaticText = {
     mockExamHowLongQuestion: 'How much time can you spend right now on this quiz?',
     mockExamGoodLuckText: `Your quiz will begin immediately after pressing the start button!
     Good Luck!`,
-    mockExamStartBtnLabel: 'Start!'
+    mockExamStartBtnLabel: 'Start!',
+    examP1: `...`,
+    examP2: `...`,
+    continuingEducationP1: `continuing education 1...`,
+    continuingEducationP2: `continuing education 2...`
 }
