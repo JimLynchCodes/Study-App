@@ -8,8 +8,19 @@ import * as app from "tns-core-modules/application";
 import { environment } from '../environments/environment';
 import { Auth0 } from 'nativescript-auth0';
 
+// TODO - bring back firebase stuff
 
-const firebase = require("nativescript-plugin-firebase");
+// const firebase = require("nativescript-plugin-firebase");
+
+// import { crashlytics } from "nativescript-plugin-firebase";
+
+// crashlytics.setString("test_key", "test_value");
+// crashlytics.setBool("test_key_bool", true);
+// crashlytics.setInt("test_key_int", 2);
+// crashlytics.setDouble("test_key_double", 56615.55548465);
+// crashlytics.setFloat("test_key", 54646.45);
+
+// crashlytics.setUserId("user#42");
 
 @Component({
     selector: "ns-app",
@@ -42,20 +53,20 @@ export class AppComponent implements OnInit {
         this.auth0 = new Auth0(appConfig.auth0_clientId, appConfig.auth0_domain);
 
         if (!this.firebaseInitialized)
-        firebase.init({
-            // Optionally pass in properties for database, authentication and cloud messaging,
-            // see their respective docs.
-            crashlyticsCollectionEnabled: true
-        }).then(
-            () => {
+        // firebase.init({
+        //     // Optionally pass in properties for database, authentication and cloud messaging,
+        //     // see their respective docs.
+        //     crashlyticsCollectionEnabled: true
+        // }).then(
+        //     () => {
 
-                this.firebaseInitialized = true;
-                console.log("firebase.init done");
-            },
-            error => {
-                console.log(`firebase.init error: ${error}`);
-            }
-        );
+        //         this.firebaseInitialized = true;
+        //         console.log("firebase.init done");
+        //     },
+        //     error => {
+        //         console.log(`firebase.init error: ${error}`);
+        //     }
+        // );
 
         this.router.events
             .pipe(filter((event: any) => event instanceof NavigationEnd))

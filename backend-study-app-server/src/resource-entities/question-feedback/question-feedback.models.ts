@@ -1,7 +1,8 @@
 
 import { ObjectId } from 'mongodb';
 
-enum FeedbackType {
+export enum FeedbackType {
+    reportBug = 'Report a Bug',
     spellingOrGrammer = 'Spelling / Grammar',
     incorrectAnswerOrExplanation = 'Incorrect Answer Or Explanation',
     iHaveAQuestion = 'I Have A Question About This Question',

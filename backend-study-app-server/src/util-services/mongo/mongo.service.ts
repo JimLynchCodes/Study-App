@@ -11,6 +11,8 @@ export class MongoService {
 
     async getDb(dbName: string): Promise<Db> {
 
+        console.log('connecting to... ', process.env.MONGO_USERS_COLLECTION)
+        
         if (this.db)
             return this.db;
 

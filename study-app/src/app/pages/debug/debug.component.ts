@@ -5,7 +5,7 @@ import { ModalDialogService, ModalDialogOptions } from "nativescript-angular/com
 import { VideoAdManagerService } from "~/app/utils/video-ad-manager/video-ad-manager.service";
 import { SettingsModalComponent } from "../settings/modal/settings.modal";
 
-const firebase = require("nativescript-plugin-firebase");
+// const firebase = require("nativescript-plugin-firebase");
 
 @Component({
     selector: "Debug",
@@ -63,72 +63,72 @@ export class DebugComponent implements OnInit {
         this.videoAdLoadingText = 'Video ad is playing...'
         this.adPreloadingFinished = false
 
-        try {
-            firebase.admob.showRewardedVideoAd({
-                onRewarded: (reward) => {
-                    console.log("onRewarded");
+        // try {
+        //     firebase.admob.showRewardedVideoAd({
+        //         onRewarded: (reward) => {
+        //             console.log("onRewarded");
 
-                    ++this.rewards;
+        //             ++this.rewards;
 
-                    this.zone.run(() => {
-                        console.log('enabled time travel');
-                        this.videoAdLoadingText = 'You watched the ad!';
+        //             this.zone.run(() => {
+        //                 console.log('enabled time travel');
+        //                 this.videoAdLoadingText = 'You watched the ad!';
 
-                        const amount = this.rewards === 1 ? 'a' : this.rewards
+        //                 const amount = this.rewards === 1 ? 'a' : this.rewards
 
-                        const sOrNot = this.rewards === 1 ? '' : 's'
+        //                 const sOrNot = this.rewards === 1 ? '' : 's'
 
-                        this.message = `You watched ${amount} video${sOrNot}!`
-                    });
-                },
-                onClosed: () => {
+        //                 this.message = `You watched ${amount} video${sOrNot}!`
+        //             });
+        //         },
+        //         onClosed: () => {
 
-                    console.log('Ad Closed2!')
+        //             console.log('Ad Closed2!')
 
-                    setTimeout(() => {
+        //             setTimeout(() => {
 
-                        console.log('timeout fired!')
+        //                 console.log('timeout fired!')
 
-                        this.zone.run(async () => {
-                            await this.preloadVideo(this.loadingAnotherVideoText)
-                        })
+        //                 this.zone.run(async () => {
+        //                     await this.preloadVideo(this.loadingAnotherVideoText)
+        //                 })
 
-                    }, 2000)
+        //             }, 2000)
 
-                },
-                onRewardedVideoAdClosed: () => {
+        //         },
+        //         onRewardedVideoAdClosed: () => {
 
-                    console.log('Ad Closed!')
+        //             console.log('Ad Closed!')
 
-                    setTimeout(() => {
+        //             setTimeout(() => {
 
-                        console.log('timeout fired!')
+        //                 console.log('timeout fired!')
 
-                        this.zone.run(async () => {
-                            await this.preloadVideo(this.loadingAnotherVideoText)
-                        })
+        //                 this.zone.run(async () => {
+        //                     await this.preloadVideo(this.loadingAnotherVideoText)
+        //                 })
 
-                    }, 2000)
+        //             }, 2000)
 
-                },
-                onOpened: () => console.log("onRewardedVideoAdOpened"),
-                onStarted: () => console.log("onRewardedVideoStarted"),
-                onCompleted: () => {
-                    console.log("onRewardedVideoCompleted")
-                },
-            }).then(
-                function () {
-                    console.log("showRewardedVideoAd is playing");
-                },
-                function (error) {
-                    console.log("admob showRewardedVideoAd error: " + error);
-                    // Sentry.captureException(error, {});
-                })
+        //         },
+        //         onOpened: () => console.log("onRewardedVideoAdOpened"),
+        //         onStarted: () => console.log("onRewardedVideoStarted"),
+        //         onCompleted: () => {
+        //             console.log("onRewardedVideoCompleted")
+        //         },
+        //     }).then(
+        //         function () {
+        //             console.log("showRewardedVideoAd is playing");
+        //         },
+        //         function (error) {
+        //             console.log("admob showRewardedVideoAd error: " + error);
+        //             // Sentry.captureException(error, {});
+        //         })
                 
-            } catch (err) {
-                console.log("admob err: " + err);
-            // Sentry.captureException(err, {});
-        }
+        //     } catch (err) {
+        //         console.log("admob err: " + err);
+        //     // Sentry.captureException(err, {});
+        // }
 
     }
 

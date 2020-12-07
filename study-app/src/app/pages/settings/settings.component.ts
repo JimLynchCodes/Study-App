@@ -18,7 +18,7 @@ import {
 } from "tns-core-modules/application-settings";
 
 
-const firebase = require("nativescript-plugin-firebase");
+// const firebase = require("nativescript-plugin-firebase");
 
 @Component({
     selector: "Settings",

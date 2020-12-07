@@ -14,7 +14,7 @@ import { UserIdentityService } from './util-services/user-identity/user-identity
 @Module({
   imports: [
     ConfigModule.forRoot({
-      envFilePath: ['.env.development.local', '.env.dev'],
+      envFilePath: ['.env.development.local', '.env.dev', '.env'],
     })
   ],
   controllers: [AppController, UsersController, QuestionFeedbackController],
@@ -25,8 +25,7 @@ export class AppModule {
     consumer
       .apply(AuthenticationMiddleware)
       .forRoutes(
-        { path: '/users(*)', method: RequestMethod.ALL },
-        { path: '/question-feedback(*)', method: RequestMethod.ALL },
+        { path: '/users(*)', method: RequestMethod.ALL }
       );
   }
 }

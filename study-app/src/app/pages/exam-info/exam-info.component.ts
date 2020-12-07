@@ -18,6 +18,11 @@ export class ExamInfoComponent implements OnInit {
     examInfoTitle
     examInfoMessage
 
+    examInfoP1 = `You can find the most recent and up-to-date information on the EA exam at the official site:
+    
+        https://google.com
+    `
+
     constructor() { }
 
     async ngOnInit(): Promise<void> {

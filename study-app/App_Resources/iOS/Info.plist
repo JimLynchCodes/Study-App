@@ -5,13 +5,13 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>Rndm Trivia</string>
+	<string>EA Study App</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>Rndm Trivia</string>
+	<string>EA Study App</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
@@ -47,6 +47,7 @@
 		<string>UIStatusBarStyleLightContent</string>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 		<false/>
+	
 	<key>GADApplicationIdentifier</key>
 		<string>ca-app-pub-5959386651087574~4497233380</string>
 
@@ -59,10 +60,20 @@
 			<string>auth0</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>random.trivia</string>
+				<string>enrolled.agent</string>
 			</array>
 		</dict>
 	</array>
 
 </dict>
 </plist>
+
+<key>NSAppTransportSecurity</key>
+<dict>
+	<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	<key>NSAllowsArbitraryLoadsForMedia</key>
+		<true/>
+	<key>NSAllowsArbitraryLoadsInWebContent</key>
+		<true/>
+</dict>

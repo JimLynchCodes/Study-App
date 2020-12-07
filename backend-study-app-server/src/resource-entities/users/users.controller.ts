@@ -35,7 +35,7 @@ export class UsersController {
         return this.usersSvc.getAllUsersForApp(appName)
         // return Promise.resolve('all users...')
     }
-    
+
     @Get(':app/me')  // where app value is "enrolled-agent", "random-trivia", etc. (and also used as the mongo "database name")
     async getMyUserData(@Param('app') appName: string, @Request() req: any): Promise<User | UnauthorizedException> {
 
@@ -53,24 +53,30 @@ export class UsersController {
         if (!isValid) {
             return new UnauthorizedException()
         }
-
+        
         return this.usersSvc.getUser(appName, userId)
     }
-
-    @Get(':app')
-    async getDataForApp(@Param('app') appName: string, @Request() req: any): Promise<string | UnauthorizedException> {
-
-        return 'foo'
-    }
-
+    
+    /**
+     * 
+     *  Takes any subset of the "User" document and updates object. 
+     * 
+     *  If no user obejct exists for the user, creates a deafult one and updates it.
+     * 
+     * @param appName 
+     * @param req 
+     */
     @Patch(':app')
-    async updateMyUsersData(@Param('app') appName: string, @Request() req: any): Promise<string | UnauthorizedException> {
+    // async updateMyUserData(@Param('app') appName: string, @Request() req: User): Promise<string | UnauthorizedException> {
+    async updateMyUserData(@Param('app') appName: string, @Request() req: User): Promise<string | UnauthorizedException> {
+        
+        return this.usersSvc.updateMyUserData(appName, req);
         return 'foo'
     }
 
-    @Post(':app/:questionId')
-    addNewUser() {
+    // @Post(':app/:questionId')
+    // addNewUser() {
 
-    }
+    // }
 
 }

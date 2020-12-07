@@ -61,13 +61,15 @@ Run tests:
 tns platform clean ios
 ```
 
-1. Set ap bundle Id
+1. Set app bundle Id
 
 [check] enrolled-agent.study-app
 
 [check] random-trivia.study-app
 
 - change package.json "id" under "nativescript".
+
+(random.trivia) or (enrolled.agent)
 
 - change bundleId in iOS plist (only used by auth0)
 
@@ -138,6 +140,24 @@ Random Trivia
 ```
 tns build ios --release --for-device --provision Ea-9-8b-profile --env.environment="random-trivia.prod" --env.uglify
 ```
+
+## 8.0 Errors
+
+Note: if you get errors that "iOs 8.0 is not supported", add this to platforms/iod/Podfile:
+```
+post_install do |installer|
+  post_installnativescript_plugin_firebase_0 installer
+  installer.pods_project.targets.each do |t|
+    t.build_configurations.each do |bc|
+      if bc.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] == '8.0'
+        bc.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '9.0'
+      end
+    end
+  end
+end
+```
+
+and then do `pod install` in the iod folder...
 
 
 ## 6. Publish

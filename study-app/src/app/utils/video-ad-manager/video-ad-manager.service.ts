@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { environment } from '../../../environments/environment'
 
-const firebase = require("nativescript-plugin-firebase");
+// const firebase = require("nativescript-plugin-firebase");
 
 @Injectable({
     providedIn: 'root'
@@ -34,24 +34,24 @@ export class VideoAdManagerService {
 
         return new Promise((resolve, reject) => {
 
-            firebase.admob.preloadRewardedVideoAd({
-                testing: true,
-                iosAdPlacementId: environment.admobKey,
-                androidAdPlacementId: environment.admobKey,
-                keywords: ["keyword1", "keyword2"], // add keywords for ad targeting
-            }).then(
+            // firebase.admob.preloadRewardedVideoAd({
+            //     testing: true,
+            //     iosAdPlacementId: environment.admobKey,
+            //     androidAdPlacementId: environment.admobKey,
+            //     keywords: ["keyword1", "keyword2"], // add keywords for ad targeting
+            // }).then(
 
-                function () {
-                    // const ok = 5 / 0
+            //     function () {
+            //         // const ok = 5 / 0
 
-                    console.log("RewardedVideoAd preloaded - you can now call 'showRewardedVideoAd' whenever you're ready to do so");
-                    resolve()
-                },
-                function (error) {
-                    console.log("admob preloadRewardedVideoAd error: " + error);
-                    reject()
-                }
-            )
+            //         console.log("RewardedVideoAd preloaded - you can now call 'showRewardedVideoAd' whenever you're ready to do so");
+            //         resolve()
+            //     },
+            //     function (error) {
+            //         console.log("admob preloadRewardedVideoAd error: " + error);
+            //         reject()
+            //     }
+            // )
 
         })
     }
