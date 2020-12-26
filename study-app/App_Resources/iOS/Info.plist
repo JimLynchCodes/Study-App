@@ -60,7 +60,7 @@
 			<string>auth0</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>enrolled.agent</string>
+				<string>enrolled-agent.study-app</string>
 			</array>
 		</dict>
 	</array>

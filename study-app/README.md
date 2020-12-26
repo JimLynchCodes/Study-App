@@ -157,8 +157,16 @@ post_install do |installer|
 end
 ```
 
-and then do `pod install` in the iod folder...
+and then do `pod install` in the ios folder...
 
+
+Note: you may also need to add this to build.xcconfig:
+```
+VALIDATE_WORKSPACE = YES
+
+EXCLUDED_ARCHS__EFFECTIVE_PLATFORM_SUFFIX_simulator__NATIVE_ARCH_64_BIT_x86_64=arm64 i386 arm64e armv7 armv7s armv6 armv8
+EXCLUDED_ARCHS=$(inherited) $(EXCLUDED_ARCHS__EFFECTIVE_PLATFORM_SUFFIX_$(EFFECTIVE_PLATFORM_SUFFIX)__NATIVE_ARCH_64_BIT_$(NATIVE_ARCH_64_BIT))
+```
 
 ## 6. Publish
 ```
@@ -214,3 +222,16 @@ tns run ios --env.environment="random-trivia.dev" --device="C3062EA8-1662-4F77-B
 
 Errthing under jim's gmail.
 
+	<key>GADApplicationIdentifier</key>
+		<string>1:392698294367:ios:3d9eeeeedf8aaa28ed2bea</string>
+
+
+## For Android Emulators:
+
+```
+cd $ANDROID_HOME/tools/bin
+```
+
+```
+./sdkmanager "system-images;android-25;google_apis;x86"
+```
