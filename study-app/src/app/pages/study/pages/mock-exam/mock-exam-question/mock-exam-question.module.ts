@@ -1,5 +1,5 @@
 import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
-import { NativeScriptCommonModule } from "nativescript-angular/common";
+import { NativeScriptCommonModule } from "@nativescript/angular";
 
 import { MockExamQuestionRoutingModule } from "./mock-exam-question-routing.module";
 import { MockExamQuestionComponent } from "./mock-exam-question.component";

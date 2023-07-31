@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewContainerRef, NgZone } from "@angular/core";
 import { RadSideDrawer } from "nativescript-ui-sidedrawer";
-import * as app from "tns-core-modules/application";
-import { ModalDialogService, ModalDialogOptions } from "nativescript-angular/common";
+import * as app from '@nativescript/core/application';
+import { ModalDialogService, ModalDialogOptions } from "@nativescript/angular";
 import { VideoAdManagerService } from "~/app/utils/video-ad-manager/video-ad-manager.service";
 import { SettingsModalComponent } from "../settings/modal/settings.modal";
 

@@ -1,21 +1,11 @@
 import { Component, OnInit, ViewContainerRef, NgZone } from "@angular/core";
 import { RadSideDrawer } from "nativescript-ui-sidedrawer";
-import * as app from "tns-core-modules/application";
-import { ModalDialogService, ModalDialogOptions } from "nativescript-angular/common";
+import * as app from '@nativescript/core/application';
+import { ModalDialogService, ModalDialogOptions } from "@nativescript/angular";
 import { SettingsModalComponent } from "./modal/settings.modal";
 import { VideoAdManagerService } from "~/app/utils/video-ad-manager/video-ad-manager.service";
 
-import {
-    getBoolean,
-    // setBoolean,
-    // getNumber,
-    // setNumber,
-    // getString,
-    // setString,
-    // hasKey,
-    // remove,
-    // clear
-} from "tns-core-modules/application-settings";
+import { ApplicationSettings } from '@nativescript/core';
 
 
 // const firebase = require("nativescript-plugin-firebase");
@@ -46,7 +36,7 @@ export class SettingsComponent implements OnInit {
         private zone: NgZone) { }
 
     async ngOnInit(): Promise<void> {
-        this.isCool = getBoolean('isCool')
+        this.isCool = ApplicationSettings.getBoolean('isCool')
     }
 
     openModalBtnClick() {

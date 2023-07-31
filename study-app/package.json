@@ -1,13 +1,4 @@
 {
-  "nativescript": {
-    "id": "enrolled.agent",
-    "tns-android": {
-      "version": "*"
-    },
-    "tns-ios": {
-      "version": "*"
-    }
-  },
   "description": "Random Trivia",
   "license": "see LICENSE",
   "repository": "<fill-your-repository-here>",
@@ -18,36 +9,38 @@
     "lint": "tslint \"src/**/*.ts\""
   },
   "dependencies": {
-    "@angular/animations": "~8.2.0",
-    "@angular/common": "~8.2.0",
-    "@angular/compiler": "~8.2.0",
-    "@angular/core": "~8.2.0",
-    "@angular/forms": "~8.2.0",
-    "@angular/platform-browser": "~8.2.0",
-    "@angular/platform-browser-dynamic": "~8.2.0",
-    "@angular/router": "~8.2.0",
+    "@angular/animations": "~15.2.0",
+    "@angular/common": "~15.2.0",
+    "@angular/compiler": "~15.2.0",
+    "@angular/core": "~15.2.0",
+    "@angular/forms": "~15.2.0",
+    "@angular/platform-browser": "~15.2.0",
+    "@angular/platform-browser-dynamic": "~15.2.0",
+    "@angular/router": "~15.2.0",
+    "@nativescript/angular": "~15.2.0",
+    "@nativescript/core": "~8.5.0",
     "@nativescript/theme": "~2.3.0",
-    "nativescript-angular": "~8.21.0",
     "nativescript-auth0": "^3.0.2",
     "nativescript-plugin-firebase": "^10.6.3",
     "nativescript-ui-sidedrawer": "~8.0.0",
     "reflect-metadata": "~0.1.12",
-    "rxjs": "^6.4.0",
-    "tns-core-modules": "~6.5.0",
-    "zone.js": "~0.9.1"
+    "rxjs": "~7.6.0",
+    "zone.js": "~0.13.0"
   },
   "devDependencies": {
-    "@angular/compiler-cli": "~8.2.0",
+    "@angular-devkit/build-angular": "~15.2.0",
+    "@angular/compiler-cli": "~15.2.0",
+    "@nativescript/ios": "~8.5.0",
+    "@nativescript/types": "~8.5.0",
     "@nativescript/schematics": "^9.0.0",
-    "@ngtools/webpack": "~8.2.0",
-    "codelyzer": "~4.5.0",
+    "@nativescript/webpack": "~5.0.0",
+    "@ngtools/webpack": "~15.2.0",
     "nativescript-angular-cli": "^0.1.9",
-    "nativescript-dev-webpack": "~1.5.0",
-    "node-sass": "^4.7.1",
-    "tns-ios": "6.5.3",
+    "sass": "~1.49.9",
     "tslint": "~5.19.0",
-    "typescript": "~3.5.3"
+    "typescript": "~4.8.2"
   },
   "gitHead": "20a65d338ae8f8911087ab6615b89363f864b07b",
-  "readme": "NativeScript Application"
+  "readme": "NativeScript Application",
+  "main": "./src/main.ts"
 }

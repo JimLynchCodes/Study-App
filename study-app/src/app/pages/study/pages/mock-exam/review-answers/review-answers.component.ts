@@ -1,13 +1,12 @@
 import { Component, OnInit, ViewContainerRef } from "@angular/core";
 import { RadSideDrawer } from "nativescript-ui-sidedrawer";
-import * as app from "tns-core-modules/application";
-import { RouterExtensions } from "nativescript-angular/router";
+import * as app from '@nativescript/core/application';
+import { RouterExtensions, ModalDialogService, ModalDialogOptions, ModalDialogParams } from "@nativescript/angular";
 import { ActivatedRoute, Router } from "@angular/router";
 import { QuestionGenerator } from "~/app/utils/question-generator/question-generator.service";
 import { IQuestion } from "~/app/data/_data.models/question.model";
 import { environment } from "../../../../../../environments/environment"
 import { MockExamManagerService } from "../mock-exam-question/mock-exam-manager.service";
-import { ModalDialogService, ModalDialogOptions, ModalDialogParams } from "nativescript-angular/common";
 import { AreYouSureExamSubmitModalComponent } from "./are-you-sure-exam-submit.modal";
 import { TimesUpModalComponent } from "../times-up.modal";
 

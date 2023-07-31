@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from "@angular/core";
 import { RadSideDrawer } from "nativescript-ui-sidedrawer";
-import * as app from "tns-core-modules/application";
-import { RouterExtensions } from "nativescript-angular/router";
+import * as app from '@nativescript/core/application';
+import { RouterExtensions } from "@nativescript/angular";
 import { ActivatedRoute, Router } from "@angular/router";
 import { IQuestion, AnswerChoice } from "../../../../data/_data.models/question.model";
 import { QuestionGenerator } from "../../../../utils/question-generator/question-generator.service";

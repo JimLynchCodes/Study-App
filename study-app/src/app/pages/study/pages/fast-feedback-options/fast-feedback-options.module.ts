@@ -1,5 +1,5 @@
 import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
-import { NativeScriptCommonModule } from "nativescript-angular/common";
+import { NativeScriptCommonModule } from "@nativescript/angular";
 
 import { FastFeedbackOptionsRoutingModule } from "./fast-feedback-options-routing.module";
 import { FastFeedbackOptionsComponent } from "./fast-feedback-options.component";

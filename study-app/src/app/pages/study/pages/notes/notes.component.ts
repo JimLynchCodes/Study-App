@@ -1,8 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { RadSideDrawer } from "nativescript-ui-sidedrawer";
-import * as app from "tns-core-modules/application";
+import * as app from '@nativescript/core/application';
 import { EventData } from "tns-core-modules/ui/page/page";
-import { RouterExtensions } from "nativescript-angular/router";
+import { RouterExtensions } from "@nativescript/angular";
 import { LoaderService } from "../../../../utils/loader.service";
 
 

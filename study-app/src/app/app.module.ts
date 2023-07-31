@@ -1,5 +1,5 @@
 import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
-import { NativeScriptModule } from "nativescript-angular/nativescript.module";
+import { NativeScriptModule, NativeScriptFormsModule } from "@nativescript/angular";
 import { NativeScriptUISideDrawerModule } from "nativescript-ui-sidedrawer/angular";
 
 import { AppRoutingModule } from "./app-routing.module";
@@ -9,7 +9,6 @@ import { VideoAdManagerService } from "./utils/video-ad-manager/video-ad-manager
 import { SettingsModalComponent } from "./pages/settings/modal/settings.modal";
 import { AreYouSureExamSubmitModalComponent } from "./pages/study/pages/mock-exam/review-answers/are-you-sure-exam-submit.modal";
 import { TimesUpModalComponent } from "./pages/study/pages/mock-exam/times-up.modal";
-import { NativeScriptFormsModule } from "nativescript-angular/forms";
 
 // import { SentryModule } from 'nativescript-sentry/angular';
 

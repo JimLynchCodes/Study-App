@@ -1,9 +1,9 @@
 import { Component, OnInit } from "@angular/core";
 import { RadSideDrawer } from "nativescript-ui-sidedrawer";
-import * as app from "tns-core-modules/application";
+import * as app from '@nativescript/core/application';
 import { EventData } from "tns-core-modules/ui/page/page";
-import { RouterExtensions } from "nativescript-angular/router";
-import { ListPicker } from "tns-core-modules/ui/list-picker";
+import { RouterExtensions } from "@nativescript/angular";
+import { ListPicker } from '@nativescript/core';
 import { MockExamManagerService } from "./mock-exam-question/mock-exam-manager.service";
 import { EaExam, ExamTime } from "./ea-exam.model";
 import { environment } from '../../../../../environments/environment'

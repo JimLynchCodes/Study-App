@@ -1,51 +1,59 @@
 import { Injectable } from '@nestjs/common';
 import { hardcodedQuestionFeedback } from './question-feedback.hardcoded-data';
 import { QuestionFeedback } from './question-feedback.models';
-import { MongoService } from 'src/util-services/mongo/mongo.service';
+import { MongoService } from '../../util-services/mongo/mongo.service';
 import { ObjectId } from 'mongodb';
 
 @Injectable()
 export class QuestionFeedbackService {
+  constructor(private mongoSvc: MongoService) {}
 
-    constructor(private mongoSvc: MongoService) { }
+  async getFeedbackForAllQuestions(
+    appName: string,
+  ): Promise<QuestionFeedback[]> {
+    const db = await this.mongoSvc.getDb(appName);
 
-    async getFeedbackForAllQuestions(appName: string): Promise<QuestionFeedback[]> {
+    return new Promise(async resolve => {
+      console.log(
+        'process.env.MONGO_QUESTION_FEEDBACK_COLLECTION ',
+        process.env.MONGO_QUESTION_FEEDBACK_COLLECTION,
+      );
 
-        const db = await this.mongoSvc.getDb(appName);
+      const result = await db
+        .collection(process.env.MONGO_QUESTION_FEEDBACK_COLLECTION)
+        .find({})
+        .toArray();
 
-        return new Promise( async resolve => {
-            
-            console.log('process.env.MONGO_QUESTION_FEEDBACK_COLLECTION ', process.env.MONGO_QUESTION_FEEDBACK_COLLECTION)
+      console.log('result is: ', result);
+      resolve(result);
+    });
+  }
 
-            const result = await db.collection(process.env.MONGO_QUESTION_FEEDBACK_COLLECTION).find({}).toArray()
+  async getAllFeedbackForQuestion(appName: string, questionId: string) {
+    const db = await this.mongoSvc.getDb(appName);
 
-            console.log('result is: ', result)
-            resolve(result)
-        })
-    }
+    return db.collection(process.env.MONGO_QUESTION_FEEDBACK_COLLECTION).find({
+      questionId: new ObjectId(questionId),
+    });
+  }
 
-    async getAllFeedbackForQuestion(appName: string, questionId: string) {
-        const db = await this.mongoSvc.getDb(appName);
+  getHardcodedQuestionFeedback(): Promise<QuestionFeedback> {
+    return Promise.resolve(hardcodedQuestionFeedback);
+  }
 
-        return db.collection(process.env.MONGO_QUESTION_FEEDBACK_COLLECTION).find({
-            questionId: new ObjectId(questionId)
-        })
-    }
+  async addSpecificFeedbackForQuestion(
+    appName: string,
+    questionId: string,
+    req: QuestionFeedback,
+  ): Promise<QuestionFeedback> {
+    const db = await this.mongoSvc.getDb(appName);
 
-    getHardcodedQuestionFeedback(): Promise<QuestionFeedback> {
-        return Promise.resolve(hardcodedQuestionFeedback)
-    }
+    return new Promise(async resolve => {
+      const result = await db
+        .collection(process.env.MONGO_QUESTION_FEEDBACK_COLLECTION)
+        .insertOne({ ...req, questionId });
 
-    async addSpecificFeedbackForQuestion(appName: string, questionId: string, req: QuestionFeedback): Promise<QuestionFeedback> {
-        const db = await this.mongoSvc.getDb(appName);
-
-        return new Promise(async resolve => {
-
-            const result = await db.collection(process.env.MONGO_QUESTION_FEEDBACK_COLLECTION)
-                .insertOne({ ...req, questionId })
-
-            resolve(result.ops[0])
-        })
-    }
-
+      resolve(result.ops[0]);
+    });
+  }
 }

@@ -1,5 +1,5 @@
 import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
-import { NativeScriptCommonModule } from "nativescript-angular/common";
+import { NativeScriptCommonModule } from "@nativescript/angular";
 import { ExamInfoComponent } from "./exam-info.component";
 import { ExamInfoRoutingModule } from "./exam-info-routing.module";
 
