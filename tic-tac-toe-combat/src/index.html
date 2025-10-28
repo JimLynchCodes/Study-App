@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>Tic Tac Toe Combat</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="game-container">
+        <!-- Game Header -->
+        <div id="game-header">
+            <div class="player-info">
+                <div class="player-name">Player X</div>
+                <div class="health-bar">
+                    <div id="player-health" class="health-fill"></div>
+                </div>
+                <div class="energy-bar">
+                    <div id="player-energy" class="energy-fill"></div>
+                </div>
+            </div>
+            <div id="timer">3:00</div>
+            <div class="player-info">
+                <div class="player-name">Player O</div>
+                <div class="health-bar">
+                    <div id="enemy-health" class="health-fill"></div>
+                </div>
+                <div class="energy-bar">
+                    <div id="enemy-energy" class="energy-fill"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Game Grid -->
+        <div id="game-grid">
+            <div class="grid-cell" data-index="0"></div>
+            <div class="grid-cell" data-index="1"></div>
+            <div class="grid-cell" data-index="2"></div>
+            <div class="grid-cell" data-index="3"></div>
+            <div class="grid-cell" data-index="4"></div>
+            <div class="grid-cell" data-index="5"></div>
+            <div class="grid-cell" data-index="6"></div>
+            <div class="grid-cell" data-index="7"></div>
+            <div class="grid-cell" data-index="8"></div>
+        </div>
+
+        <!-- Combat Arena (shown during fights) -->
+        <div id="combat-arena" class="hidden">
+            <div class="arena-bg">
+                <div id="player-fighter" class="fighter player-x">X</div>
+                <div id="enemy-fighter" class="fighter player-o">O</div>
+            </div>
+            <div id="combat-message"></div>
+        </div>
+
+        <!-- Mobile Controls -->
+        <div id="mobile-controls">
+            <!-- Left Controls (Movement) -->
+            <div id="left-controls">
+                <div id="virtual-joystick">
+                    <div id="joystick-base">
+                        <div id="joystick-stick"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Controls (Actions) -->
+            <div id="right-controls">
+                <button class="action-btn special-btn" id="special-btn">
+                    <span>⚡</span>
+                    <span class="btn-label">SPECIAL</span>
+                </button>
+                <button class="action-btn block-btn" id="block-btn">
+                    <span>🛡️</span>
+                    <span class="btn-label">BLOCK</span>
+                </button>
+                <button class="action-btn punch-btn" id="punch-btn">
+                    <span>👊</span>
+                    <span class="btn-label">PUNCH</span>
+                </button>
+                <button class="action-btn kick-btn" id="kick-btn">
+                    <span>🦵</span>
+                    <span class="btn-label">KICK</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Game Messages -->
+        <div id="game-message" class="hidden">
+            <div class="message-content">
+                <h2 id="message-title"></h2>
+                <p id="message-text"></p>
+                <button id="message-btn">Continue</button>
+            </div>
+        </div>
+
+        <!-- Start Screen -->
+        <div id="start-screen">
+            <h1>TIC TAC TOE COMBAT</h1>
+            <p>Fight for each square!</p>
+            <button id="start-btn">START GAME</button>
+            <div class="instructions">
+                <h3>How to Play:</h3>
+                <ul>
+                    <li>Tap a square to fight for it</li>
+                    <li>Use on-screen controls during combat</li>
+                    <li>Win by getting 3 in a row or depleting opponent's health</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>

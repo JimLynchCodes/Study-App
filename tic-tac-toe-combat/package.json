@@ -1,0 +1,27 @@
+{
+  "name": "tic-tac-toe-combat",
+  "version": "1.0.0",
+  "description": "A mobile fighting game combining tic-tac-toe strategy with combat gameplay",
+  "main": "src/game.js",
+  "scripts": {
+    "start": "python3 -m http.server 8000 --directory src",
+    "dev": "python3 -m http.server 8000 --directory src"
+  },
+  "keywords": [
+    "game",
+    "mobile",
+    "fighting",
+    "tic-tac-toe",
+    "combat",
+    "touch-controls"
+  ],
+  "author": "Tic Tac Toe Combat Team",
+  "license": "SEE LICENSE IN LICENSE",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JimLynchCodes/Study-App"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
