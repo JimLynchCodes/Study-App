@@ -10,6 +10,8 @@ const gameState = {
     currentSquare: null,
     gameOver: false,
     timer: 180, // 3 minutes
+    timerInterval: null,
+    isBlocking: false,
 };
 
 // DOM Elements
@@ -53,21 +55,25 @@ function initGame() {
         e.preventDefault();
         attack('punch');
     });
+    elements.punchBtn.addEventListener('click', () => attack('punch'));
     
     elements.kickBtn.addEventListener('touchstart', (e) => {
         e.preventDefault();
         attack('kick');
     });
+    elements.kickBtn.addEventListener('click', () => attack('kick'));
     
     elements.blockBtn.addEventListener('touchstart', (e) => {
         e.preventDefault();
         block();
     });
+    elements.blockBtn.addEventListener('click', () => block());
     
     elements.specialBtn.addEventListener('touchstart', (e) => {
         e.preventDefault();
         specialMove();
     });
+    elements.specialBtn.addEventListener('click', () => specialMove());
     
     // Joystick (basic implementation)
     setupJoystick();
@@ -88,6 +94,7 @@ function resetGame() {
     gameState.enemyEnergy = 100;
     gameState.gameOver = false;
     gameState.timer = 180;
+    gameState.isBlocking = false;
     
     updateHealthBars();
     updateEnergyBars();
@@ -181,8 +188,14 @@ function attack(type) {
 
 function block() {
     if (!gameState.inCombat) return;
+    
+    gameState.isBlocking = true;
     showCombatMessage('Blocking...');
-    // Block reduces next damage by 50%
+    
+    // Block lasts for 2 seconds
+    setTimeout(() => {
+        gameState.isBlocking = false;
+    }, 2000);
 }
 
 function specialMove() {
@@ -224,13 +237,20 @@ function enemyAction() {
     
     if (action < 0.6) {
         // Enemy attacks
-        const damage = Math.random() < 0.5 ? 8 : 12;
+        let damage = Math.random() < 0.5 ? 8 : 12;
+        
+        // Apply blocking reduction
+        if (gameState.isBlocking) {
+            damage = Math.floor(damage * 0.5);
+            showCombatMessage(`Blocked! Only -${damage} damage`);
+        } else {
+            showCombatMessage(`Enemy attacks! -${damage} damage`);
+        }
+        
         gameState.playerHealth -= damage;
         
         elements.enemyFighter.classList.add('attacking');
         elements.playerFighter.classList.add('hit');
-        
-        showCombatMessage(`Enemy attacks! -${damage} damage`);
         
         setTimeout(() => {
             elements.enemyFighter.classList.remove('attacking');
@@ -327,7 +347,12 @@ function updateEnergyBars() {
 }
 
 function startTimer() {
-    setInterval(() => {
+    // Clear any existing timer
+    if (gameState.timerInterval) {
+        clearInterval(gameState.timerInterval);
+    }
+    
+    gameState.timerInterval = setInterval(() => {
         if (!gameState.gameOver && gameState.timer > 0) {
             gameState.timer--;
             const minutes = Math.floor(gameState.timer / 60);

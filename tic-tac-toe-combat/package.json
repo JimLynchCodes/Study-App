@@ -16,7 +16,7 @@
     "touch-controls"
   ],
   "author": "Tic Tac Toe Combat Team",
-  "license": "SEE LICENSE IN LICENSE",
+  "license": "SEE LICENSE IN ../LICENSE",
   "repository": {
     "type": "git",
     "url": "https://github.com/JimLynchCodes/Study-App"
